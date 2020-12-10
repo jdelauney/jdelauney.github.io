@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!-- FR car c'est en français -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Ce site est certifié 100% fait maison et à la main -->
+
+  <!-- Ce site est un exemple de réalisation pour un barber shop, mais il peut-être entièrement adapaté à votre domaine professionnel -->
+  <!-- Ce site est la à titre d'exemple et de référence -->
+
+  <!-- Technologiquement, y-a quoi dans tout ce bazar ? -->
+  <!--
+      - Du HTML parce que nous le valons bien !
+      - Du CSS et du SASS les crèmes beauté.
+      - Le framework CSS mondialement connu : Bootstrap. Pour se simplifier la vie (et oui, je suis développeur, donc un peu fainiant ;) )
+      - Du javascript (vanilla et un peu d'aide de JQuery ) pour le dynamisme et l'interactivité
+      - C'est invisble et ça trompe énormément. PHP est là pour que vous puissiez me contacter et m'envoyer un message simplement et facilement.
+        Sinon mon adresse virtuelle (je veux parler de mon e-mail bien sur) c'est devweb-freelance@jerome-delauney.com    
+      - "mobile-first" pour les nomades
+      - Et tout ça avec Infomaniak mon bailleur web, sans lequel vous n'auriez jamais vu ma trombine et faire connaissance avec moi.
+
+      Alors, pourquoi pas vous ? pourquoi pas moi ? Réalisons ensemble votre vision de votre carte d'identé digitale. 
+      
+      N'HESITEZ PLUS, CONTACTEZ MOI !
+    -->
+
+  <!-- SEO -->
+  <title>The barber shop demo</title>
+  <meta name="Description" content="Enter your description here" />
+
+  <link rel="shortcut icon" href="ressources/images/barbershop-badge-01.svg" type="image/svg">
+  <meta name="robots" content="index, follow">
+
+  <!-- Les petites icones de font awesome -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- feuille de style personnelle -->
+  <link rel="stylesheet" href="style/default.css" />
+
+  <!-- favicon-->
+
+</head>
+
+<body>
+  <div id="headerIntro">
+    <div id="headerCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+      <!-- <ol class="carousel-indicators">
+        <li data-target="headerCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="headerCarousel" data-slide-to="1"></li>
+        <li data-target="headerCarousel" data-slide-to="2"></li>
+      </ol> -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="overlay-img">
+            <img src="ressources/images/bg-header-01.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-caption carousel-caption-custom d-none d-md-block">
+            <h2>Un savoir-faire à des prix inégalés</h2>
+            <p><span>Vous recherchez la tradition d’un savoir faire, souhaitez bénéficier d’un <strong>rasage</strong> précis et expérimenté ou encore réaliser des économies ? <br> Confiez donc votre barbe à nos <strong>maîtres barbiers</strong> et venez découvrir notre salons situés a Sanstif, à proximité de <strong>Lechauve</strong> et de <strong>Letondu</strong></span></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="overlay-img">
+            <img src="ressources/images/bg-header-02.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-caption carousel-caption-custom d-none d-md-block">
+            <h2>Coiffeur barbier :  une passion !</h2>
+            <p>En effet, le métier de<strong> coiffeur-barbier</strong> ne s&rsquo;improvise pas et c&rsquo;est d&rsquo;ailleurs pourquoi chacun de nos collaborateurs a été sélectionné avec soin et formé selon les standards de qualité Barbers. </p>            
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="overlay-img">
+            <img src="ressources/images/bg-header-03.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-caption carousel-caption-custom d-none d-md-block">
+            <h2>ZZ-Bop, votre barbier à Sanstif</h2>
+            <p>Dans un cadre exclusivement réservé à la gent masculine, notre équipe de professionnels se fera un plaisir de vous recevoir, avec ou sans rendez-vous. </p>
+            <p>Si vous désirez <a href="#rdv" class="btn btn-barber btn-barber-inverted btn-small mx-2">prendre rendez-vous</a> en ligne, c’est tout à fait possible et nous vous invitons à le faire via la page dédiée.</p>
+          </div>
+        </div>
+      </div>
+      <!-- <a class="carousel-control-prev" href="#headerCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Précédent</span>
+      </a>
+      <a class="carousel-control-next" href="#headerCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Suivant</span>
+      </a>   -->
+    </div>
+    <header class="mainHeader">
+      <div id="top-bar">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-6 top-text">
+              <ul class="list-inline mb-0">
+                <li>18 rue du Tondu 69963 Santif</li>
+                <li><a type="phone" href="#">+41 77 123 45 64</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-6 top-text text-right">
+              <ul class="list-inline mb-0">
+                <li>
+                  <a href="mailto:info@barbershop.com">info@barbershop.com</a>
+                </li>
+                <li class="top-social-item">
+                  <a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li class="top-social-item">
+                  <a class="twitter" href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="top-social-item">
+                  <a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="top-social-item">
+                  <a class="linkedin" href="#"><i class="fab fa-linkedin"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sticky-container">
+        <div id="mainNav-container">
+          <div class="sticky-wrapper">
+            <nav class="navbar  navbar-expand-md navbar-dark navbar-transparent w-100">
+              <div class="container-fluid">
+                <div id="MainNavbar" class="navbar-collapse collapse">
+                  <div class="row w-100">
+                    <div class="col-md-5">
+                      <ul class="navbar-nav justify-content-end">
+                        <li class="nav-item"><a class="nav-link" href="#about">A propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#service">Services</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="col-md-2">
+                      <a href="index.html" class="navbar-brand py-4"><img class="img-fluid d-block mx-auto"
+                          src="ressources/images/logo-barber.svg" alt=""></a>
+                    </div>
+
+                    <div class="col-md-5 align-items-center justify-content-center">
+                      <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#pricing">Tarifs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <main>
+    <section id="introduction">
+      <div class="container">
+        <p class="prettyTitle">Introduction</p>
+        <div class="d-flex justify-content-center">
+          <div class="prettyContainer">
+            <h1 class="title text-center">ZZ-Bop votre salon de coiffure, barbier professionnel</h1>
+            <p class="subTitle colored">
+              Un barbier est une personne dont la profession consiste principalement à couper, coiffer et raser la barbe
+              et la moustache des hommes et des garçons.
+              Le lieu de travail d'un barbier est connu sous le nom de `` Barber Shop ''
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="aboutus">
+      <div class="row no-gutters">
+        <div class="col-md-6">
+          <div class="aboutus-img"></div>
+        </div>
+        <div class="col-md-6 bg-black">
+          <div class="aboutus-card fancy-border">
+            <div class="fancy-border-inner p-4">
+              <h2 class="title title-invert text-center">Notre histoire</h2>
+              <span class="aboutus-subTitle d-block mb-3 text-gold">Depuis 1991,</span>
+              <p>
+                ZZ-Bop Barber Shop. est un salon de coiffure haut de gamme. Nous offrons une variété de services, pour
+                tous.
+              </p>
+              <p>
+                C'est aussi une boutique pour gentleman, qui rappelle le salon de coiffure classique d'antan.
+                Nous nous efforçons de ramener les souvenirs, avec uniquement la clientèle à l'esprit.
+              </p>
+              <p>
+                Nous sommes des barbiers qui aimont notre métier, nous offront un service de premier ordre qui aide les
+                hommes à rester affûtés et dans l'ère du temps.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="services" class="py-5">
+      <div class="container">
+        <h2 class="title text-center">Coiffure, rasage et bien-être</h2>
+        <h3 class="subTitle colored">ZZ-Bop, offre aux gentlemen un espace, une ambiance authentique réservée aux hommes pour profiter d’un service de barbier dans un cadre Oldschool et sophistiqué. Ses artisans barbiers maîtrisent l’art du rasage traditionnel et ses nombreuses techniques à la perfection. Toujours à l’écoute, ils proposent un service personalisé de qualité. ZZ-Bop vous invite à passer un moment de détente dans son salon situés à Sanstif.</h3>
+        <div class="divider"></div>
+        <div class="row my-3">
+          <div class="col-md-4">
+            <div class="card card-barber pb-3">
+              <div class="image-box-fx rounded mt-4 mx-4">
+                <img class="img-fluid" src="ressources/images/portrait-of-male-hairdresser-with-electric-trimmer-cr.jpg"
+                  alt="male-hairdresser-with-electric-trimmer">
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Les soins</h5>
+                <p class="card-text pb-3">Qu’il s’agisse de tonifier votre peau, de la régénérer par un peeling, nous nous occupons de vous ! Nos barbiers sont prêts à répondre à vos questions et sont à votre écoute, afin de vous proposer une prestation adaptée à vos souhaits.</p>                
+                <a href="#" class="btn btn-barber btn-barber-redAndGold">En savoir plus</a>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4">
+            <div class="card card-barber pb-3">
+              <div class="image-box-fx rounded mt-4 mx-4">
+                <img class="img-fluid"
+                  src="ressources/images/male-hairdresser-cutting-client-s-hair-in-barber-shop-cr.jpg"
+                  alt="male-hairdresser-with-electric-trimmer">
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">La coupe</h5>
+                <p class="card-text pb-3">Envie d’une coiffure classique, branchée ou encore stylée? Notre salon vous propose plusieurs formules de coupe masculine, toutes adaptées à vos exigences. Du défrisage au dégradé pour homme, laissez-vous conseiller.</p>
+                <a href="#" class="btn btn-barber btn-barber-redAndGold">En savoir plus</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-barber pb-3">
+              <div class="image-box-fx rounded mt-4 mx-4">
+                <img class="img-fluid"
+                  src="ressources/images/professional-barber-with-shave-brush-and-old-male-client-cr.jpg"
+                  alt="male-hairdresser-with-electric-trimmer">
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">La barbe</h5>
+                <p class="card-text pb-3">Venez découvrir ou retrouver le plaisir d’un rasage à l’ancienne, d’une mise en forme de vos moustaches ou encore d’une taille minutieuse de votre barbe. Délectez-vous de ce véritable moment de détente, qui vous donnera entière satisfaction.</p>
+                <!-- <a href="#" class="btn-barber btn-barber-lined-thick">Go somewhere</a> -->
+                <a href="#" class="btn btn-barber btn-barber-redAndGold">En savoir plus</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    
+    </section>
+    <section id="horaires" class="section-image-back backPrices py-5">
+      <div class="container">
+        <div class="box-overlay">
+          <h2 class="title text-center">Horaires d'ouverture</h2>
+          <h3 class="subTitle colored">Plus que de vouloir vous <strong>couper les cheveux</strong> ou réaliser pour vous l&rsquo;entretien de votre <strong>barbe</strong>, ce qui nous tiens à coeur est de vous aider à arborer une apparence soignée, moderne et masculine tout au long de l&rsquo;année.</h3>
+          <div class="divider"></div>
+
+          <div class="row">
+            <div class="col-md-4 px-3">
+              <h4 class="mb-4 text-gold">Style et élégance</h4>
+              <p>
+                La question de <strong>l’entretien de sa barbe</strong> se pose autant que celle de se coiffer le matin. Oui, cela peut paraître banal, mais une <strong>barbe</strong> correctement entretenue est avant tout une preuve incontestable d’hygiène et d’entretien de soi.
+              </p>
+              <a href="#" class="btn btn-barber btn-barber-redAndGold mb-3">Prendre rendez-vous</a>
+            </div>
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md-4 d-flex align-items-center justify-content-center">
+                  <div class="hours-box">
+                    <span class="dayTitle">Lundi</span>
+                    <span class="hourRange">10:00 - 20:00</span>
+                  </div>
+                </div>
+                <div class="col-md-4 d-flex align-items-center justify-content-center">
+                  <div class="hours-box mx-auto">
+                    <span class="dayTitle">Mardi</span>
+                    <span class="hourRange">10:00 - 20:00</span>
+                  </div>
+                </div>
+                <div class="col-md-4  d-flex align-items-center justify-content-center">
+                  <div class="hours-box mx-auto">
+                    <span class="dayTitle">Mercredi</span>
+                    <span class="hourRange">10:00 - 20:00</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-4">
+                <div class="col-md-4  d-flex align-items-center justify-content-center">
+                  <div class="hours-box mx-auto">
+                    <span class="dayTitle">Jeudi</span>
+                    <span class="hourRange">10:00 - 20:00</span>
+                  </div>
+                </div>
+                <div class="col-md-4  d-flex align-items-center justify-content-center">
+                  <div class="hours-box mx-auto">
+                    <span class="dayTitle">Vendredi</span>
+                    <span class="hourRange">10:00 - 20:00</span>
+                  </div>
+                </div>
+                <div class="col-md-4  d-flex align-items-center justify-content-center">
+                  <div class="hours-box mx-auto">
+                    <span class="dayTitle">Samedi</span>
+                    <span class="hourRange">10:00 - 18:00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="Tarifs" class="py-5">
+      <div class="container">
+        <h2 class="title text-center">Tarifs, toujours imités, jamais égalés</h2>
+        <h3 class="subTitle colored">Que vous soyez adulte, sénior, etudiant, enfant. De la coupe classique à la coupe tendance, du rasage à la lame, à la taille de la barbe aux ciseaux. De la taille de la moustache et rasage du visage au dégagement du cou et des joues. Du façonnage d’un bouc à la taille des poils disgracieux (nez et oreilles), etc... Jusqu'au soins et massage du visage. Chacun de nos barbiers maitrise à la perfection toutes les techniques</h3>
+        <div class="divider"></div>
+        <div class="row price-list-container">
+          <div class="col-md-4 px-2 mx-0">
+            <div class="price-list-item fancy-border">
+              <div class="fancy-border-inner">            
+                <div class="price-list-item-img">
+                  <img class="img-fluid d-block mx-auto" src="ressources/images/haircut-stamp.svg" alt="prix coupe de cheveux, adulte, enfant, senior, militaire, etudiant">
+                </div>
+                <div class="price-list-item-body">
+                  <h3 class="price-list-item-body-title">Coupe de cheveux</h3>
+                  <div class="price-list-item-body-details">
+                    <ul class="list-unstyled price-list-item-body-details-list">
+                      <li>
+                        <div class="item-price-container">
+                          <span>Adulte</span>
+                          <span class="price-value" data-after=" CHF">25.00</span>
+                        </div>
+                        <span class="price-details">Shampoing, coupe et coiffage</span>
+                      </li>                    
+                      <li>
+                        <div class="item-price-container">
+                          <span>Enfants & étudiants</span>
+                          <span class="price-value" data-after=" CHF">20.00</span>
+                        </div>
+                        <span class="price-details">Shampoing, coupe et coiffage</span>
+                      </li>
+                      <li>
+                        <div class="item-price-container">
+                          <span>Senior & militaire</span>
+                          <span class="price-value" data-after=" CHF">20.00</span>
+                        </div>
+                        <span class="price-details">Shampoing, coupe et coiffage</span>
+                      </li>
+                      <li>
+                        <div class="item-price-container">
+                          <span>Cheveux long, supplément</span>
+                          <span class="price-value" data-after=" CHF">10.00</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-4 px-2 mx-0">
+            <div class="price-list-item fancy-border">
+              <div class="fancy-border-inner"> 
+             
+                <div class="price-list-item-img">
+                  <img class="img-fluid d-block mx-auto" src="ressources/images/shave-stamp.svg" alt="">
+                </div>
+                <div class="price-list-item-body">
+                  <h3 class="price-list-item-body-title">Barbe & moustache</h3>
+                  <div class="price-list-item-body-details">
+                    <ul class="list-unstyled price-list-item-body-details-list">
+                      <li>
+                        <div class="item-price-container">
+                          <span>Taille de la barbe</span>
+                          <span class="price-value" data-after=" CHF">15.00</span>
+                        </div>
+                        <span class="price-details">À la tondeuse sans serviette chaude</span>
+                      </li>                    
+                      <li>
+                        <div class="item-price-container">
+                          <span>Taille de la barbe (courte)</span>
+                          <span class="price-value" data-after=" CHF">35.00</span>
+                        </div>
+                        <span class="price-details">Trimming : Au blaireau, coupe chou, tondeuse, savon à barbe avec serviette chaude, aftershave et beard wax</span>
+                      </li>
+                      <li>
+                        <div class="item-price-container">
+                          <span>Rasage complet de la barbe</span>
+                          <span class="price-value" data-after=" CHF">30.00</span>
+                        </div>
+                        <span class="price-details">Au coupe chou avec serviette chaude et aftershave</span>
+                      </li>
+                      <li>
+                        <div class="item-price-container">
+                          <span>taille de la barbe (longue)</span>
+                          <span class="price-value" data-after=" CHF">40.00</span>
+                        </div>
+                        <span class="price-details">Restructuration (diagnostique + analyse) : Au coupe chou, à la tondeuse, aux ciseaux, avec serviette chaude, sèche-cheveux, aftershave et beard wax</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-4 px-2 mx-0">
+            <div class="price-list-item fancy-border">
+              <div class="fancy-border-inner">               
+                <div class="price-list-item-img">
+                  <img class="img-fluid d-block mx-auto" src="ressources/images/spa-stamp.svg" alt="soins et massage du cuir chevelu">
+                </div>
+                <div class="price-list-item-body">
+                  <h3 class="price-list-item-body-title">Soins & massages</h3>
+                  <div class="price-list-item-body-details">
+                    <ul class="list-unstyled price-list-item-body-details-list">
+                      <li>
+                        <div class="item-price-container">
+                          <span>Soins classique</span>
+                          <span class="price-value" data-after=" CHF">20.00</span>
+                        </div>
+                        <span class="price-details">Lotion, gommage, masque.</span>
+                      </li>                    
+                      <li>
+                        <div class="item-price-container">
+                          <span>Soins complet avec massage</span>
+                          <span class="price-value" data-after=" CHF">28.00</span>
+                        </div>
+                        <span class="price-details">Lotion, gommage, masque argile<br>Massage du visage, serviette chaude.</span>
+                      </li>
+                      <li>
+                        <div class="item-price-container">
+                          <span>Soins du visage à la vapeur</span>
+                          <span class="price-value" data-after=" CHF">20.00</span>
+                        </div>
+                        <span class="price-details">Lotion, gommage, massage du visage, serviette chaude élimination des points noirs.</span>
+                      </li>                    
+                    </ul>
+                    <span class="d-block text-center">Tous nos soins, sont accompagnés de produits adaptés à votre type de peau</span>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="section-image-back backServices">
+      <div class="container-fluid">
+        <div class="box-overlay">
+          <div class="container">
+            <h2 class="title text-center">Des coiffeurs barbiers de talent </h2>
+            <h3 class="subTitle colored">Vous souhaitez réaliser des mèches ou une coloration ? Vous souhaitant obtenir une coupe unique avec des motifs et dessins sur le crâne ? Vous souhaitez avoir la même coupe qu’une célébrité ? Tout cela est possible chez ZZ-Bop, il suffit de nous le demander !</h3>
+            <div class="divider"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 gmap"></div>
+            <div class="col-md-6 d-flex align-items-center justify-content-center flex-column">
+              <div class="my-4 w-100">
+                <p class="prettyTitle prettyTitle-light">téléphone</p>
+                <span class="d-block text-center"><a type="phone" href="+41771234564" itemprop="telephone">+41 77 123 45 64</a></span>
+                <p class="prettyTitle prettyTitle-light mt-5">email</p>
+                <span class="d-block text-center">
+                  <a
+                    href="mailto:info@barbershop.com?subject=Premier contact&body=Bonjour,"
+                    itemprop="email">info@barbershop.com
+                  </a>
+                </span>
+              </div>
+
+              <form class="form-box">
+                <div class="form-row">
+                  <div class="col-sm-6">
+                    <div class="input-form">
+                      <input type="text" id="inputName" placeholder=" " class="my-input" required>
+                      <span class="my-input-focus"></span>
+                      <label for="inputName">Nom</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="input-form">
+                      <input type="text" id="inputEmail" placeholder=" " class="my-input" required>
+                      <span class="my-input-focus"></span>
+                      <label for="inputEmail">E-Mail</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col">
+                    <div class="input-form">
+                      <textarea id="inputMessage" placeholder=" " class="my-input" rows="3" required></textarea>
+                      <span class="my-input-focus"></span>
+                      <label for="inputMessage">Message</label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button type="submit" class="btn btn-barber btn-barber-inverted btn-block mt-3">Envoyer</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-5">
+      <div class="container">
+        <h2 class="title text-center">Suivez, aimez, épinglez, partagez</h2>
+        <h3 class="subTitle colored">Retrouvez nous sur les réseaux sociaux</h3>
+        <div class="divider"></div>
+        <ul class="list-inline social-list mb-0 mx-auto text-center">        
+          <li class="social-item">
+            <a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li class="social-item">
+            <a class="twitter" href="#"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li class="social-item">
+            <a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li class="social-item">
+            <a class="linkedin" href="#"><i class="fab fa-linkedin"></i></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="px-3 pt-5 pb-3">
+    
+    <section>
+      <div class="row">
+        <div class="col-md-3">
+        <img class="img-fluid d-block mx-auto" src="ressources/images/logo-barber.svg" alt="ZZ Bop Coiffeur et babrbier à Sanstif" width="90px">
+          <p class="p-3 text-gold">
+            Notre salon de coiffure est conçu pour les hommes qui apprécient la qualité supérieure, passer du temps à se
+            détendre, pour un look impeccable.
+          </p>
+        </div>
+        <div class="col-md-3">
+          <h3 class="title title-sub title-gold">Quartier général</h3>
+          <div class="d-block" itemscope itemtype="https://schema.org/Person" translate="no">
+            <div class="pb-3"  itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">                                    
+              <div class="d-block">
+                <div class="d-inline-block text-white mr-2">
+                  <span class="far fa-map-marker-alt"></span>
+                </div>
+                <span class="text-muted d-inline-block" itemprop="streetAddress">
+                  18 rue du Tondu 
+                </span>
+              </div>
+              <div class="ml-4">
+                <span class="text-muted" itemprop="postalCode">69963</span>
+                <span class="text-muted" itemprop="addressLocality">Santif</span>
+                
+              </div>
+              <div class="ml-4">
+                <span class="text-muted" itemprop="addressRegion">Lebouc, Mustache</span>
+              </div>
+            </div>              
+            <div class="d-flex flex-warp pb-3">
+              <div class="text-white mr-2">
+                <span class="far fa-phone"></span>
+              </div>                              
+              <span class="text-muted"><a type="phone" href="+417712345" itemprop="telephone">+41(0) 77.123.45.64</a></span>              
+            </div>
+            <div class="d-flex flex-warp pb-3">
+              <div class="text-white mr-2">
+                <span class="far fa-envelope"></span>
+              </div>                           
+               <span class="text-muted">
+                  <a href="mailto:info@barbershop.com?subject=Premier contact&body=Bonjour," itemprop="email">info@barbershop.com</a>
+              </span>              
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <h3 class="title title-sub title-gold">Horaires d'ouverture</h3>
+          <ul class="list-unstyled">
+            <li>Lundi de 10:00 à 20:00</li>
+            <li>Mardi de 10:00 à 20:00</li>
+            <li>Mercredi de 10:00 à 20:00</li>
+            <li>Jeudi de 10:00 à 20:00</li>
+            <li>Vendredi de 10:00 à 20:00</li>
+            <li>Samedi de 10:00 à 18:00</li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="title title-sub title-gold">Restons en contact</h3>
+          <p> Abonnez-vous à la newsletter de ZZ-Bop, pour recevoir les dernières informations et promotions</p>
+          <div id="subscribe-box">
+            <form>
+              <input type="email" placeholder="inscrivez votre email">
+              <button type="submit" class="btn btn-barber btn-barber-redAndGold btn-small btn-block">S'inscrire</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="subfooter">
+        <span>&copy 2021 ZZ-Bop</span>
+        <div class="d-inline-block text-right px-2 float-right w-auto mx-auto">
+          <a href="#">Mentions légales</a>
+          <a class="ml-2" href="#">Reportez un problème</a>
+        </div>
+      </div>
+    </section>
+  </footer>
+  <a href="#header" id="scroll-to-top"><span class="fa fa-arrow-up"></span></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+    crossorigin="anonymous"></script>
+  <script src="scripts/script.js"></script>
+</body>
+
+</html>

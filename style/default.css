@@ -3,6 +3,20 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: #1a81bc;
+}
+a:hover {
+  text-decoration: none;
+  color: #1abc9c;
+}
+
+footer {
+  background: #131418;
+  color: #e2dcce;
+}
+
 .navbar-brand {
   color: #1abc9c !important;
 }
@@ -41,15 +55,16 @@ body {
 
 #gallery {
   margin: 4em 0;
-  /* https://codepen.io/ouzkagan/pen/RwaPGej */
 }
 #gallery .card {
   background: #e2dcce;
   box-shadow: 3px 3px 8px rgba(19, 20, 24, 0.65);
+  transition: all 0.5s;
+  padding: 1rem 0;
 }
 #gallery .card .frame-img {
   position: relative;
-  margin: 1.5rem auto;
+  margin: 2rem auto;
   padding: 0.5rem;
   border: 1px solid #39413f;
   border-radius: 5px;
@@ -79,16 +94,20 @@ body {
   text-shadow: 1px 1px 2px rgba(19, 20, 24, 0.5);
 }
 #gallery .card .frame-img img {
+  /* https://codepen.io/ouzkagan/pen/RwaPGej */
   object-fit: cover;
   width: 100%;
   transform: translateY(0);
   transition: all 2s ease-out;
 }
-#gallery .card .frame-img:hover .overlay-box {
+#gallery .card:hover {
+  background: #131418;
+}
+#gallery .card:hover .frame-img .overlay-box {
   opacity: 0;
   transition: all 0.3s;
 }
-#gallery .card .frame-img:hover img {
+#gallery .card:hover .frame-img img {
   object-fit: cover;
   width: 100%;
   /* Considering frame height   */

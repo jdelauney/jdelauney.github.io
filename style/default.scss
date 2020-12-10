@@ -4,9 +4,26 @@ $mainFont:'Poppins', sans-serif;
 $activeColor : #1abc9c;
 $borderColor: #39413f;
 $cardBgColor : #e2dcce;
+$linkColor: #1a81bc;
+$BgColorDark :#131418;
 
 body {
   font-family: $mainFont;
+}
+
+a {
+  text-decoration: none;
+  color:$linkColor;
+
+  &:hover {
+    text-decoration: none;
+    color:$activeColor;
+  }
+}
+
+footer {
+  background: $BgColorDark;
+  color:$cardBgColor;
 }
 
 .navbar-brand {
@@ -24,7 +41,7 @@ body {
 	min-height: 520px;
 	width: 100%;
 
-  background: #131418;
+  background: $BgColorDark;
   background-image: url('../ressources/images/back.jpg');  
 	background-position: center;
   background-size: cover;
@@ -52,14 +69,15 @@ body {
 #gallery {
   margin: 4em 0;
 
-  /* https://codepen.io/ouzkagan/pen/RwaPGej */  
   .card {
     background: $cardBgColor;
     box-shadow: 3px 3px 8px  rgba(19, 20, 24, 0.65);
+    transition: all 0.5s;    
+    padding:1rem 0;
 
     .frame-img {
       position: relative;
-      margin: 1.5rem auto;
+      margin: 2rem auto;
       padding: 0.5rem;      
       border:1px solid $borderColor;
       border-radius: 5px;
@@ -92,16 +110,19 @@ body {
         }
       }
 
-      img{
+      img{ /* https://codepen.io/ouzkagan/pen/RwaPGej */  
         object-fit: cover;
         width:100%;
         transform: translateY(0);        
         transition: all 2s ease-out;
-      }
+      }      
+    } 
 
-      &:hover {
-        .overlay-box {       
-          //background: rgba(19, 20, 24, 0.0);
+    &:hover {
+      background: $BgColorDark;
+
+      .frame-img {
+        .overlay-box {                 
           opacity:0;
           transition: all 0.3s;
         }
@@ -113,11 +134,7 @@ body {
           transform: translateY(calc(-100% + 300px));
           transition: all 2s ease-out;
         }
-      }
+      }     
     }
-
-    
-
-    
   }
 }
