@@ -1,5 +1,5 @@
 # portfolio
-##Page présentant mes divers travaux en développement web
+## Page présentant mes divers travaux en développement web
 ### HTML / CSS / SASS / JAVASCRIPT / PHP et MySQL
 
 Lien vers mon CodePen : https://codepen.io/jdelauney
