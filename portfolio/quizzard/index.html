@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizz JS</title>
+  
+  <link rel="stylesheet" href="styles/hljs/zenburn.css">
+  <link rel="stylesheet" href="styles/default.css">
+</head>
+
+<body>
+  <main id="mainContainer">
+    <section id="introBox" data-show="true">    
+      <div class="container">
+        <h1>Bienvenue dans la tour du père Fouras<span class="badge">2.0</span></h1>
+        <div class="introBox-container">
+          <div class="imgBox"></div>
+          <blockquote>
+          Son temps est compté quelquefois, Chacun peut invoquer son droit, Par son absence, elle fait douter, En la nommant, vous la donnez. Qui est-elle ?
+          </blockquote>
+          <p>
+          Allez vous acceptez, les énigmes, du père Fouras 2.0 ?, saurez vous relevez ces défis ?
+          </p>
+          <hr>
+          <h3>Choisissez un thème et mettez votre esprit à l'épreuve !</h3>          
+          <div id="selectThemeBox">
+            <select name="selectTheme" id="selectTheme" >              
+            </select>
+            <p id="themeDescription">            
+            </p>
+            <div id="btnStartQuizz" class="btn-startQuizz">
+              <div class="inner"></div>
+              <span>Commencer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="quizzBox" data-show="false" >
+      <div class="container">
+        <h1>Vanilla Javascript - Section 1/6</h1>
+        <div class="quizzBox-container">
+          <div id="quizzBox-form">
+            <div id="quizzSlider-container">
+              <ul id="quizzSections">
+              </ul>
+            </div>
+            <div id="quizzSlider-controls-container">
+              <button class="btn rounded ctrl-prev" style="display:none;">&lt;</button>
+              <button class="btn rounded ctrl-next">&gt;</button>
+              <button class="btn ctrl-eval" style="display:none;">Evaluation</button>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </section>
+    <section id="evalBox" data-show="false">
+      <div class="container">
+        <h1>Evaluation</h1>      
+        <div class="evalBox-container">
+          <img src="ressources/images/evaluation.png">
+          <h2>Votre score</h2>
+          <div class="eval-result">
+            15/300
+          </div>
+          <div class="eval-task">
+            <h4>Que souhaitez vous faire ?</h4>        
+
+            <button id="btnShowCorrection" class="btn">Voir la correction</button>
+            <button id="btnRetry" class="btn">Recommencer</button>
+            <button id="btnGoHome" class="btn">Un nouveau quizz</button>        
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy 2021 - J.Delauney
+  </footer>
+
+  <!-- <script src="quizzardLocal.js"></script> -->
+  <!--  
+    POUR PERMETTRE L'IMPORTATION DE "CLASSES/VARIABLES ETC. " EXPORTEES DEPUIS D'AUTRES FICHIERS JS DANS LE SCRIPT PRINCIPAL
+    IL FAUT SPECIFIER L'ATTRIBUTE << type="module" >>
+  -->
+  <script type="module" src="scripts/app.js"></script>
+</body>
+
+</html>

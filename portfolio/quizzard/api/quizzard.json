@@ -1,0 +1,1003 @@
+{
+  "quizz":[
+    {
+      "theme":{
+        "name": "Vanilla Javascript",
+        "description": "Testez vos connaissances sur le développement web, et plus particulièrement sur la langage de programmation Javascript"
+      },
+      "sections":[
+        {
+          "questions":[
+            {
+              "question":"Quel est votre langage préféré ?",
+              "correctAnswer":3,
+              "infos" : {
+                "text": "JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web. Avec les technologies HTML et CSS, JavaScript est parfois considéré comme l'une des technologies cœur du World Wide Web",
+                "ref":"Issue de Wikipedia",
+                "refUrl":"https://fr.wikipedia.org/wiki/JavaScript"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "Java",
+                "C#",
+                "Rust",
+                "Javascript",
+                "Je ne sais pas"
+              ]
+            },
+            {
+              "question":"En quelle année a été inventé le javascript ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "Le langage a été créé en dix jours en mai 1995 pour le compte de la Netscape Communications Corporation par Brendan Eich, qui s'est inspiré de nombreux langages, notamment de Java mais en simplifiant la syntaxe pour les débutants9.",
+                "ref":"Issue de Wikipedia",
+                "refUrl":"https://fr.wikipedia.org/wiki/JavaScript"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "1984",
+                "1995",
+                "2001",
+                "Je ne sais pas"                
+              ]
+            },
+            {
+              "question":"Le javascript est une implémentation de ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "JavaScript est une implémentation d'ECMAScript, celle mise en œuvre par la fondation Mozilla. L'implémentation d'ECMAScript par Microsoft (dans Internet Explorer jusqu'à sa version 9) se nomme JScript, tandis que celle d'Adobe Systems se nomme ActionScript.",
+                "ref":"Issue de Wikipedia",
+                "refUrl":"https://fr.wikipedia.org/wiki/JavaScript"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "JSCript (Microsoft)",
+                "ECMAScript (Mozilla)",
+                "ActionScript (Adobe)",
+                "Je ne sais pas"                
+              ]
+            },
+            {
+              "question":"Avant d'être appelé JavaScript, le langage s'appelait ?",
+              "correctAnswer":0,
+              "infos" : {
+                "text": "Brendan Eich a initialement développé un langage de script côté serveur, appelé LiveScript, pour renforcer l'offre commerciale de serveur HTTP de Mosaic Communications Corporation. La sortie de LiveScript intervient à l'époque où le NCSA force Mosaic Communications Corporation à changer de nom pour devenir Netscape Communications Corporation.. Netscape travaille alors au développement d'une version orientée client de LiveScript. Quelques jours avant sa sortie, Netscape change le nom de LiveScript pour JavaScript. Sun Microsystems et Netscape étaient partenaires, et la machine virtuelle Java de plus en plus populaire. Ce changement de nom servait les intérêts des deux sociétés.",
+                "ref":"Issu de Wikipedia",
+                "refUrl":"https://fr.wikipedia.org/wiki/JavaScript"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "LiveScript",                
+                "CoffeScript",
+                "JSCript",
+                "ActionScript",
+                "Je ne sais pas"                
+              ]
+            },
+            {
+              "question":"Le javascript est-il un langage ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "Le JavaScript est un langage interprété. Les premiers moteurs JavaScript étaient de simples interpréteurs. Puis, les versions ont évoluées et ont intégrés la compilation afin d'améliorer les performances d'exécution du code JavaScript. On appelle ça la compilation JIT : Just In Time, ou « en temps réel ».",
+                "ref":"Issue de Wikipedia",
+                "refUrl":"https://fr.wikipedia.org/wiki/Moteur_JavaScript"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[                
+                "Compilé",
+                "Interprété",
+                "Les deux",
+                "précompilé"                
+              ]
+            }            
+          ]
+        },
+        {
+          "questions":[
+            {
+              "question":"Le JavaScript est principalement utilisé en tant que langage ?",
+              "correctAnswer":0,
+              "infos" : {
+                "text": "Le JavaScript est un langage conçu pour dynamiser les pages Web après leur téléchargement par les navigateurs, il est donc client-side vu qu'il s'exécute par le biais du navigateur. Cependant, il est possible de l'utiliser dans des applications server-side",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "client-side",
+                "server-side",
+                "client-side et server-side"                                
+              ]
+            },   
+            {
+              "question":"Le JavaScript peut s'utiliser conjointement avec ?",
+              "correctAnswer":3,
+              "infos" : {
+                "text": "Le JavaScript est un langage dont l'utilisation majoritaire se fait conjointement avec du HTML, mais il peut s'utiliser avec beaucoup d'autre langages (le c, le pascal, etc.). Par exemple, Firefox s'en sert pour son interface en XUL, et Adobe AIR exploite aussi ce langage pour sa plateforme portable (concurrente de Java).",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "du HTML",
+                "du PHP",
+                "du C",
+                "de nombreux langages);"                
+              ]
+            },                                            
+            {
+              "question":"JavaScript est-il un langage sensible à la casse ?",
+              "correctAnswer":0,
+              "infos" : {
+                "text": "Oui, JavaScript est un langage sensible à la casse. Les mots-clés du langage, les variables, les noms de fonction et tout autre identificateur sont sensibles à la casse.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "Oui",
+                "Non"                
+              ]
+            },
+            {
+              "question":"Qui est le plus rapide, JavaScript ou ASP ?",
+              "correctAnswer":0,
+              "infos" : {
+                "text": "JavaScript est plus rapide. JavaScript est un langage côté client et n’a donc pas besoin d’un serveur Web pour s’exécuter. Tandis que, ASP est un langage côté serveur et est donc toujours plus lent que JavaScript. Javascript est maintenant aussi un langage côté serveur (nodejs).",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "Javascript",
+                "ASP"                
+              ]
+            },  
+            {
+              "question":"JavaScript est-il un langage multi-paradigme ?",
+              "correctAnswer":0,
+              "infos" : {
+                "text": "Oui, JavaScript est un langage multi-paradigme, supportant la programmation impérative/procédurale avec la programmation orientée objet (POO) et la programmation fonctionnelle. JavaScript prend en charge la POO avec héritage prototypique.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "Oui",
+                "Non"                
+              ]
+            }                                                
+          ]
+        },
+        {
+          "questions":[                 
+            {
+              "question":"Où dois-je placer de préférence mon code JavaScript dans une page web ?",
+              "correctAnswer":2,
+              "infos" : {
+                "text": "Pour des raisons de rapidité d'exécution du code, il est préférable de placer votre code JavaScript avant la fin de la balise &ltbody&gt afin que les vieux navigateurs ne chargent pas le JavaScript avant le contenu de la page Web.",
+                "ref":"",
+                "refUrl":""
+              },              
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "Dans la balise &lthead&gt.",
+                "Entre les balises &lthead&gt et &ltbody&gt.",
+                "Juste avant la fin de la balise &ltbody&gt."               
+              ]
+            },
+            {
+              "question":"Laquelle de ces propositions, n'est pas un type natif de Javascript ?",
+              "correctAnswer":2,
+              "infos" : {
+                "text": "Pour des raisons de rapidité d'exécution du code, il est préférable de placer votre code JavaScript avant la fin de la balise &ltbody&gt afin que les vieux navigateurs ne chargent pas le JavaScript avant le contenu de la page Web.",
+                "ref":"",
+                "refUrl":""
+              },              
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "String",
+                "Bool",
+                "Float",
+                "Undefined",
+                "Number"               
+              ]
+            },  
+            {
+              "question":"Comment lier un fichier Monscript.js externe dans une page HTML ?",
+              "correctAnswer":3,
+              "infos" : {
+                "text": "L'attribut à utiliser est \"type\", les autres présents ici s'utilisent dans des \"meta-tag\".",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "&ltscript type=\"text/javascript\" content=\"Monscript.js\"&gt &lt/script&gt",
+                "&ltjavascript content=\"Monscript.js\"&gt &lt/script&gt",
+                "&ltscript http-equiv=\"text/javascript\" src=\"Monscript.js\"&gt &lt/script&gt",
+                "&ltscript type=\"text/javascript\" src=\"Monscript.js\"&gt "                
+              ]
+            },             
+            {
+              "question":"Que fait la balise \"&ltnoscript&gt\" ?",
+              "correctAnswer":0,
+              "infos" : {
+                "text": "En effet, certain plugins pour les navigateurs ou de vieux navigateurs, qui ne gèrent pas correctement Javascript, peuvent désactiver le support de Javascript. Cette balise permet donc de notifier à l'utilisateur qu'il ne pourra pas bénéficier de la meilleur expérience de navigation.",
+                "ref":"",
+                "refUrl":""
+              },              
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "permet d'insérer un code html lu si les scripts ont été désactivés",
+                "indique la fin d'un script",
+                "Elle n'existe pas",
+                "interdit l'exécution des scripts"                
+              ]
+            },   
+            {
+              "question":"Comment ajouter du code Javascript dans une page HTML  ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "Attention, la balise \"script\" n'est pas auto-fermante, c'est-à-dire que l'on ne peut pas écrire &ltscript type=\"text/javascript\" ... /&gt L'attribut type doit être renseigné avec la syntaxe XHTML, mais il peut être omis en HTML5.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "&ltscript src=\"text/javascript\"&gt &lt/script&gt",                
+                "&ltscript type=\"text/javascript\"&gt &lt/script&gt",
+                "&ltscript src=\"javascript\"&gt &lt/script&gt",
+                "&ltscript type=\"javascript\"&gt &lt/script&gt"                
+              ]
+            }                                 
+          ]
+        }, 
+        {
+          "questions":[
+            {
+              "question":"Quelle est la bonne syntaxe pour écrire un commentaire de fin de ligne  ?",
+              "correctAnswer":3,
+              "infos" : {
+                "text": "Les commentaires de fin de ligne s'écrivent en commençant par les caractères // tandis que les commentaires multilignes utilisent les caractères /* et */.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "|| Commentaire de fin de ligne",                
+                "&& Commentaire de fin de ligne",
+                "\\\\ Commentaire de fin de ligne",
+                "// Commentaire de fin de ligne",
+                "# Commentaire de fin de ligne"                                
+              ]
+            },            
+            {
+              "question":"Quelle est la porté d'une variable, déclarée avec le mot clé \"var\" ?",
+              "correctAnswer":0,
+              "infos" : {
+                "text": "Une variable déclarée avec le mot clé \"var\" sera bien disponible dans tous les scripts du document HTML. C'est pour éviter des erreur que son utilisation tend à disparaitre au profit de \"let\" et \"const\" ",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "dans tous les scripts du document HTML",
+                "dans ce script et toutes ses fonctions uniquement",
+                "dans ce script et toutes les fonctions déclarées après cette variables",
+                "dans ce script uniquement"
+              ]
+            },              
+            {
+              "question":"Le mot clé \"let\" permet de déclarer des variables",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "Le \"let\" comme le \"const\" ont une portéé local. A contrario de \"var\" qui à une porté globale, Actuellement, il est recommandé de ne plus utiliser le \"var\" ou le moins possible.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "locales ou globales",
+                "locales uniquement",
+                "globales uniquement",
+                "N'existe pas en Javascript"                
+              ]
+            }, 
+            {
+              "question":"Quel est l'utilité de \"unsigned\" ?",
+              "correctAnswer":2,
+              "infos" : {
+                "text": "C'etait un piège, cette instruction n'existe pas en Javascript",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "prendre la valeur absolue d'un nombre",
+                "déclarer un entier non signé",
+                "Ca n'existe pas en Javascript"
+              ]
+            },  
+            {
+              "question":"Que retourne \"typeof(1&gt2)\" ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "Nous demandons, ici de retourné le type d'une expression de comparaison, celle-ci sera donc bien de type boolean.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "Number",
+                "boolean",
+                "false",
+                "true"
+              ]
+            } 
+          ]                                    
+        }, 
+        {
+          "questions":[
+            {
+              "question":"Quelle est la bonne syntaxe pour afficher un message ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "Seule la deuxième réponse est correcte car la première ne contient pas de point-virgule. Et la troisième ne contient pas les apostrophes qui doivent encadrer le texte à afficher.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "alert('Hello world!')",
+                "alert('Hello world!');",
+                "alert 'Hello world!';",
+                "alert(Hello world!);"                
+              ]
+            },              
+            {
+              "question":"A quoi sert l'opérateur \"===\"",
+              "correctAnswer":2,
+              "infos" : {
+                "text": "Contrairement à l'opérateur \"==\" qui ne compare que les valeurs, ici le type de la variable est également comparée. Par exemple si i vaut 2. l'expression (i == \"2\") renverra vrai. Alors que (i === \"2\") renverra faux.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "Il sert à rien",
+                "Ca n'existe pas en Javascript",
+                "A comparer le type et la valeur de deux variables",
+                "A assigner une variable après la comparaison"                
+              ]
+            },
+            {
+              "question":"Que renvoit : \"alert(i++);\" et \"alert(++i);\" ?",
+              "correctAnswer":2,
+              "infos" : {
+                "text": "L'opérateur ++, si il est pacé avant le variable, sera evalué avant l'utilisation de celle-ci. Si non, si il est placé après la variable sera d'abord utilisée puis incrémenté.",
+                "ref":"",
+                "refUrl":""
+              },              
+              "details":{
+                "text":"Note :  la variable \"i\" est initialisée à zero. . Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "+1 et -1",
+                "+1 et +1 ",
+                "0 et +1 ",
+                "+1 et 0"                
+              ]
+            },   
+            {
+              "question":"A quoi est équivalent l'expression suivante : \"i += 1\" ?",
+              "correctAnswer":3,
+              "infos" : {
+                "text": "La réponse est bien \"i = i + 1\". D'autre opérateurs comme -, * \\, &, | peuvent être utilisée de cette manière de façàn à avoir un code plus concis",
+                "ref":"",
+                "refUrl":""
+              },              
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "i &gt 1",
+                "N'existe pas en Javascript",                
+                "i = +1",
+                "i = i + 1"
+              ]
+            },
+            {
+              "question":"Quel opérateur est utilisé pour concaténer des chaînes de caractères ? ",
+              "correctAnswer":2,
+              "infos" : {
+                "text": "L'opérateur de concaténation est bien \"+\". Depuis ES7, on peut sans passer et utliser des \"template string\".",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "&",
+                ".",
+                "+",
+                "|"
+              ]
+            }            
+          ]
+        },
+        {
+          "questions":[
+            {
+              "question":"Que signifie \"NaN\" ?",
+              "correctAnswer":2,
+              "infos" : {
+                "text": "Provient de la fonction \"isNan\" qui renvoit VRAI si l'argument passé en paramètre n'est pas un nombre.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "Not a Null",
+                "Number and Null",
+                "Not a Number",
+                "Number and Negative"
+              ]
+            },
+            {
+              "question":" Lequel de ces oparateurs, n’est pas un opérateur de comparaison ?",
+              "correctAnswer":2,
+              "infos" : {
+                "text": "En effet \"=\" est un opérateur d'assignation (affectation). L'opérateur pour comparer une égalité est \"==\".",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "<",
+                ">",
+                "=",
+                "!="
+              ]
+            },
+            {
+              "question":"De combien de façons un code JavaScript peut-il être intégré dans un fichier HTML ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "Il existe 3 façons différentes pour intégrer un code JavaScript dans un fichier HTML: Inline, Internal et External.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "1",
+                "3",
+                "4",
+                "0"
+              ]
+            },
+            {
+              "question":"Que signifie l'acronyme AJAX ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "Ajax permet d'effectuer des requêtes au serveur web et, en conséquence, de modifier partiellement la page web affichée sur le poste client sans avoir à afficher une nouvelle page complète. Cette architecture informatique permet de construire des applications Web et des sites web dynamiques interactifs. Ajax combine JavaScript et DOM, qui permettent de modifier l'information présentée dans le navigateur en respectant sa structure, les API Fetch et XMLHttpRequest, qui servent au dialogue asynchrone avec le serveur Web ; ainsi qu'un format de données (XML ou JSON).",
+                "ref":"Issue de wikipedia",
+                "refUrl":"https://fr.wikipedia.org/wiki/Ajax_(informatique)"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "Advanced JavaScript with XMLHttpRequest",          
+                "Asynchronous JavaScript and XML",
+                "A JavaScript An eXtensible"
+              ]
+            },
+            {
+              "question":"Laquelle de ces expressions est évaluée à false ?",
+              "correctAnswer":3,
+              "infos" : {
+                "text": "Aussi surprenant que cela puisse paraître, NaN n'est égal à rien en JavaScript, pas même à lui-même. Il faut utiliser la fonction \"isNaN\" pour éviter ce problème.",
+                "ref":"Issue d'Alsacreation",
+                "refUrl":"https://www.alsacreations.com/quiz/resultat/10"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "\"0xa\" == 10",
+                "\"Infinity\" == Infinity",
+                "{\"valueOf\": function() {return 2;}} == 2",
+                "NaN == NaN "
+              ]
+            }
+          ]
+        },
+        {
+          "questions":[
+            {
+              "question":"Laquelle de ces variables sera déclarée correctement ?",
+              "correctAnswer":2,
+              "infos" : {
+                "text": "Pour déclarer une variable, il faut respecter plusieurs étapes : Écrire le mot-clé let ou var. Utiliser un nom de variable valide, c'est à dire qui ne commence pas par un chiffre et qui n'est pas un mot clé réservé. Assigner une valeur si on le souhaite, elle peut être un chiffre, un nombre exponentiel, du texte, etc.. Ne pas oublier le point-virgule.",
+                "ref":"Issue d'exercices javascript",
+                "refUrl":"http://odyssey.sdlm.be"
+              },
+              "details":{
+                "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
+                "extra":"var var = 4;\ntext = 'Hello !';\nvar variable = 5.781e+8;\nvar 1variable = 10;"
+              },
+              "choices":[
+                "var",
+                "text",
+                "variable",
+                "1variable"
+              ]
+            },
+            {
+              "question":"Par quoi est encadrée une chaîne de caractères ?",
+              "correctAnswer":4,
+              "infos" : {
+                "text": "Les chaînes de caractères peuvent être entourées de guillemets ou d'apostrophes, cela ne change rien à votre code. Sachez juste les utiliser à bon escient, par exemple n'allez pas mettre des apostrophes pour encadrer votre texte alors que celui-ci contient plein d'apostrophes : \"const text1 = 'C\\'est pas beau l\\'apprentissage du JavaScript ?';\" oui, mais... \"const text2 = \"C'est pas beau l'apprentissage du JavaScript ?\";\"  c'est mieux ",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante.",
+                "extra":""
+              },
+              "choices":[
+                "Par des guillemets : \" \"",
+                "Par des chevrons : < >",
+                "Par des apostrophes : ' '",
+                "Il est possible d'utiliser les trois ci-dessus.",
+                "Par des apostrophes ou des guillemets, cela a peu d'importance."
+              ]
+            },
+            {
+              "question":"Qu'affichera la fonction \"alerte\" ?",
+              "correctAnswer":2,
+              "infos" : {
+                "text": "Les chaînes de caractères se concatènent avec l'opérateur + même si elles contiennent des chiffres. Si vous voulez faire le calcul, pensez bien à utiliser la fonction parseInt() ou Number() sur chaque chaîne !",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
+                "extra":"var number1 = \"2\", number2 = \"3\", resultat;\nresultat = number1 + number2;\nalert(resultat);"
+              },
+              "choices":[
+                "-1",
+                "5",
+                "23",
+                "Provoque une erreur"
+              ]
+            },
+            {
+              "question":"Lorsqu'on crée un variable qui ne devra pas être modifiée par la suite, quel mot-clé devons-nous utiliser ?",
+              "correctAnswer":2,
+              "infos" : {
+                "text": "\"let\" : permet de déclarer une variable d’une manière simple.Sa principale caractéristique est sa portée : elle est limité à celle du bloc courant. \"const\" : permet de déclarer une constante disponible uniquement en lecture. A l’inverse de \"let\", \"const\" a besoin d’être déclaré avec une valeur initiale. Sa portée est celle du bloc.. \"var\" est similaire à \"let\", mais avec une portée de fonction (là ou \"let\" a une portée de bloc)",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante.",
+                "extra":""
+              },
+              "choices":[
+                "var",
+                "let",
+                "const"
+              ]
+            },
+            {
+              "question":"Quel resultat sera affiché dans la console ?",
+              "correctAnswer":3,
+              "infos" : {
+                "text": "\"resultat\" étant une constante, il est impossible de la modifier.",
+                "ref":"Issue de javascript la formation ultime",
+                "refUrl":"https://www.udemy.com/course/javascript-la-formation-ultime/"
+              },
+              "details":{
+                "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
+                "extra":"let nombreA = 5;\nlet nombreB = 4;\nconst resultat = 0;\nresultat = nombreA + nombreB;\nconsole.log(resultat);"
+              },
+              "choices":[
+                "5",
+                "4",
+                "54",
+                "une erreur"
+              ]
+            }
+          ]
+        },
+        {
+          "questions":[
+            {
+              "question":"Que permet Le mot-clé \"continue\" ?",
+              "correctAnswer":2,
+              "infos" : {
+                "text": "\"continue\" permet de passer à la prochaine itération directement, a contrario de \"break\" qui stopperra et fera sortir de la boucle.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante.",
+                "extra":""
+              },
+              "choices":[
+                "De dire qu'il n'y a pas d'erreur",
+                "D'arrêter une boucle ou une condition",
+                "De passer à la prochaine itération directement",
+                "N'existe pas"
+              ]
+            },
+            {
+              "question":"Quel resultat sera affiché dans la console ?",
+              "correctAnswer":0,
+              "infos" : {
+                "text": "Ici, il fallait faire attention à l'opérateur logique \"||\" (ou)",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
+                "extra":"let age = 18, statut = \"étudiant\";\nif(age < 18 || statut == \"étudiant\") {\nconsole.log('Partie 1');\n}\nelse if(age == 18 && statut != \"étudiant\") {\nconsole.log('Partie 2');\n}\nelse {\nconsole.log('Partie 3');\n}"
+              },
+              "choices":[
+                "Partie 1",
+                "Partie 2",
+                "Partie 3",
+                "Une erreur"
+              ]
+            },
+            {
+              "question":"Qu'est ce que la récursivité ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "Un algorithme récursif est un algorithme qui résout un problème en calculant des solutions d'instances plus petites du même problème1. L'approche récursive est un des concepts de base en informatique.",
+                "ref":"Issue de wikipedia",
+                "refUrl":"https://fr.wikipedia.org/wiki/Algorithme_récursif"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante.",
+                "extra":""
+              },
+              "choices":[
+                "Un concept qui fait qu'on appelle une fonction autre que celle dans laquelle on est (on utilise donc une fonction dans une fonction, qui n'est pas celle dans laquelle nous sommes déjà)",
+                "Un concept qui fait qu'on appelle une fonction dans laquelle nous sommes déjà",
+                "Un concept qui permet juste d'écrire des variables facilement",
+                "Un concept qui n'existe pas en JavaScript"
+              ]
+            },
+            {
+              "question":"Quel resultat sera affiché dans la console ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "La ligne 2 est équivalente à a = a % 5 or 17 modulo 5 vaut 2 (reste de la division de 17 par 5). Finalement 1 + 2 + 3x2 - 2, la multiplication étant prioritaire sur l'addition, donne 1 + 2 + 6 - 2 = 7.",
+                "ref":"Issue de javascript es6 supdecode",
+                "refUrl":"https://www.udemy.com/course/javascript-es6-supdecode"
+              },
+              "details":{
+                "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
+                "extra":"let a = 17;\na %= 5;\nconsole.log(1 + a + 3 * a - 2);"
+              },
+              "choices":[
+                "4",
+                "7",
+                "13",
+                "17"
+              ]
+            },
+            {
+              "question":"Quel resultat sera affiché dans la console ?",
+              "correctAnswer":4,
+              "infos" : {
+                "text": "Après la ligne 1, a vaut 1. Après la ligne 2, b vaut immédiatement a c'est à dire 1 puis a vaut 2. Après la ligne 3, a vaut immédiatement 3 puis c vaut a c'est à dire 3.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
+                "extra":"let a = 1;\nlet b = a++;\nlet c = ++a;\nconsole.log(a, b, c);"
+              },
+              "choices":[
+                "1 2 2",
+                "1 2 3",
+                "1 3 3",
+                "2 2 3",
+                "3 1 3"
+              ]
+            }
+          ]
+        },
+        {
+          "questions":[
+            {
+              "question":"Quel resultat sera affiché dans la console ?",
+              "correctAnswer":3,
+              "infos" : {
+                "text": "L'expression a == b entraîne la conversion de a en chaîne (chaînes prioritaires et égalité simple) donc '12' == '12' est vrai. L'expression a === b est une égalité stricte donc 12 === '12' est faux. Dans l'expression 3, 0xC ext en base 16 et vaut 12 (A vaut 10, B vaut 11, C vaut 12... F vaut 15) donc 12 == 12 est vrai. Même chose pour la quatrième expression, encore vraie.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
+                "extra":"let a = 12;\nlet b = '12';\nlet c = 0xC;\nconsole.log(a == b, a === b, a == c, a === c);"
+              },
+              "choices":[
+                "false false false false",
+                "true false true false",
+                "true true false false",
+                "true false true true",
+                "true false false true"
+              ]
+            },
+            {
+              "question":"Quel resultat sera affiché dans la console ?",
+              "correctAnswer":0,
+              "infos" : {
+                "text": "Premier if, -1 est vrai donc b passe à 1. Second if, a est vrai donc la partie droite du ET est évaluée et est vraie parce que a est évalué avant la post-incrémentation qui le passe à 0 donc b passe à 2. Troisième if, a est faux donc la partie droite du OU est évaluée et est fausse puis a passe à 1 mais b reste à 2. Quatrième if, a est vrai donc non a est faux donc la partie droite du ET n'est pas évaluée donc a et b restent inchangés. Cinquième if, non a est faux donc la partie droite du OU est évaluée et est vraie puis a passe à 2 et b à 3.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
+                "extra":"let a = -1, b = 0;\nif (a) {\n  b++;\n}\nif (a && a++) {\n  b++;\n}\nif (a || a++) {\n  b++;\n}\nif (!a && a++) {\n  b++;\n}\nif (!a || a++) {\n   b++;\n}\nconsole.log(a, b);"
+              },
+              "choices":[
+                "2 3",
+                "2 4",
+                "3 3",
+                "3 4",
+                "4 5"
+              ]
+            },
+            {
+              "question":"Quel resultat sera affiché dans la console ?",
+              "correctAnswer":0,
+              "infos" : {
+                "text": "Premier if, 17 est inférieur à 18 donc b passe à 1 et les 2 else ne sont pas exécutés donc a vaut 17 et b 1.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
+                "extra":"let a = 17, b = 0;\nif (a < 2*9) {\n  b++;\n}\nelse if (b > ++a % 2) {\n  a++;\n}\nelse {\n  b++;\n}\nconsole.log(a, b);"
+              },
+              "choices":[
+                "17 1",
+                "17 2",
+                "18 1",
+                "18 2",
+                "19 2"
+
+              ]
+            },
+            {
+              "question":"Quel resultat sera affiché dans la console ?",
+              "correctAnswer":3,
+              "infos" : {
+                "text": "Seul le cas 35 % 17 vaut 1 (reste de la division de 35 par 17) donc b *= ++a est exécuté donc a passe immédiatement à 2 puis b passe à 0 x 2 donc toujours 0. Mais il n'y a pas de break avant le cas par défaut donc b = a est exécuté et finalement a et b valent 2.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
+                "extra":"let a = 1, b = 0;\nswitch (a) {\n  case -4 + 3 :\n    b += ++a;\n  case 35 % 17 :\n    b *= ++a;\n  default :\n    b = a;\n}\nconsole.log(a, b);"
+              },
+              "choices":[
+                "1 0",
+                "1 1",
+                "1 2",
+                "2 2",
+                "2 3"
+              ]
+            },
+            {
+              "question":"Quel resultat sera affiché dans la console ?",
+              "correctAnswer":0,
+              "infos" : {
+                "text": "a condition de maintien de la boucle est vraie dès le départ (0 est inférieur à 100) et le restera éternellement parce que le corps de la boucle modifie la variable b, pas a.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
+                "extra":"let a = b = 0;\nwhile (a < 100) {\n  b++;\n}\nconsole.log(a, b);"
+              },
+              "choices":[
+                "Une boucle infinie",
+                "99 99",
+                "99 100",
+                "100 100"
+              ]
+            }
+          ]
+        },
+        {
+          "questions":[
+            {
+              "question":"Quel resultat sera affiché dans la console ?",
+              "correctAnswer":3,
+              "infos" : {
+                "text": "Il y a un premier passage dans le corps de la boucle qui passe i à 11 puis la condition de maintien est fausse (11 n'est pas inférieur à 10) donc la sortie de boucle se fait avec i valant 11.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
+                "extra":"let i = 10;\ndo {\n  i++;\n} while (i < 10);\nconsole.log(i);"
+              },
+              "choices":[
+                "Une boucle infinie",
+                "10",
+                "une erreur",
+                "11",
+                "12"
+              ]
+            },
+            {
+              "question":"Quel resultat sera affiché dans la console ?",
+              "correctAnswer":3,
+              "infos" : {
+                "text": "Initialement, n vaut 0 puis va de 2 en 2 donc au premier tour, s'affiche 0 puis au second 2 puis au troisième 4 mais avant le quatrième tour, la condition de maintien est fausse (6 n'est pas inférieur à 5) donc la boucle s'arrête.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
+                "extra":"for (let n = 0; n < 5; n += 2) {\n  console.log(n);\n}"
+              },
+              "choices":[
+                "0 1 2 3 4 5",
+                "0 1 2 3 4",                                
+                "0 2 4 6",
+                "0 2 4",
+                "0 2"
+              ]
+            },
+            {
+              "question":"Quelle est l'utilité de \"break\" dans une boucle ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "\"break\" sert à mettre fin à l'itération courante, et à sortir de la boucle.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante.",
+                "extra":""
+              },
+              "choices":[
+                "Il permet de faire une pause",
+                "Il permet d'arrêter l'itération en cours et de quitter la boucle",
+                "Il permet d'arrêter l'itération en cours et de passer à la suivante"                
+              ]
+            },
+            {
+              "question":"Quelle est la particularité d'une boucle do while ?",
+              "correctAnswer":2,
+              "infos" : {
+                "text": "Les instructions contenues dans une boucle do while sont toujours exécutées au moins une fois. Après cette première exécution, la condition est testée pour savoir si la boucle peut continuer, et celle-ci se comporte alors comme une boucle while normale.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante.",
+                "extra":""
+              },
+              "choices":[
+                "Aucune, c'est la forme longue de la boucle while",
+                "La condition n'est exécutée qu'au début de chaque itération",
+                "Les instructions sont exécutées au moins une fois",
+                "La condition est exécutée au début et à la fin de chaque itération"
+              ]
+            },
+            {
+              "question":"Quelle est la syntaxe exacte d'une boucle for ?",
+              "correctAnswer":0,
+              "infos" : {
+                "text": "La syntaxe correcte est : \"for (initialisation; condition; incrémentation) {}\". Il est possible de ne pas spécifier d'incrémentation, mais dans ce cas le point-virgule terminant la condition doit être présent :\"for (initialisation; condition;) {}\".",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante.",
+                "extra":""
+              },
+              "choices":[
+                "for (initialisation; condition; incrémentation) { }",
+                "for (condition; initialisation; conclusion) { }",
+                "for (initialisation; incrémentation; condition) { }",
+                "for (initialisation; condition) { }"
+              ]
+            }
+          ]
+        }                                
+      ]
+    }
+  ]
+}                  

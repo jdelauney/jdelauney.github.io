@@ -1,0 +1,113 @@
+{
+  "quizz":[
+    {
+      "theme":{
+        "name": "Vanilla Javascript",
+        "description": "Testez vos connaissances sur le développement web, et plus particulièrement sur la langage de programmation Javascript"
+      },
+      "sections":[
+        {
+          "questions":[
+            {
+              "question":"Quel est votre langage préféré ?",
+              "correctAnswer":3,
+              "infos" : {
+                "text": "JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web. Avec les technologies HTML et CSS, JavaScript est parfois considéré comme l'une des technologies cœur du World Wide Web",
+                "ref":"Issue de Wikipedia",
+                "refUrl":"https://fr.wikipedia.org/wiki/JavaScript"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":"let a = 17;\na %= 5;\nconsole.log(1 + a + 3 * a - 2);"
+              },
+              "choices":[
+                "Java",
+                "C#",
+                "Rust",
+                "Javascript",
+                "Je ne sais pas"
+              ]
+            },
+            {
+              "question":"En quelle année a été inventé le javascript ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "Le langage a été créé en dix jours en mai 1995 pour le compte de la Netscape Communications Corporation par Brendan Eich, qui s'est inspiré de nombreux langages, notamment de Java mais en simplifiant la syntaxe pour les débutants9.",
+                "ref":"Issue de Wikipedia",
+                "refUrl":"https://fr.wikipedia.org/wiki/JavaScript"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "1984",
+                "1995",
+                "2001",
+                "Je ne sais pas"                
+              ]
+            },
+            {
+              "question":"Le javascript est une implémentation de ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "JavaScript est une implémentation d'ECMAScript, celle mise en œuvre par la fondation Mozilla. L'implémentation d'ECMAScript par Microsoft (dans Internet Explorer jusqu'à sa version 9) se nomme JScript, tandis que celle d'Adobe Systems se nomme ActionScript.",
+                "ref":"Issue de Wikipedia",
+                "refUrl":"https://fr.wikipedia.org/wiki/JavaScript"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "JSCript (Microsoft)",
+                "ECMAScript (Mozilla)",
+                "ActionScript (Adobe)",
+                "Je ne sais pas"                
+              ]
+            },
+            {
+              "question":"Avant d'être appelé JavaScript, le langage s'appelait ?",
+              "correctAnswer":0,
+              "infos" : {
+                "text": "Brendan Eich a initialement développé un langage de script côté serveur, appelé LiveScript, pour renforcer l'offre commerciale de serveur HTTP de Mosaic Communications Corporation. La sortie de LiveScript intervient à l'époque où le NCSA force Mosaic Communications Corporation à changer de nom pour devenir Netscape Communications Corporation.. Netscape travaille alors au développement d'une version orientée client de LiveScript. Quelques jours avant sa sortie, Netscape change le nom de LiveScript pour JavaScript. Sun Microsystems et Netscape étaient partenaires, et la machine virtuelle Java de plus en plus populaire. Ce changement de nom servait les intérêts des deux sociétés.",
+                "ref":"Issu de Wikipedia",
+                "refUrl":"https://fr.wikipedia.org/wiki/JavaScript"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "LiveScript",                
+                "CoffeScript",
+                "JSCript",
+                "ActionScript",
+                "Je ne sais pas"                
+              ]
+            },
+            {
+              "question":"Le javascript est-il un langage ?",
+              "correctAnswer":0,
+              "infos" : {
+                "text": "Le JavaScript est un langage interprété. Les premiers moteurs JavaScript étaient de simples interpréteurs. Puis, les versions ont évoluées et ont intégrés la compilation afin d'améliorer les performances d'exécution du code JavaScript. On appelle ça la compilation JIT : Just In Time, ou « en temps réel ».",
+                "ref":"Issue de Wikipedia",
+                "refUrl":"https://fr.wikipedia.org/wiki/Moteur_JavaScript"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[                
+                "Compilé",
+                "Interprété",
+                "Les deux",
+                "précompilé"                
+              ]
+            }            
+          ]
+        }
+      ]
+    }
+  ]
+}
