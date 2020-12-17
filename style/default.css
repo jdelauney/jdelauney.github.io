@@ -7,6 +7,7 @@ a {
   text-decoration: none;
   color: #1a81bc;
 }
+
 a:hover {
   text-decoration: none;
   color: #1abc9c;
@@ -37,6 +38,7 @@ footer {
   background-repeat: no-repeat;
   text-align: center;
 }
+
 #mainHeader h1 {
   margin: 0;
   padding: 1rem 0;
@@ -46,6 +48,7 @@ footer {
   letter-spacing: 5px;
   font-weight: bold;
 }
+
 #mainHeader h2 {
   font-size: 1.6rem;
   text-transform: uppercase;
@@ -56,12 +59,16 @@ footer {
 #gallery {
   margin: 4em 0;
 }
+
 #gallery .card {
   background: #e2dcce;
-  box-shadow: 3px 3px 8px rgba(19, 20, 24, 0.65);
+  -webkit-box-shadow: 3px 3px 8px rgba(19, 20, 24, 0.65);
+          box-shadow: 3px 3px 8px rgba(19, 20, 24, 0.65);
+  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   padding: 1rem 0;
 }
+
 #gallery .card .frame-img {
   position: relative;
   margin: 2rem auto;
@@ -72,47 +79,67 @@ footer {
   height: 300px;
   overflow: hidden;
 }
+
 #gallery .card .frame-img .overlay-box {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(19, 20, 24, 0.65);
+  -webkit-transition: all 2s;
   transition: all 2s;
-  opacity: 1;
+  opacity: 1.0;
 }
+
 #gallery .card .frame-img .overlay-box .title {
   text-align: center;
   color: #1abc9c;
 }
+
 #gallery .card .frame-img .overlay-box .title p {
   color: white;
   text-shadow: 1px 1px 2px rgba(19, 20, 24, 0.5);
 }
+
 #gallery .card .frame-img img {
   /* https://codepen.io/ouzkagan/pen/RwaPGej */
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
-  transform: translateY(0);
-  transition: all 2s ease-out;
-}
-#gallery .card:hover {
-  background: #131418;
-}
-#gallery .card:hover .frame-img .overlay-box {
-  opacity: 0;
-  transition: all 0.3s;
-}
-#gallery .card:hover .frame-img img {
-  object-fit: cover;
-  width: 100%;
-  /* Considering frame height   */
-  transform: translateY(calc(-100% + 300px));
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 2s ease-out;
   transition: all 2s ease-out;
 }
 
+#gallery .card:hover {
+  background: #131418;
+}
+
+#gallery .card:hover .frame-img .overlay-box {
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#gallery .card:hover .frame-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  /* Considering frame height   */
+  -webkit-transform: translateY(calc(-100% + 300px));
+          transform: translateY(calc(-100% + 300px));
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+}
 /*# sourceMappingURL=default.css.map */
