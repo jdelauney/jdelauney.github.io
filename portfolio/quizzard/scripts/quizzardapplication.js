@@ -261,10 +261,8 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
       newSection.appendChild(newQuestionList);
       quizzSections.appendChild(newSection);
 
-      // Surlignage du code avec la bibliothèque highlight.js
-      console.log('CALL HLJS');
-      const hlBlock = document.querySelectorAll('pre code');
-      console.log('Nb Block ' + hlBlock.length);
+      // Surlignage du code avec la bibliothèque highlight.js      
+      const hlBlock = document.querySelectorAll('pre code');      
       hlBlock.forEach((block) => {
         console.log(block);
         hljs.highlightBlock(block);
