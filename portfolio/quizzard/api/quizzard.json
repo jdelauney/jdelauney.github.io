@@ -205,7 +205,7 @@
               "question":"Où dois-je placer de préférence mon code JavaScript dans une page web ?",
               "correctAnswer":2,
               "infos" : {
-                "text": "Pour des raisons de rapidité d'exécution du code, il est préférable de placer votre code JavaScript avant la fin de la balise &tbody&gt afin que les vieux navigateurs ne chargent pas le JavaScript avant le contenu de la page Web. Cependant, de nos jours, ca n'a pas vraiment d'importance avec les defer/async... bien que ce soit une \"best practice\", ca ne changera rien au fonctionnement",
+                "text": "Pour des raisons de rapidité d'exécution du code, il est préférable de placer votre code JavaScript avant la fin de la balise &ltbody&gt afin que les vieux navigateurs ne chargent pas le JavaScript avant le contenu de la page Web. Cependant, de nos jours, ca n'a pas vraiment d'importance avec les defer/async... bien que ce soit une \"best practice\", ca ne changera rien au fonctionnement",
                 "ref":"",
                 "refUrl":""
               },              
@@ -214,16 +214,16 @@
                 "extra":""
               },
               "choices":[
-                "Dans la balise &thead&gt.",
-                "Entre les balises &thead&gt et &tbody&gt.",
-                "Juste avant la fin de la balise &tbody&gt."               
+                "Dans la balise &lthead&gt.",
+                "Entre les balises &lthead&gt et &ltbody&gt.",
+                "Juste avant la fin de la balise &ltbody&gt."               
               ]
             },
             {
               "question":"Laquelle de ces propositions, n'est pas un type natif de Javascript ?",
               "correctAnswer":2,
               "infos" : {
-                "text": "Pour des raisons de rapidité d'exécution du code, il est préférable de placer votre code JavaScript avant la fin de la balise &tbody&gt afin que les vieux navigateurs ne chargent pas le JavaScript avant le contenu de la page Web.",
+                "text": "Pour des raisons de rapidité d'exécution du code, il est préférable de placer votre code JavaScript avant la fin de la balise &ltbody&gt afin que les vieux navigateurs ne chargent pas le JavaScript avant le contenu de la page Web.",
                 "ref":"",
                 "refUrl":""
               },              
@@ -281,7 +281,7 @@
               "question":"Comment ajouter du code Javascript dans une page HTML  ?",
               "correctAnswer":1,
               "infos" : {
-                "text": "Attention, la balise \"script\" n'est pas auto-fermante, c'est-à-dire que l'on ne peut pas écrire &tscript type=\"text/javascript\" ... /&gt L'attribut type doit être renseigné avec la syntaxe XHTML, mais il peut être omis en HTML5.",
+                "text": "Attention, la balise \"script\" n'est pas auto-fermante, c'est-à-dire que l'on ne peut pas écrire &ltscript type=\"text/javascript\" ... /&gt L'attribut type doit être renseigné avec la syntaxe XHTML, mais il peut être omis en HTML5.",
                 "ref":"",
                 "refUrl":""
               },
@@ -290,10 +290,10 @@
                 "extra":""
               },
               "choices":[
-                "&tscript&gt src=\"text/javascript\"&gt &t/script&gt",                
-                "&tscript&gt type=\"text/javascript\"&gt &t/script&gt",
-                "&tscript&gt src=\"javascript\"&gt &t/script&gt",
-                "&tscript&gt type=\"javascript\"&gt &t/script&gt"                
+                "&ltscript&gt src=\"text/javascript\"&gt &lt/script&gt",                
+                "&ltscript&gt type=\"text/javascript\"&gt &lt/script&gt",
+                "&ltscript&gt src=\"javascript\"&gt &lt/script&gt",
+                "&ltscript&gt type=\"javascript\"&gt &lt/script&gt"                
               ]
             }                                 
           ]
@@ -530,7 +530,7 @@
                 "extra":""
               },
               "choices":[
-                "&t",
+                "&lt",
                 "&gt",
                 "=",
                 "!="
@@ -629,7 +629,7 @@
               },
               "choices":[
                 "Par des guillemets : \" \"",
-                "Par des chevrons : &t &gt",
+                "Par des chevrons : &lt &gt",
                 "Par des apostrophes : ' '",
                 "Il est possible d'utiliser les trois ci-dessus.",
                 "Par des apostrophes ou des guillemets, cela a peu d'importance."
@@ -724,7 +724,7 @@
               },
               "details":{
                 "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
-                "extra":"let age = 18, statut = \"étudiant\";\nif(age &t 18 || statut == \"étudiant\") {\nconsole.log('Partie 1');\n}\nelse if(age == 18 && statut != \"étudiant\") {\nconsole.log('Partie 2');\n}\nelse {\nconsole.log('Partie 3');\n}"
+                "extra":"let age = 18, statut = \"étudiant\";\nif(age &lt 18 || statut == \"étudiant\") {\nconsole.log('Partie 1');\n}\nelse if(age == 18 && statut != \"étudiant\") {\nconsole.log('Partie 2');\n}\nelse {\nconsole.log('Partie 3');\n}"
               },
               "choices":[
                 "Partie 1",
@@ -845,7 +845,7 @@
               },
               "details":{
                 "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
-                "extra":"let a = 17, b = 0;\nif (a &t 2*9) {\n  b++;\n}\nelse if (b &gt ++a % 2) {\n  a++;\n}\nelse {\n  b++;\n}\nconsole.log(a, b);"
+                "extra":"let a = 17, b = 0;\nif (a &lt 2*9) {\n  b++;\n}\nelse if (b &gt ++a % 2) {\n  a++;\n}\nelse {\n  b++;\n}\nconsole.log(a, b);"
               },
               "choices":[
                 "17 1",
@@ -886,7 +886,7 @@
               },
               "details":{
                 "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
-                "extra":"let a = b = 0;\nwhile (a &t 100) {\n  b++;\n}\nconsole.log(a, b);"
+                "extra":"let a = b = 0;\nwhile (a &lt 100) {\n  b++;\n}\nconsole.log(a, b);"
               },
               "choices":[
                 "Une boucle infinie",
@@ -909,7 +909,7 @@
               },
               "details":{
                 "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
-                "extra":"let i = 10;\ndo {\n  i++;\n} while (i &t 10);\nconsole.log(i);"
+                "extra":"let i = 10;\ndo {\n  i++;\n} while (i &lt 10);\nconsole.log(i);"
               },
               "choices":[
                 "Une boucle infinie",
@@ -929,7 +929,7 @@
               },
               "details":{
                 "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
-                "extra":"for (let n = 0; n &t 5; n += 2) {\n  console.log(n);\n}"
+                "extra":"for (let n = 0; n &lt 5; n += 2) {\n  console.log(n);\n}"
               },
               "choices":[
                 "0 1 2 3 4 5",
