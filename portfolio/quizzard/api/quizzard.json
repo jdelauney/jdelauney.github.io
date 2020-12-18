@@ -3,16 +3,16 @@
     {
       "theme":{
         "name": "Vanilla Javascript",
-        "description": "Testez vos connaissances sur le développement web, et plus particulièrement sur la langage de programmation Javascript"
+        "description": "Testez vos connaissances sur le développement web, et plus particulièrement sur la language de programmation Javascript"
       },
       "sections":[
         {
           "questions":[
             {
-              "question":"Quel est votre langage préféré ?",
+              "question":"Quel est votre language préféré ?",
               "correctAnswer":3,
               "infos" : {
-                "text": "JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web. Avec les technologies HTML et CSS, JavaScript est parfois considéré comme l'une des technologies cœur du World Wide Web",
+                "text": "JavaScript est un language de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web surtout depuis l'apparition de nodeJS & co . Avec les technologies HTML et CSS, JavaScript est parfois considéré comme l'une des technologies cœur du World Wide Web",
                 "ref":"Issue de Wikipedia",
                 "refUrl":"https://fr.wikipedia.org/wiki/JavaScript"
               },
@@ -32,7 +32,7 @@
               "question":"En quelle année a été inventé le javascript ?",
               "correctAnswer":1,
               "infos" : {
-                "text": "Le langage a été créé en dix jours en mai 1995 pour le compte de la Netscape Communications Corporation par Brendan Eich, qui s'est inspiré de nombreux langages, notamment de Java mais en simplifiant la syntaxe pour les débutants9.",
+                "text": "Le language a été créé en dix jours en mai 1995 pour le compte de la Netscape Communications Corporation par Brendan Eich, qui s'est inspiré de nombreux languages, notamment de Java mais en simplifiant la syntaxe pour les débutants9.",
                 "ref":"Issue de Wikipedia",
                 "refUrl":"https://fr.wikipedia.org/wiki/JavaScript"
               },
@@ -67,10 +67,10 @@
               ]
             },
             {
-              "question":"Avant d'être appelé JavaScript, le langage s'appelait ?",
+              "question":"Avant d'être appelé JavaScript, le language s'appelait ?",
               "correctAnswer":0,
               "infos" : {
-                "text": "Brendan Eich a initialement développé un langage de script côté serveur, appelé LiveScript, pour renforcer l'offre commerciale de serveur HTTP de Mosaic Communications Corporation. La sortie de LiveScript intervient à l'époque où le NCSA force Mosaic Communications Corporation à changer de nom pour devenir Netscape Communications Corporation.. Netscape travaille alors au développement d'une version orientée client de LiveScript. Quelques jours avant sa sortie, Netscape change le nom de LiveScript pour JavaScript. Sun Microsystems et Netscape étaient partenaires, et la machine virtuelle Java de plus en plus populaire. Ce changement de nom servait les intérêts des deux sociétés.",
+                "text": "Brendan Eich a initialement développé un language de script côté serveur, appelé LiveScript, pour renforcer l'offre commerciale de serveur HTTP de Mosaic Communications Corporation. La sortie de LiveScript intervient à l'époque où le NCSA force Mosaic Communications Corporation à changer de nom pour devenir Netscape Communications Corporation.. Netscape travaille alors au développement d'une version orientée client de LiveScript. Quelques jours avant sa sortie, Netscape change le nom de LiveScript pour JavaScript. Sun Microsystems et Netscape étaient partenaires, et la machine virtuelle Java de plus en plus populaire. Ce changement de nom servait les intérêts des deux sociétés.",
                 "ref":"Issu de Wikipedia",
                 "refUrl":"https://fr.wikipedia.org/wiki/JavaScript"
               },
@@ -87,10 +87,10 @@
               ]
             },
             {
-              "question":"Le javascript est-il un langage ?",
+              "question":"Le javascript est-il un language ?",
               "correctAnswer":1,
               "infos" : {
-                "text": "Le JavaScript est un langage interprété. Les premiers moteurs JavaScript étaient de simples interpréteurs. Puis, les versions ont évoluées et ont intégrés la compilation afin d'améliorer les performances d'exécution du code JavaScript. On appelle ça la compilation JIT : Just In Time, ou « en temps réel ».",
+                "text": "Le JavaScript est un language interprété. Les premiers moteurs JavaScript étaient de simples interpréteurs. Puis, les versions ont évoluées et ont intégrés la compilation afin d'améliorer les performances d'exécution du code JavaScript. On appelle ça la compilation JIT : Just In Time, ou « en temps réel ».",
                 "ref":"Issue de Wikipedia",
                 "refUrl":"https://fr.wikipedia.org/wiki/Moteur_JavaScript"
               },
@@ -110,10 +110,10 @@
         {
           "questions":[
             {
-              "question":"Le JavaScript est principalement utilisé en tant que langage ?",
+              "question":"Le JavaScript est principalement utilisé en tant que language ?",
               "correctAnswer":0,
               "infos" : {
-                "text": "Le JavaScript est un langage conçu pour dynamiser les pages Web après leur téléchargement par les navigateurs, il est donc client-side vu qu'il s'exécute par le biais du navigateur. Cependant, il est possible de l'utiliser dans des applications server-side",
+                "text": "Le JavaScript est un language conçu pour dynamiser les pages Web après leur téléchargement par les navigateurs, il est donc client-side vu qu'il s'exécute par le biais du navigateur. Cependant, il est possible de l'utiliser dans des applications server-side",
                 "ref":"",
                 "refUrl":""
               },
@@ -131,7 +131,7 @@
               "question":"Le JavaScript peut s'utiliser conjointement avec ?",
               "correctAnswer":3,
               "infos" : {
-                "text": "Le JavaScript est un langage dont l'utilisation majoritaire se fait conjointement avec du HTML, mais il peut s'utiliser avec beaucoup d'autre langages (le c, le pascal, etc.). Par exemple, Firefox s'en sert pour son interface en XUL, et Adobe AIR exploite aussi ce langage pour sa plateforme portable (concurrente de Java).",
+                "text": "Le JavaScript est un language dont l'utilisation majoritaire se fait conjointement avec du HTML, mais il peut s'utiliser avec beaucoup d'autres languages (le c, le pascal, etc.). Par exemple, Firefox s'en sert pour son interface en XUL, et Adobe AIR exploite aussi ce language pour sa plateforme portable (concurrente de Java).",
                 "ref":"",
                 "refUrl":""
               },
@@ -143,14 +143,14 @@
                 "du HTML",
                 "du PHP",
                 "du C",
-                "de nombreux langages);"                
+                "de nombreux languages);"                
               ]
             },                                            
             {
-              "question":"JavaScript est-il un langage sensible à la casse ?",
+              "question":"JavaScript est-il un language sensible à la casse ?",
               "correctAnswer":0,
               "infos" : {
-                "text": "Oui, JavaScript est un langage sensible à la casse. Les mots-clés du langage, les variables, les noms de fonction et tout autre identificateur sont sensibles à la casse.",
+                "text": "Oui, JavaScript est un language sensible à la casse. Les mots-clés du language, les variables, les noms de fonction et tout autre identificateur sont sensibles à la casse.",
                 "ref":"",
                 "refUrl":""
               },
@@ -167,7 +167,7 @@
               "question":"Qui est le plus rapide, JavaScript ou ASP ?",
               "correctAnswer":0,
               "infos" : {
-                "text": "JavaScript est plus rapide. JavaScript est un langage côté client et n’a donc pas besoin d’un serveur Web pour s’exécuter. Tandis que, ASP est un langage côté serveur et est donc toujours plus lent que JavaScript. Javascript est maintenant aussi un langage côté serveur (nodejs).",
+                "text": "JavaScript est plus rapide. JavaScript est un language côté client et n’a donc pas besoin d’un serveur Web pour s’exécuter. Tandis que, ASP est un language côté serveur et est donc toujours plus lent que JavaScript. Javascript est maintenant aussi un language côté serveur (nodejs).",
                 "ref":"",
                 "refUrl":""
               },
@@ -181,10 +181,10 @@
               ]
             },  
             {
-              "question":"JavaScript est-il un langage multi-paradigme ?",
+              "question":"JavaScript est-il un language multi-paradigme ?",
               "correctAnswer":0,
               "infos" : {
-                "text": "Oui, JavaScript est un langage multi-paradigme, supportant la programmation impérative/procédurale avec la programmation orientée objet (POO) et la programmation fonctionnelle. JavaScript prend en charge la POO avec héritage prototypique.",
+                "text": "Oui, JavaScript est un language multi-paradigme, supportant la programmation impérative/procédurale avec la programmation orientée objet (POO) et la programmation fonctionnelle. JavaScript prend en charge la POO avec héritage prototypique.",
                 "ref":"",
                 "refUrl":""
               },
@@ -205,7 +205,7 @@
               "question":"Où dois-je placer de préférence mon code JavaScript dans une page web ?",
               "correctAnswer":2,
               "infos" : {
-                "text": "Pour des raisons de rapidité d'exécution du code, il est préférable de placer votre code JavaScript avant la fin de la balise &ltbody&gt afin que les vieux navigateurs ne chargent pas le JavaScript avant le contenu de la page Web.",
+                "text": "Pour des raisons de rapidité d'exécution du code, il est préférable de placer votre code JavaScript avant la fin de la balise <body> afin que les vieux navigateurs ne chargent pas le JavaScript avant le contenu de la page Web. Cependant, de nos jours, ca n'a pas vraiment d'importance avec les defer/async... bien que ce soit une \"best practice\", ca ne changera rien au fonctionnement",
                 "ref":"",
                 "refUrl":""
               },              
@@ -214,16 +214,16 @@
                 "extra":""
               },
               "choices":[
-                "Dans la balise &lthead&gt.",
-                "Entre les balises &lthead&gt et &ltbody&gt.",
-                "Juste avant la fin de la balise &ltbody&gt."               
+                "Dans la balise <head>.",
+                "Entre les balises <head> et <body>.",
+                "Juste avant la fin de la balise <body>."               
               ]
             },
             {
               "question":"Laquelle de ces propositions, n'est pas un type natif de Javascript ?",
               "correctAnswer":2,
               "infos" : {
-                "text": "Pour des raisons de rapidité d'exécution du code, il est préférable de placer votre code JavaScript avant la fin de la balise &ltbody&gt afin que les vieux navigateurs ne chargent pas le JavaScript avant le contenu de la page Web.",
+                "text": "Pour des raisons de rapidité d'exécution du code, il est préférable de placer votre code JavaScript avant la fin de la balise <body> afin que les vieux navigateurs ne chargent pas le JavaScript avant le contenu de la page Web.",
                 "ref":"",
                 "refUrl":""
               },              
@@ -252,14 +252,14 @@
                 "extra":""
               },
               "choices":[
-                "&ltscript type=\"text/javascript\" content=\"Monscript.js\"&gt &lt/script&gt",
-                "&ltjavascript content=\"Monscript.js\"&gt &lt/script&gt",
-                "&ltscript http-equiv=\"text/javascript\" src=\"Monscript.js\"&gt &lt/script&gt",
-                "&ltscript type=\"text/javascript\" src=\"Monscript.js\"&gt "                
+                "<script type=\"text/javascript\" content=\"Monscript.js\"> </script>",
+                "<javascript content=\"Monscript.js\"> </script>",
+                "<script http-equiv=\"text/javascript\" src=\"Monscript.js\"> </script>",
+                "<script type=\"text/javascript\" src=\"Monscript.js\"> "                
               ]
             },             
             {
-              "question":"Que fait la balise \"&ltnoscript&gt\" ?",
+              "question":"Que fait la balise \"<noscript>\" ?",
               "correctAnswer":0,
               "infos" : {
                 "text": "En effet, certain plugins pour les navigateurs ou de vieux navigateurs, qui ne gèrent pas correctement Javascript, peuvent désactiver le support de Javascript. Cette balise permet donc de notifier à l'utilisateur qu'il ne pourra pas bénéficier de la meilleur expérience de navigation.",
@@ -281,7 +281,7 @@
               "question":"Comment ajouter du code Javascript dans une page HTML  ?",
               "correctAnswer":1,
               "infos" : {
-                "text": "Attention, la balise \"script\" n'est pas auto-fermante, c'est-à-dire que l'on ne peut pas écrire &ltscript type=\"text/javascript\" ... /&gt L'attribut type doit être renseigné avec la syntaxe XHTML, mais il peut être omis en HTML5.",
+                "text": "Attention, la balise \"script\" n'est pas auto-fermante, c'est-à-dire que l'on ne peut pas écrire <script type=\"text/javascript\" ... /> L'attribut type doit être renseigné avec la syntaxe XHTML, mais il peut être omis en HTML5.",
                 "ref":"",
                 "refUrl":""
               },
@@ -290,10 +290,10 @@
                 "extra":""
               },
               "choices":[
-                "&ltscript src=\"text/javascript\"&gt &lt/script&gt",                
-                "&ltscript type=\"text/javascript\"&gt &lt/script&gt",
-                "&ltscript src=\"javascript\"&gt &lt/script&gt",
-                "&ltscript type=\"javascript\"&gt &lt/script&gt"                
+                "<script src=\"text/javascript\"> </script>",                
+                "<script type=\"text/javascript\"> </script>",
+                "<script src=\"javascript\"> </script>",
+                "<script type=\"javascript\"> </script>"                
               ]
             }                                 
           ]
@@ -321,7 +321,7 @@
               ]
             },            
             {
-              "question":"Quelle est la porté d'une variable, déclarée avec le mot clé \"var\" ?",
+              "question":"Quelle est la portée d'une variable, déclarée avec le mot clé \"var\" ?",
               "correctAnswer":0,
               "infos" : {
                 "text": "Une variable déclarée avec le mot clé \"var\" sera bien disponible dans tous les scripts du document HTML. C'est pour éviter des erreur que son utilisation tend à disparaitre au profit de \"let\" et \"const\" ",
@@ -377,7 +377,7 @@
               ]
             },  
             {
-              "question":"Que retourne \"typeof(1&gt2)\" ?",
+              "question":"Que retourne \"typeof(1>2)\" ?",
               "correctAnswer":1,
               "infos" : {
                 "text": "Nous demandons, ici de retourné le type d'une expression de comparaison, celle-ci sera donc bien de type boolean.",
@@ -400,7 +400,7 @@
         {
           "questions":[
             {
-              "question":"Quelle est la bonne syntaxe pour afficher un message ?",
+              "question":"Quelle est la bonne syntaxe pour afficher un message dans la page du navigateur ?",
               "correctAnswer":1,
               "infos" : {
                 "text": "Seule la deuxième réponse est correcte car la première ne contient pas de point-virgule. Et la troisième ne contient pas les apostrophes qui doivent encadrer le texte à afficher.",
@@ -469,7 +469,7 @@
                 "extra":""
               },
               "choices":[
-                "i &gt 1",
+                "i > 1",
                 "N'existe pas en Javascript",                
                 "i = +1",
                 "i = i + 1"
