@@ -2,11 +2,13 @@
   "quizz":[
     {
       "theme":{
-        "name": "Vanilla Javascript",
+        "name": "Le language Javascript en mode vanilla",
         "description": "Testez vos connaissances sur le développement web, et plus particulièrement sur la language de programmation Javascript"
       },
       "sections":[
         {
+          "name":"Généralités",
+          "description": "Quesions générales, et concepts de base du javascript",
           "questions":[
             {
               "question":"Quel est votre language préféré ?",
@@ -104,11 +106,7 @@
                 "Les deux",
                 "précompilé"                
               ]
-            }            
-          ]
-        },
-        {
-          "questions":[
+            },
             {
               "question":"Le JavaScript est principalement utilisé en tant que language ?",
               "correctAnswer":0,
@@ -196,11 +194,7 @@
                 "Oui",
                 "Non"                
               ]
-            }                                                
-          ]
-        },
-        {
-          "questions":[                 
+            },
             {
               "question":"Où dois-je placer de préférence mon code JavaScript dans une page web ?",
               "correctAnswer":2,
@@ -220,26 +214,6 @@
               ]
             },
             {
-              "question":"Laquelle de ces propositions, n'est pas un type natif de Javascript ?",
-              "correctAnswer":2,
-              "infos" : {
-                "text": "Pour des raisons de rapidité d'exécution du code, il est préférable de placer votre code JavaScript avant la fin de la balise &ltbody&gt afin que les vieux navigateurs ne chargent pas le JavaScript avant le contenu de la page Web.",
-                "ref":"",
-                "refUrl":""
-              },              
-              "details":{
-                "text":"Faite votre choix parmis les propositions suivante",
-                "extra":""
-              },
-              "choices":[
-                "String",
-                "Bool",
-                "Float",
-                "Undefined",
-                "Number"               
-              ]
-            },  
-            {
               "question":"Comment lier un fichier Monscript.js externe dans une page HTML ?",
               "correctAnswer":3,
               "infos" : {
@@ -257,7 +231,7 @@
                 "&ltscript http-equiv=\"text/javascript\" src=\"Monscript.js\"&gt &lt/script&gt",
                 "&ltscript type=\"text/javascript\" src=\"Monscript.js\"&gt "                
               ]
-            },             
+            },
             {
               "question":"Que fait la balise \"<noscript>\" ?",
               "correctAnswer":0,
@@ -281,7 +255,7 @@
               "question":"Comment ajouter du code Javascript dans une page HTML  ?",
               "correctAnswer":1,
               "infos" : {
-                "text": "Attention, la balise \"script\" n'est pas auto-fermante, c'est-à-dire que l'on ne peut pas écrire &ltscript type=\"text/javascript\" ... /&gt L'attribut type doit être renseigné avec la syntaxe XHTML, mais il peut être omis en HTML5.",
+                "text": "Attention, la balise \"script\" n'est pas auto-fermante, c'est-à-dire que l'on ne peut pas écrire <script type=\"text/javascript\" ... /> L'attribut type doit être renseigné avec la syntaxe XHTML, mais il peut être omis en HTML5.",
                 "ref":"",
                 "refUrl":""
               },
@@ -290,16 +264,12 @@
                 "extra":""
               },
               "choices":[
-                "&ltscript&gt src=\"text/javascript\"&gt &lt/script&gt",                
-                "&ltscript&gt type=\"text/javascript\"&gt &lt/script&gt",
-                "&ltscript&gt src=\"javascript\"&gt &lt/script&gt",
-                "&ltscript&gt type=\"javascript\"&gt &lt/script&gt"                
+                "&ltscript src=\"text/javascript\"&gt &lt/script&gt",                
+                "&ltscript type=\"text/javascript\"&gt &lt/script&gt",
+                "&ltscript src=\"javascript\"&gt &lt/script&gt",
+                "&ltscript type=\"text/javascript\" /script&gt"                
               ]
-            }                                 
-          ]
-        }, 
-        {
-          "questions":[
+            },
             {
               "question":"Quelle est la bonne syntaxe pour écrire un commentaire de fin de ligne  ?",
               "correctAnswer":3,
@@ -319,7 +289,108 @@
                 "// Commentaire de fin de ligne",
                 "# Commentaire de fin de ligne"                                
               ]
-            },            
+            },    
+            {
+              "question":"De combien de façons un code JavaScript peut-il être intégré dans un fichier HTML ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "Il existe 3 façons différentes pour intégrer un code JavaScript dans un fichier HTML: Inline, Internal et External.",
+                "ref":"",
+                "refUrl":""
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "1",
+                "3",
+                "4",
+                "0"
+              ]
+            },                     
+            {
+              "question":"Que signifie l'acronyme AJAX ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "Ajax permet d'effectuer des requêtes au serveur web et, en conséquence, de modifier partiellement la page web affichée sur le poste client sans avoir à afficher une nouvelle page complète. Cette architecture informatique permet de construire des applications Web et des sites web dynamiques interactifs. Ajax combine JavaScript et DOM, qui permettent de modifier l'information présentée dans le navigateur en respectant sa structure, les API Fetch et XMLHttpRequest, qui servent au dialogue asynchrone avec le serveur Web ; ainsi qu'un format de données (XML ou JSON).",
+                "ref":"Issue de wikipedia",
+                "refUrl":"https://fr.wikipedia.org/wiki/Ajax_(informatique)"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "Advanced JavaScript with XMLHttpRequest",          
+                "Asynchronous JavaScript and XML",
+                "A JavaScript An eXtensible"
+              ]
+            },
+            {
+              "question":"Qu'est ce que la récursivité ?",
+              "correctAnswer":1,
+              "infos" : {
+                "text": "Un algorithme récursif est un algorithme qui résout un problème en calculant des solutions d'instances plus petites du même problème1. L'approche récursive est un des concepts de base en informatique.",
+                "ref":"Issue de wikipedia",
+                "refUrl":"https://fr.wikipedia.org/wiki/Algorithme_récursif"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante.",
+                "extra":""
+              },
+              "choices":[
+                "Un concept qui fait qu'on appelle une fonction autre que celle dans laquelle on est (on utilise donc une fonction dans une fonction, qui n'est pas celle dans laquelle nous sommes déjà)",
+                "Un concept qui fait qu'on appelle à la fonction dans laquelle nous sommes déjà",
+                "Un concept qui permet juste d'écrire des variables facilement",
+                "Un concept qui n'existe pas en JavaScript"
+              ]
+            },
+            {
+              "question":"Quelle est l'affirmation correcte ?",
+              "correctAnswer":3,
+              "infos" : {
+                "text": "Une méthode est bien sûr une fonction interne à un objet, tandis qu'une propriété est une variable interne à un objet.",
+                "ref":"Issue d'exercices javascript",
+                "refUrl":"http://odyssey.sdlm.be"
+              },
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "Une propriété est une variable transmise à un objet",
+                "Une méthode est une variable interne à un objet",
+                "Une propriété est une fonction interne à un objet",
+                "Une méthode est une fonction interne à un objet"
+              ]
+            }            
+          ]
+        },
+        {
+          "name":"Les bases du javascript",
+          "description": "Types, variables, opérateurs, conditions et boucles",
+          "questions":[                             
+            {
+              "question":"Laquelle de ces propositions, n'est pas un type natif de Javascript ?",
+              "correctAnswer":2,
+              "infos" : {
+                "text": "Pour des raisons de rapidité d'exécution du code, il est préférable de placer votre code JavaScript avant la fin de la balise &ltbody&gt afin que les vieux navigateurs ne chargent pas le JavaScript avant le contenu de la page Web.",
+                "ref":"",
+                "refUrl":""
+              },              
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "String",
+                "Bool",
+                "Float",
+                "Undefined",
+                "Number"               
+              ]
+            },        
             {
               "question":"Quelle est la portée d'une variable, déclarée avec le mot clé \"var\" ?",
               "correctAnswer":0,
@@ -394,11 +465,7 @@
                 "false",
                 "true"
               ]
-            } 
-          ]                                    
-        }, 
-        {
-          "questions":[
+            },
             {
               "question":"Quelle est la bonne syntaxe pour afficher un message dans la page du navigateur ?",
               "correctAnswer":1,
@@ -493,11 +560,7 @@
                 "+",
                 "|"
               ]
-            }            
-          ]
-        },
-        {
-          "questions":[
+            },
             {
               "question":"Que signifie \"NaN\" ?",
               "correctAnswer":2,
@@ -537,43 +600,6 @@
               ]
             },
             {
-              "question":"De combien de façons un code JavaScript peut-il être intégré dans un fichier HTML ?",
-              "correctAnswer":1,
-              "infos" : {
-                "text": "Il existe 3 façons différentes pour intégrer un code JavaScript dans un fichier HTML: Inline, Internal et External.",
-                "ref":"",
-                "refUrl":""
-              },
-              "details":{
-                "text":"Faite votre choix parmis les propositions suivante",
-                "extra":""
-              },
-              "choices":[
-                "1",
-                "3",
-                "4",
-                "0"
-              ]
-            },
-            {
-              "question":"Que signifie l'acronyme AJAX ?",
-              "correctAnswer":1,
-              "infos" : {
-                "text": "Ajax permet d'effectuer des requêtes au serveur web et, en conséquence, de modifier partiellement la page web affichée sur le poste client sans avoir à afficher une nouvelle page complète. Cette architecture informatique permet de construire des applications Web et des sites web dynamiques interactifs. Ajax combine JavaScript et DOM, qui permettent de modifier l'information présentée dans le navigateur en respectant sa structure, les API Fetch et XMLHttpRequest, qui servent au dialogue asynchrone avec le serveur Web ; ainsi qu'un format de données (XML ou JSON).",
-                "ref":"Issue de wikipedia",
-                "refUrl":"https://fr.wikipedia.org/wiki/Ajax_(informatique)"
-              },
-              "details":{
-                "text":"Faite votre choix parmis les propositions suivante",
-                "extra":""
-              },
-              "choices":[
-                "Advanced JavaScript with XMLHttpRequest",          
-                "Asynchronous JavaScript and XML",
-                "A JavaScript An eXtensible"
-              ]
-            },
-            {
               "question":"Laquelle de ces expressions est évaluée à false ?",
               "correctAnswer":3,
               "infos" : {
@@ -591,11 +617,7 @@
                 "{\"valueOf\": function() {return 2;}} == 2",
                 "NaN == NaN "
               ]
-            }
-          ]
-        },
-        {
-          "questions":[
+            },
             {
               "question":"Laquelle de ces variables sera déclarée correctement ?",
               "correctAnswer":2,
@@ -690,11 +712,7 @@
                 "54",
                 "une erreur"
               ]
-            }
-          ]
-        },
-        {
-          "questions":[
+            },
             {
               "question":"Que permet Le mot-clé \"continue\" ?",
               "correctAnswer":2,
@@ -724,7 +742,7 @@
               },
               "details":{
                 "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
-                "extra":"let age = 18, statut = \"étudiant\";\nif(age &lt 18 || statut == \"étudiant\") {\nconsole.log('Partie 1');\n}\nelse if(age == 18 && statut != \"étudiant\") {\nconsole.log('Partie 2');\n}\nelse {\nconsole.log('Partie 3');\n}"
+                "extra":"let age = 18, statut = \"étudiant\";\nif(age < 18 || statut == \"étudiant\") {\nconsole.log('Partie 1');\n}\nelse if(age == 18 && statut != \"étudiant\") {\nconsole.log('Partie 2');\n}\nelse {\nconsole.log('Partie 3');\n}"
               },
               "choices":[
                 "Partie 1",
@@ -732,26 +750,7 @@
                 "Partie 3",
                 "Une erreur"
               ]
-            },
-            {
-              "question":"Qu'est ce que la récursivité ?",
-              "correctAnswer":1,
-              "infos" : {
-                "text": "Un algorithme récursif est un algorithme qui résout un problème en calculant des solutions d'instances plus petites du même problème1. L'approche récursive est un des concepts de base en informatique.",
-                "ref":"Issue de wikipedia",
-                "refUrl":"https://fr.wikipedia.org/wiki/Algorithme_récursif"
-              },
-              "details":{
-                "text":"Faite votre choix parmis les propositions suivante.",
-                "extra":""
-              },
-              "choices":[
-                "Un concept qui fait qu'on appelle une fonction autre que celle dans laquelle on est (on utilise donc une fonction dans une fonction, qui n'est pas celle dans laquelle nous sommes déjà)",
-                "Un concept qui fait qu'on appelle une fonction dans laquelle nous sommes déjà",
-                "Un concept qui permet juste d'écrire des variables facilement",
-                "Un concept qui n'existe pas en JavaScript"
-              ]
-            },
+            },            
             {
               "question":"Quel resultat sera affiché dans la console ?",
               "correctAnswer":1,
@@ -790,11 +789,7 @@
                 "2 2 3",
                 "3 1 3"
               ]
-            }
-          ]
-        },
-        {
-          "questions":[
+            },
             {
               "question":"Quel resultat sera affiché dans la console ?",
               "correctAnswer":3,
@@ -845,7 +840,7 @@
               },
               "details":{
                 "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
-                "extra":"let a = 17, b = 0;\nif (a &lt 2*9) {\n  b++;\n}\nelse if (b &gt ++a % 2) {\n  a++;\n}\nelse {\n  b++;\n}\nconsole.log(a, b);"
+                "extra":"let a = 17, b = 0;\nif (a < 2*9) {\n  b++;\n}\nelse if (b > ++a % 2) {\n  a++;\n}\nelse {\n  b++;\n}\nconsole.log(a, b);"
               },
               "choices":[
                 "17 1",
@@ -853,7 +848,6 @@
                 "18 1",
                 "18 2",
                 "19 2"
-
               ]
             },
             {
@@ -886,7 +880,7 @@
               },
               "details":{
                 "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
-                "extra":"let a = b = 0;\nwhile (a &lt 100) {\n  b++;\n}\nconsole.log(a, b);"
+                "extra":"let a = b = 0;\nwhile (a < 100) {\n  b++;\n}\nconsole.log(a, b);"
               },
               "choices":[
                 "Une boucle infinie",
@@ -894,11 +888,7 @@
                 "99 100",
                 "100 100"
               ]
-            }
-          ]
-        },
-        {
-          "questions":[
+            },
             {
               "question":"Quel resultat sera affiché dans la console ?",
               "correctAnswer":3,
@@ -909,7 +899,7 @@
               },
               "details":{
                 "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
-                "extra":"let i = 10;\ndo {\n  i++;\n} while (i &lt 10);\nconsole.log(i);"
+                "extra":"let i = 10;\ndo {\n  i++;\n} while (i < 10);\nconsole.log(i);"
               },
               "choices":[
                 "Une boucle infinie",
@@ -929,7 +919,7 @@
               },
               "details":{
                 "text":"D'après le code ci-dessous. Faite votre choix parmis les propositions suivante.",
-                "extra":"for (let n = 0; n &lt 5; n += 2) {\n  console.log(n);\n}"
+                "extra":"for (let n = 0; n < 5; n += 2) {\n  console.log(n);\n}"
               },
               "choices":[
                 "0 1 2 3 4 5",
@@ -996,7 +986,68 @@
               ]
             }
           ]
-        }                                
+        },
+        {
+          "name":"Les tableaux",
+          "description": "Comment manipuler les tableaux",
+          "questions":[                             
+            {
+              "question":"Quel indice utiliser si je veux accéder au troisème élément d'un tableau ?",
+              "correctAnswer":2,
+              "infos" : {
+                "text": "La numérotation des indices commence à 0. Donc, pour le troisième item, l'indice sera 2.",
+                "ref":"",
+                "refUrl":""
+              },              
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "4",
+                "3",
+                "2"                
+              ]
+            },
+            {
+              "question":"Quelle est la bonne façon d’écrire un tableau ?",
+              "correctAnswer":3,
+              "infos" : {
+                "text": "En Javascipt pour définir un tableau avec des valeurs, celle-ci doivente être encadrées par [ et ]",
+                "ref":"",
+                "refUrl":""
+              },              
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":"Réponse 1 : var fruits = 1 = (\"orange\"), 2 = (\"banane\"), 3 = (\"pomme\")\nRéponse 2 : var fruits = (1:\"orange\", 2:\"banane\", 3:\"pomme\")\nRéponse 3 : var fruits = \"orange\", \"banane\", \"pomme\"\nRéponse 4 : var fruits = [\"orange\", \"banane\", \"pomme\"]"
+              },
+              "choices":[
+                "Réponse 1",
+                "Réponse 2",
+                "Réponse 3",
+                "Réponse 4"
+              ]
+            },
+            {
+              "question":"Pour obtenir le nombre d'éléments du tableau \"unTableau\", il faut écrire l'instruction ?",
+              "correctAnswer":0,
+              "infos" : {
+                "text": "La bonne réponse est \"unTableau.length\". En effet \"length\" est une propriété et non pas une fonction",
+                "ref":"",
+                "refUrl":""
+              },              
+              "details":{
+                "text":"Faite votre choix parmis les propositions suivante",
+                "extra":""
+              },
+              "choices":[
+                "unTableau.length",
+                "unTableau.length()",
+                "length(unTableau)"                
+              ]
+            }
+          ]
+        }                                        
       ]
     }
   ]

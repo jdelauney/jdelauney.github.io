@@ -27,9 +27,12 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
     }
   };
 
+  _currentPage = 0;
+  _pageCount = 0;
   _currentSection = 0;
-  _sectionCount = 0;
   _score = 0;
+  
+  _questionPerPage = 5; //Nombre de question affichées par page
   
   /*=======[ CONSTRUCTOR /DESTRUCTOR ]=======================================================================*/  
   constructor() {
@@ -49,32 +52,51 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
     return this._actions;
   }
 
+  /**
+   * published property actions
+   * * Retourne le nombre de question par page
+   * @return {INT} 
+   */
+  get questionsPerPage() {
+    return this._questionPerPage;
+  }
+
+  /**
+   * published property actions
+   * * Modifie le nombre de question par page
+   * @return {INT} 
+   */
+  set questionsPerPage(aValue) {
+    this._questionPerPage = aValue;
+  }
+
   /*=======[ PROTECTED METHODS ]=============================================================================*/
   /**
    * protected function _changeMainTitle
    * * Modifie le titre dans la vue de la partie section
    */
   _changeMainTitle() {
-    console.log("QuizzardApplication : _changeMainTitle()");
+    console.log("QuizzardApplication : _changeMainTitle()" + this._pageCount);
     const quizzBox = document.querySelector("#quizzBox");
     const mainTitle = quizzBox.querySelector("h1");
 
-    mainTitle.innerHTML = `${this._quizzManager.getQuizzThemeName()}<br>Section ${(this._currentSection + 1)}/${this._sectionCount}`; 
+    //mainTitle.innerHTML = `${this._quizzManager.getQuizzThemeName()}<br>Section ${(this._currentPage + 1)}/${this._pageCount}`; 
+    mainTitle.innerHTML = `${this._quizzManager.getSectionName()}<br>${this._quizzManager.getSectionDescription()}<br>Section ${(this._currentPage + 1)}/${this._pageCount}`; 
   }
 
   /**
-   * protected function _displaySection
-   * * Affiche la section du quizz choisie avec "sectionIndex"
-   * @param {INT} sectionIdx : Numéro d'index de la section
+   * protected function _displayPage
+   * * Affiche la section du quizz choisie avec "pageIdx"
+   * @param {INT} pageIdx : Numéro d'index de la section
    */
-  _displaySection(sectionIndex) {
-    console.log("QuizzardApplication : _displaySection("+ sectionIndex + ")");
+  _displayPage(pageIdx) {
+    console.log("QuizzardApplication : _displayPage("+ pageIdx + ")");
     this._changeMainTitle();
 
     const btnPrev = document.querySelector('.ctrl-prev');
     const btnNext = document.querySelector('.ctrl-next');
 
-    if (sectionIndex > 0) {
+    if (pageIdx > 0) {
       btnPrev.style = "display:block;";
     }
     else {
@@ -83,7 +105,7 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
 
     const btnEval = document.querySelector(".ctrl-eval");
 
-    if (sectionIndex == (this._sectionCount - 1)) {      
+    if (pageIdx == (this._pageCount - 1)) {      
       btnNext.style = "display:none;";      
       btnEval.style = "display:block";                
     }
@@ -93,7 +115,7 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
     }
 
     const sections = document.querySelectorAll(".quizzSection-container");
-    const currentSection = sections[sectionIndex];
+    const currentSection = sections[pageIdx];
     sections.forEach((elt) => {
       elt.setAttribute("data-show", false);
     });
@@ -124,27 +146,45 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
    */
   _generateQuizz() {
     console.log('QuizzardApplication : _generateQuizz()');
+    const questionCount = this._quizzManager.getSectionQuestionCount();
 
-    this._sectionCount = this._quizzManager.getSectionCount();
-    this._currentSection = 0;
+
+    console.log('Nombre de question de la section : ' + questionCount);
+    console.log('QuestionPerPage : ' + this.questionsPerPage);
+    let nbSection = Math.floor(questionCount / this.questionsPerPage);
+    console.log('nbSection : ' + nbSection);
+    
+
+    const numSection = ((questionCount % this.questionsPerPage) === 0 ) ? nbSection : (nbSection + 1);
+    
+
+    console.log('Nombre de page : ' + numSection);
+
+    this._pageCount = numSection; //this._quizzManager.getSectionCount();
+    this._currentPage = 0;
     
 
     this._changeMainTitle();
     
     const quizzBoxForm = document.querySelector("#quizzBox-form");
 
-    quizzBoxForm.setAttribute("data-section-count", this._sectionCount.toString());
-    quizzBoxForm.setAttribute("data-section-current", this._currentSection.toString());
+    quizzBoxForm.setAttribute("data-section-count", this._pageCount.toString());
+    quizzBoxForm.setAttribute("data-section-current", this._currentPage.toString());
 
     //const quizzSlider = document.querySelector("quizzSlider-container");
 
     const quizzSections = document.querySelector("#quizzSections");
     quizzSections.textContent = "";
 
-    for (let i = 0; (i < this._quizzManager.getSectionCount()); i++) { 
-      //console.log('---> Nouvelle section :' + i);   
-      this._quizzManager.loadSection(i);
+
+    this._quizzManager.shuffleQuestions();
+    let startIdx = 0;
     
+    //for (let i = 0; (i < this._quizzManager.getSectionCount()); i++) { 
+    for (let i = 0; (i < numSection); i++) { 
+      //console.log('---> Nouvelle section :' + i);   
+      //this._quizzManager.loadSection(i);
+      
       const newSection = document.createElement("li");
       newSection.classList.add("quizzSection-container");
       if (i > 0) {
@@ -157,9 +197,13 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
       const newQuestionList = document.createElement("ol");
       newQuestionList.classList.add("quizzSection-question-list");
 
+      let endIdx = (startIdx + this.questionsPerPage);
+      if (endIdx > questionCount ) { endIdx = questionCount; }
+
+      console.log("startIdx = " + startIdx + " endIdx = " + endIdx);
       
-      console.log('Nombre de question de la section : ' + this._quizzManager.getSectionQuestionCount());
-      for (let j = 0; (j < this._quizzManager.getSectionQuestionCount()); j++) {
+      //for (let j = 0; (j < this._quizzManager.getSectionQuestionCount()); j++) {
+      for (let j = startIdx; (j < endIdx); j++) {
          //console.log('------> Nouvelle question :' + j); 
         // @TODO function _createQuestionCard
         const newQuestion = document.createElement("li");
@@ -264,19 +308,19 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
       // Surlignage du code avec la bibliothèque highlight.js      
       const hlBlock = document.querySelectorAll('pre code');      
       hlBlock.forEach((block) => {
-        console.log(block);
+        //console.log(block);
         hljs.highlightBlock(block);
       });
 
       const btnEval = document.querySelector(".ctrl-eval");
-      if (this._sectionCount == 1) {              
+      if (this._pageCount == 1) {              
         const btnNext = document.querySelector('.ctrl-next');
         btnNext.style = "display:none";        
         btnEval.style = "display:block";
       }
       btnEval.removeEventListener("click", this._event_onClick_GotoHome);
       btnEval.addEventListener("click", this._event_onClick_EvaluateQuizz.bind(this));  
-
+      startIdx = startIdx + this.questionsPerPage;
     }
 
     //quizzBoxForm.appendChild(quizzSections);
@@ -290,46 +334,23 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
   _evalQuizz() {
     console.log("QuizzardApplication : _evalQuizz()");
     this._score = 0;
-    const sections = document.querySelectorAll(".quizzSection-container");      
-    for (let sectionIdx = 0; (sectionIdx < sections.length); sectionIdx++) {
-      const section = sections[sectionIdx];      
-      //const questionList = section.querySelector(".quizzSection-question-list");    
-
-      // console.log('QUESTIONLIST');
-      // console.log(questionList);
-
-
-      //=======[ MON PROBLEME EST ICI ]====================================================
-      // /!\ ici il faut bien utilisé la classe pour selectionner les li sinon erreur plutard  
-      // si  je fais const questions = questionList.querySelectorAll("li");
-      // A la deuxième itérations, cela provoque une erreur dans la boucle suivante avec "choices"
-      const questions = section.querySelectorAll(".quizzSection-question-list > li"); //(".quizzSection-question-box");
-      // console.log('QUESTIONS');
-      // console.log(questions);
-      //========================================================================================
+    const pages = document.querySelectorAll(".quizzSection-container"); 
+    let questionIdx = 0;
+    console.log("Nombre de page : " + pages.length);
+    for (let pageIdx = 0; (pageIdx < pages.length); pageIdx++) {
+      const page = pages[pageIdx];      
+      const questions = page.querySelectorAll(".quizzSection-question-list > li"); 
       
-      for (let questionIdx = 0; (questionIdx < questions.length); questionIdx++) {
-        const question = questions[questionIdx];        
-        // console.log('QUESTION');
-        // console.log(question);
-        //const choiceList = question.querySelector(".quizzSection-question-choices"); 
-        // console.log('CHOICELIST');
-        // console.log(choiceList);
-
-        //========================================================      
-        // A la seconde itération l'erreur est levée ici
-        //const choices = choiceList.querySelectorAll("li"); 
+      for (let i = 0; (i < questions.length); i++) {
+        const question = questions[i];        
         const choices = question.querySelectorAll(".quizzSection-question-choices > li");        
 
-        // console.log('CHOICES');
-        // console.log(choices);
-        //======================================================
-
-        const correctAnswer = this._quizzManager.getCorrectAnswer(sectionIdx, questionIdx);
+        const correctAnswer = this._quizzManager.getCorrectAnswer(this._currentSection, questionIdx);
         console.log('La reponse correcte est : ' + correctAnswer);
 
         for (let choiceIdx = 0; (choiceIdx < choices.length); choiceIdx++) {
           const choice = choices[choiceIdx];
+          
           const inputRadio = choice.querySelector("input");
           if (inputRadio.checked) {
             console.log('La réponse cochée est : ' + choiceIdx);
@@ -338,24 +359,39 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
             }
             else {              
               this._score++;
+              inputRadio.setAttribute("data-value", "good");
               console.log("SCORE : " + this._score.toString());
             }            
           }
-          else {
-            if (choiceIdx == correctAnswer) {
-              inputRadio.setAttribute("data-value", "good");
-            }
-          }
-
+          
           if (choiceIdx == correctAnswer) {
             const answer = choice.querySelector(".choice-answer");
             answer.style = "display:block";                        
           }
         }
+        questionIdx++;
       }
     }    
   }
 
+  _fillSectionThemes(quizzIdx) {
+    console.log('QuizzardApplication : _fillSectionThemes(' + quizzIdx + ')');
+    this._quizzManager.loadQuizz(quizzIdx);
+    const sections = this._quizzManager.getAllSections();
+
+    const selectSectionElement = document.querySelector("#selectSection"); 
+
+    for( let i = 0; (i < sections.length); i++) {
+      console.log(sections[i]);
+      let opt = document.createElement("option");
+      opt.value= i;
+      opt.textContent = sections[i].name; // whatever property it has            
+      selectSectionElement.appendChild(opt);            
+    }
+
+    const sectionDescription = document.querySelector("#sectionDescription"); 
+    sectionDescription.textContent = sections[0].description;    
+  }
 
   /*=======[ PUBLIC METHODS ]================================================================================*/
   /**
@@ -377,17 +413,31 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
       selectThemeElement.appendChild(opt);            
     }
     const themeDescription = document.querySelector("#themeDescription"); 
-    themeDescription.textContent = themes[0].description;  
+    themeDescription.textContent = themes[0].description; 
+    this._fillSectionThemes(0); 
+    this._quizzManager.loadSection(0);
+
+    /* Initialisation des évènements */
+    selectThemeElement.addEventListener("change", () => {
+      const themeElement = document.querySelector("#selectTheme"); 
+      let selectedQuizzIndex = themeElement.value;
+      this._quizzManager.loadQuizz(selectedQuizzIndex);  
+      const themeDescription = document.querySelector("#themeDescription");  
+      themeDescription.textContent = this._quizzManager.getQuizzThemeDescription();
+      this._fillSectionThemes(selectedQuizzIndex);
+    });
+
+    const selectSectionElement = document.querySelector("#selectSection"); 
+    selectSectionElement.addEventListener("change", () => {  
+      const sectionElement = document.querySelector("#selectSection");                  
+      this._currentSection = sectionElement.value;            
+      const sectionDescription = document.querySelector("#sectionDescription");  
+      this._quizzManager.loadSection(this._currentSection);
+      sectionDescription.textContent = this._quizzManager.getSectionDescription();        
+    });
 
     const btnStartQuizz = document.querySelector("#btnStartQuizz"); 
-    btnStartQuizz.addEventListener("click", () =>{ this.executeAction(this._actions.QUIZZ.STARTQUIZZ);});
-
-    selectThemeElement.addEventListener("change", () =>{
-      const themeDescription = document.querySelector("#themeDescription");          
-      let selectedQuizzIndex = this.value;
-      const themes = this._quizzManager.getAllQuizzTheme();
-      themeDescription.textContent = themes[selectedQuizzIndex].description;
-    });
+    btnStartQuizz.addEventListener("click", () =>{ this.executeAction(this._actions.QUIZZ.STARTQUIZZ);});  
 
     const btnPrev = document.querySelector('.ctrl-prev');
     const btnNext = document.querySelector('.ctrl-next');
@@ -404,8 +454,8 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
   actionStartQuizz()  {
     console.log("QuizzardApplication : actionStartQuizz()");
     const selectThemeElement = document.querySelector("#selectTheme"); 
-    let selectedQuizzIndex = selectThemeElement.value;
-    this._quizzManager.loadQuizz(selectedQuizzIndex);
+    // let selectedQuizzIndex = selectThemeElement.value;
+    // this._quizzManager.loadQuizz(selectedQuizzIndex);
 
     console.log("Questionnaire sur le theme : " + this._quizzManager.getQuizzThemeName() + " chargé.");
     console.log("Ce questionnaire contient " + this._quizzManager.getSectionCount() + " sections.");  
@@ -442,10 +492,10 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
    */
   actionGotoNextSection() {
     console.log("QuizzardApplication : actionGotoNextSection()");
-    if (this._currentSection < (this._sectionCount)) {
-      this._currentSection++;
+    if (this._currentPage < (this._pageCount)) {
+      this._currentPage++;
     
-      this._displaySection(this._currentSection);      
+      this._displayPage(this._currentPage);      
     }
   }
 
@@ -455,9 +505,9 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
    */
   actionGotoPrevSection() {
     console.log("QuizzardApplication : actionGotoPrevSection()");
-    if (this._currentSection > 0) {
-      this._currentSection--;      
-      this._displaySection(this._currentSection);      
+    if (this._currentPage > 0) {
+      this._currentPage--;      
+      this._displayPage(this._currentPage);      
     }  
   }
 
@@ -475,7 +525,7 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
     evalBox.setAttribute("data-show","true"); 
 
     const score = document.querySelector(".eval-result");
-    score.textContent = this._score.toString() + '/' + this._quizzManager.getTotalQuestionCount().toString();
+    score.textContent = this._score.toString() + '/' + this._quizzManager.getSectionQuestionCount().toString();
 
     const btnShowCorrection = document.querySelector("#btnShowCorrection");
     btnShowCorrection.addEventListener("click", () => { this.executeAction(this._actions.QUIZZ.SHOW_CORRECTION);});
@@ -494,8 +544,8 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
    */
   actionDisplayCorrection() {
     console.log("QuizzardApplication : actionDisplayCorrection()");    
-    this._currentSection = 0;
-    this._displaySection(0);  
+    this._currentPage = 0;
+    this._displayPage(0);  
     const quizzBox = document.querySelector("#quizzBox");
     quizzBox.setAttribute("data-show","true"); 
     const evalBox = document.querySelector("#evalBox");
@@ -513,8 +563,8 @@ export default class QuizzardApplication extends AbstractQuizzardApplication {
   actionRetryQuizz() {
     console.log("QuizzardApplication : actionRetryQuizz()"); 
     this._generateQuizz();
-    this._currentSection = 0;
-    this._displaySection(0);
+    this._currentPage = 0;
+    this._displayPage(0);
     const quizzBox = document.querySelector("#quizzBox");
     quizzBox.setAttribute("data-show","true"); 
     const evalBox = document.querySelector("#evalBox");

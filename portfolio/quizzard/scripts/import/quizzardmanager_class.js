@@ -117,7 +117,19 @@ export default class QuizzardManager {
       }
     }
     return nbQuestions;
-  }   
+  } 
+
+  getAllSections() {
+    if (!this._quizzLoaded) { 
+      throw new Error("Vous devez d'abord charger un quizz avec la methode : loadQuizz(quizz)"); 
+      //return undefined;
+    }
+    else
+    {
+     console.log(this._currentQuizz.sections);
+     return this._currentQuizz.sections;
+    }
+  }
 
   /**
    * public function loadSection
@@ -137,7 +149,7 @@ export default class QuizzardManager {
    * @return {JSON} 
    */
   getSection() {
-    console.log("QuizzardManager : Get quizz section");
+    console.log("QuizzardManager : getSection()");
     if (!this._sectionLoaded) { 
       throw new Error("Vous devez d'abord charger une section avec la méthode : loadSection(section)"); 
       //return undefined;
@@ -147,6 +159,30 @@ export default class QuizzardManager {
      return this._currentQuizzSection; 
     }
   } 
+
+  getSectionName() {
+    console.log("QuizzardManager : getSectionName()");
+    if (!this._sectionLoaded) { 
+      throw new Error("Vous devez d'abord charger une section avec la méthode : loadSection(section)"); 
+      //return undefined;
+    }
+    else
+    {
+     return this._currentQuizzSection.name; 
+    } 
+  }
+
+  getSectionDescription() {
+    console.log("QuizzardManager : getSectionName()");
+    if (!this._sectionLoaded) { 
+      throw new Error("Vous devez d'abord charger une section avec la méthode : loadSection(section)"); 
+      //return undefined;
+    }
+    else
+    {
+     return this._currentQuizzSection.description; 
+    } 
+  }  
 
   /**
    * public function getCorrectAnswer
@@ -167,6 +203,8 @@ export default class QuizzardManager {
    * @return {INT} 
    */
   getSectionQuestionCount() {
+    console.log("QuizzardManager : getSectionQuestionCount()");
+    console.log(this._currentQuizzSection);
     return this._currentQuizzSection.questions.length;
   }
 
@@ -177,6 +215,14 @@ export default class QuizzardManager {
    */
   getQuestions() {
     return this._currentQuizzSection.questions;
+  }
+
+  shuffleQuestions() {
+    console.log('QuizzardManager : shuffleQuestions()');
+    for (let i = (this._currentQuizzSection.questions.length - 1); i > 0; i-- ) {
+      let j = Math.floor(Math.random() * (i + 1));      
+      [this._currentQuizzSection.questions[i], this._currentQuizzSection.questions[j]] = [this._currentQuizzSection.questions[j], this._currentQuizzSection.questions[i]];
+    }
   }
 
   /**
