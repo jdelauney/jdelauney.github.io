@@ -267,7 +267,7 @@
                 "&ltscript src=\"text/javascript\"&gt &lt/script&gt",                
                 "&ltscript type=\"text/javascript\"&gt &lt/script&gt",
                 "&ltscript src=\"javascript\"&gt &lt/script&gt",
-                "&ltscript type=\"text/javascript\" /script&gt"                
+                "&ltscript type=\"text/javascript\" /&gt"                
               ]
             },
             {
