@@ -24,6 +24,7 @@ export default class TimeZoneApplication extends AbstractApplication {
   _maxWorldClock        = 4;
   _activeWorldClock     = [];
   _activeWorldClockCount = 0;
+  _activeClockIndex      = 0;
 
   constructor() {
     //super(quizzApiUrl, autoInitLoader);
@@ -104,8 +105,8 @@ export default class TimeZoneApplication extends AbstractApplication {
   }  
 
   async _getLocationTimestamp(index) {  
-    console.log("TimeZoneApplication : _getLocationDatas()");    
-    const url = this._api_url_location + '/' + this._activeWorldClock[(index-1)];    
+    console.log("TimeZoneApplication : _getLocationTimestamp");        
+    const url = this._api_url_location + '/' + this._activeWorldClock[index];    
     const response = await fetch(url);
     if (!response.ok) {
       const message = `An error has occured: ${response.status} = ${response.statusText}`;
@@ -242,11 +243,13 @@ export default class TimeZoneApplication extends AbstractApplication {
       });      
 
       if (this._activeWorldClockCount == 1) {
-        this._updateDisplayWorldClock(index);
+        this._activeClockIndex = (index - 1);
+        this._updateDisplayWorldClock();
         this. _startWatchingWorldClocks();
       }
       else {
-        this._updateDisplayWorldClock(index);      
+        this._activeClockIndex = (index - 1);
+        this._updateDisplayWorldClock();      
       }
     }  
 
@@ -270,23 +273,25 @@ export default class TimeZoneApplication extends AbstractApplication {
     document.querySelector(".user__timezone__clock__hours").style.transform = `rotate(${hourDeg}deg)`;
     document.querySelector(".user__timezone__clock__minutes").style.transform = `rotate(${minuteDeg}deg)`;
     document.querySelector(".user__timezone__clock__seconds").style.transform = `rotate(${secondDeg}deg)`;  
+    document.querySelector(".user__timezone__clock__date").textContent = now.getDate().toString().padStart(2, '0') + '/' + (now.getMonth()+1).toString().padStart(2, '0');
   }
 
-  _updateDisplayWorldClock(index) {
-    this._getLocationTimestamp(index).then(unixTimestamp => {
-      //console.log(`timestamp ==> ${unixTimestamp}`);
-      
+  _updateDisplayWorldClock() {
+    console.log("TimeZoneApplication : _updateDisplayWorldClock()");
+    //console.log(this._activeClockIndex);
+    const index = this._activeClockIndex + 1;
+    this._getLocationTimestamp((index-1)).then(unixTimestamp => {
+      //console.log(`timestamp ==> ${unixTimestamp}`);      
       //const dateObj = new Date(); 
       const dateObj = unixTimestamp.match(/\d+/g);
       //dateObj.parse(unixTimestamp); //(unixTimestamp * 1000); 
       const h = dateObj[3]; //.getHours(); 
-      const m = dateObj[4]; //.getMinutes();
-
+      const m = dateObj[4]; //.getMinutes();      
       const clock = document.querySelector(`#worldClock-${index}`);      
       const hours = clock.querySelector('.card__clock__hours');
       const minutes = clock.querySelector('.card__clock__minutes');
-      hours.textContent = h; //.toString().padStart(2, '0');//zeroPadding(h, 2);
-      minutes.textContent = m; //.toString().padStart(2, '0');//zeroPadding(m, 2);
+      hours.textContent = h; //.toString().padStart(2, '0');
+      minutes.textContent = m; //.toString().padStart(2, '0');
 
     }).catch(error =>{
       console.log(error);
@@ -297,7 +302,8 @@ export default class TimeZoneApplication extends AbstractApplication {
   _updateWorldClocks() {
     console.log("TimeZoneApplication : _updateWorldClocks()"); 
     for (let i=0; (i < this._activeWorldClock.length); i++) {
-      this._updateDisplayWorldClock(i);
+      this._activeClockIndex = i;
+      this._updateDisplayWorldClock();
     }
   }
 
