@@ -15,7 +15,7 @@ export default class TimeZoneApplication extends AbstractApplication {
     REMOVE_CLOCK : "removeClock"  
   };
 
-  _api_url_location = "http://worldtimeapi.org/api/timezone"; 
+  _api_url_location = "https://worldtimeapi.org/api/timezone"; 
 
   _locations            = {};
   _currentZone          ="";
@@ -172,6 +172,8 @@ export default class TimeZoneApplication extends AbstractApplication {
 
     }).catch(error =>{
       console.log(error);
+      loader.classList.toggle("loader--hidden");
+      alert("Une erreur est survenue : " + error);
     });      
   }
 
@@ -288,6 +290,7 @@ export default class TimeZoneApplication extends AbstractApplication {
 
     }).catch(error =>{
       console.log(error);
+      alert("Une erreur est survenue : " + error);
     });   
   }
 
