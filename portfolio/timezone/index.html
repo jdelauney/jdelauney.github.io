@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/default.css">
+  <title>World times zones</title>
+</head>
+<body>
+  <header>
+    <h1>World's O'Clock</h1>
+  </header>
+  <main>
+    <h2> Chez vous, il est </h2>
+    <div class="user__timezone">      
+      <div class="user__timezone__clock">
+        <div class="user__timezone__clock__wrapper">
+          <div class="user__timezone__clock__date">12/01</div>
+          <div class="user__timezone__clock__hours"></div>
+          <div class="user__timezone__clock__minutes"></div>
+          <div class="user__timezone__clock__seconds"></div>
+          <div class="user__timezone__clock__dot"></div>            
+          <div class="user__timezone__clock__glass"></div>
+        </div>
+      </div>
+    </div>    
+    <div class="worldClocks">      
+      <h2> Ajoutez une horloge</h2>
+      <div class="container">
+        <div class="btn__add__container">
+          <div id="btn-add-clock" class="card__btn__add__clock">          
+              <div class="btn__add__clock__icon"></div>            
+          </div>
+        </div>
+        <div id="worldClocks" class="wordClock__grid">            
+        <!--  <div class="wordClock__grid__card">   
+            <div class="wordClock__grid__card_container">
+              <div class="card__clock">
+                <div class="card__clock__header">
+                  <h3>${loc}</h3>
+                  <button id="btnRemove-0" data-index="${index}" class="card__clock__btn btn-delete">&times;</button>
+                </div>
+                <div class="card__clock__wrapper">
+                  <div class="card__clock__timer">
+                    <p class="card__clock__hours">12</p>
+                    <div class="card__clock__label">Heure</div>
+                  </div>
+                  <div class="card__clock__timer">
+                    <p class="card__clock__minutes">00</p>
+                    <div class="card__clock__label">Minutes</div>
+                  </div>                  
+                </div>
+              </div>
+            </div> 
+          </div>
+
+          <div class="wordClock__grid__card">   
+            <div class="wordClock__grid__card_container">
+              <div class="card__clock">
+                <div class="card__clock__header">
+                  <h3>${loc}</h3>
+                  <button id="btnRemove-1" data-index="${index}" class="card__clock__btn btn-delete">&times;</button>
+                </div>
+                <div class="card__clock__wrapper">
+                  <div class="card__clock__timer">
+                    <p class="card__clock__hours">12</p>
+                    <div class="card__clock__label">Heure</div>
+                  </div>
+                  <div class="card__clock__timer">
+                    <p class="card__clock__minutes">00</p>
+                    <div class="card__clock__label">Minutes</div>
+                  </div>                 
+                </div>
+              </div>
+            </div>  
+          </div>
+
+          <div class="wordClock__grid__card">   
+            <div class="wordClock__grid__card_container">
+              <div class="card__clock">
+                <div class="card__clock__header">
+                  <h3>America/Argentina/Bueno_Aires</h3>
+                  <button id="btnRemove-2" data-index="${index}" class="card__clock__btn btn-delete">&times;</button>
+                </div>
+                <div class="card__clock__wrapper">
+                  <div class="card__clock__timer">
+                    <p class="card__clock__hours">12</p>
+                    <div class="card__clock__label">Heure</div>
+                  </div>
+                  <div class="card__clock__timer">
+                    <p class="card__clock__minutes">00</p>
+                    <div class="card__clock__label">Minutes</div>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+
+          <div class="wordClock__grid__card">   
+            <div class="wordClock__grid__card_container">
+              <div class="card__clock">
+                <div class="card__clock__header">
+                  <h3>${loc}</h3>
+                  <button id="btnRemove-3" data-index="${index}" class="card__clock__btn btn-delete">&times;</button>
+                </div>
+                <div class="card__clock__wrapper">
+                  <div class="card__clock__timer">
+                    <p class="card__clock__hours">12</p>
+                    <div class="card__clock__label">Heure</div>
+                  </div>
+                  <div class="card__clock__timer">
+                    <p class="card__clock__minutes">00</p>
+                    <div class="card__clock__label">Minutes</div>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <span>&copy 2021 - J.Delauney</span>
+  </footer> 
+  <div id="modal-overlay" class="modal-box__overlay modal-box--hidden"></div>
+  <div id="modal" class="modal-box modal-box--hidden">
+    <div class="modal-box__wrapper">
+      
+      <header class="modal-box__header">
+        Nouvelle horloge        
+      </header>
+      
+      
+      <div class="modal-box__content">
+        <div class="input__wrapper">
+          <label for="timeZone">Zone :</label>
+          <select name="timeZone" id="selectZone"></select>
+        </div>          
+        <div class="input__wrapper">
+          <label for="state">Region :</label>
+          <select name="state" id="selectState"></select>
+        </div>   
+        <div class="input__wrapper">
+          <label for="city">Ville :</label>
+          <select name="city" id="selectCity"></select>
+        </div>        
+      </div>      
+      <footer class="modal-box__footer">                
+        <button id="btn-addNew-clock" class="modal-box-btn btn-valid">Valider</button>
+        <button id="btn-close-modal" class="modal-box-btn btn-close">Fermer</button>
+      </footer>
+
+    </div>
+  </div>
+  <div id="loader" class="loader">
+    <h2>Veuillez patienter.</h2>
+    <h3>Chargement des horloges</h3>
+    <div class="loader__spinner">
+    </div>
+  </div>
+
+  <script type="module" src="scripts/app.js"></script>
+</body>
+</html>

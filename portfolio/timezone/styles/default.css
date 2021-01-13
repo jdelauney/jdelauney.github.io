@@ -1,0 +1,619 @@
+* {
+ margin:0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+:root {
+  --bg-01       : #1d1d1d;
+  --bg-02       : #131416;
+  --text-color  :antiquewhite;
+  --shadow-color: rgba(33,33,33,0.6);
+  --shadow-color-blue: rgba(2, 204, 255, 0.5);
+  --overlay-color: rgba(33,33,33,0.8);
+  --bg-clock    : #888;
+  --bg-tick     : #131416;
+  --bg-second   : #e9253f;
+  --btn-add     : #0c9cc0;
+  --btn-add-hover : #016680;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.618;
+}
+
+body {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height:100vh; 
+  position: relative;
+}
+
+header, footer {  
+  padding: 2rem;
+  background: var(--bg-01);
+  color: var(--text-color);
+  flex-grow: 0;
+  width: 100%;
+}
+
+header, h2 {
+  text-align: center;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;  
+  width:100% !important;
+  margin-right: auto !important;
+  margin-left: auto !important; 
+  padding-left: 5px;
+  padding-right: 5px;   
+}
+
+main {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+  background: var(--bg-02);
+  color: var(--text-color);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.user__timezone {
+ margin-top: 2rem;
+}
+.user__timezone__clock {
+  background-color:var(--bg-clock);
+  background-image: url('../images/backclock01.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: var(--bg-01) 5px solid;
+  box-shadow: 0px 0px 10px 12px var(--shadow-color);
+  border-radius: 50%;
+}
+.user__timezone__clock__wrapper{
+  min-height : 250px;
+  max-height : 512px;
+  min-width  : 250px;
+  max-width  : 512px; 
+  height: 60vmin; /*100%;*/
+  width: 60vmin;/*100%;*/
+  position: relative;
+
+}
+.user__timezone__clock__hours, 
+.user__timezone__clock__minutes,
+.user__timezone__clock__seconds,
+.user__timezone__clock__dot {
+  position: absolute;
+  margin:auto;
+  transform-origin: bottom center;
+  box-shadow: 0 0 15px rgba(0,0,0,.5);
+  border-radius: 100% 0% 0% 100%;
+}
+.user__timezone__clock__hours {
+  height: 32%;
+  width : 7px;
+  top: -30%;
+  left:0;
+  bottom:0;
+  right:0;   
+  background: var(--bg-tick);  
+  transform: rotate(0deg);  
+}
+.user__timezone__clock__minutes {
+  height: 35%;
+  width : 5px;  
+  top: -36%;
+  left:0;
+  bottom:0;
+  right:0;     
+  background: var(--bg-tick);
+  transform: rotate(90deg);  
+}
+.user__timezone__clock__seconds{
+  height: 40%;
+  width : 3px;  
+  top: -40%;
+  left:0;
+  bottom:0;
+  right:0;     
+  background: var(--bg-second);  
+  transform: rotate(0deg);
+}
+.user__timezone__clock__dot {
+  height: 6%;  
+  width : 6%;  
+  top: 0;
+  left:0;
+  bottom:0;
+  right:0;   
+  border-radius: 50% !important;
+  background: radial-gradient(circle,  var(--text-color) 0%, var(--bg-02) 100%);
+  box-shadow: 0 2px 4px -1px black;
+}
+.user__timezone__clock__date {
+   position: absolute;
+   margin:auto;
+   top:0;
+   left: 0;   
+   bottom: -35%;   
+   right:0;   
+   width: 16%;
+   height: 30px;
+   background: #90c2f8;
+   border-radius: 6px;   
+   font-size: 14px;
+   font-weight: bold;
+   line-height: 30px;
+   color: var(--bg-02);
+   text-align: center;
+   box-shadow: inset 0 2px 2px 0 rgba(0,0,0,.3), inset 0 -2px 2px 0 rgba(255,255,255,.2);
+}
+.user__timezone__clock__glass {
+  position: absolute;
+  width:100%;
+  height:100%;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  background-image: url('../images/backclockGlass01.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+ 
+}
+
+.worldClocks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  width:100%;
+  margin-top: 2rem;
+
+}
+.wordClock__grid {
+  display: flex;  
+  flex-wrap: wrap;
+  width:100%;
+}
+.wordClock__grid__card {
+  min-width: 260px;
+  width:100%;
+  padding: 0.5rem 0.5rem;
+  flex-grow: 1;  
+}
+.wordClock__grid__card_container {
+  position: relative;   
+  padding:1rem;
+  background: var(--text-color);
+  color:var(--bg-02);
+  border-radius: 1rem;
+  border: var(--bg-01) 1px solid;
+  box-shadow: 2px 2px 4px 6px var(--shadow-color);   
+}
+
+.card__btn__add__clock{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  height:100%;  
+  margin: 0.5rem;
+  padding:0.5rem;
+  cursor: pointer;  
+  background: var(--text-color);
+  color:var(--bg-02);
+  border-radius: 1rem;
+  border: var(--bg-01) 1px solid;
+  box-shadow: 2px 2px 4px 6px var(--shadow-color);     
+  transition: all 0.3s ;
+}
+
+.btn__add__container {
+  min-width: 260px;
+  width:100%;
+  padding: 0.5rem 0.5rem;
+}
+
+.card__btn__add__clock:hover {
+  box-shadow: none;
+  background: var(--bg-clock);
+}
+.card__btn__add__clock:hover > .btn__add__clock__icon {
+  background: var(--bg-second);
+}
+
+.btn__add__clock__icon {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  background: var(--bg-01);
+  border-radius: 50%;
+  transition: all 0.3s;
+  /* top: calc(50% - 2rem);
+  left: calc(50% - 2rem); */
+}
+.btn__add__clock__icon::after,
+.btn__add__clock__icon::before {
+  content: "";
+  position: absolute;
+  height:2rem;
+  width:0.5rem;
+  top: calc(50% - 1rem);
+  left: calc(50% - 0.25rem); 
+  background: var(--text-color);
+  border-radius: 25%;
+}
+.btn__add__clock__icon::before {
+  transform-origin: center center;
+  transform: rotate(90deg);
+}
+
+.card__clock__wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;  
+  background-color: var(--bg-02);
+  color:var(--text-color);
+  border-radius: 5px;
+  padding: 2rem 1rem;
+  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.15), 0 5px 9px 3px rgba(0, 0, 0, 0.25);
+}
+.card__clock__timer {
+  text-align: center;  
+  min-width: 60px;
+  position: relative;
+}
+.card__clock__timer > p {
+  font-size: 2rem;
+}
+.card__clock__header{
+  position:relative;
+}
+.card__clock__header > h3 {
+  display: inline-block;
+  padding:0;
+  color: var(--bg-tick);
+  font-weight: bold;
+  font-style: italic;
+  font-size:0.7em;
+  width: calc(100% - 1.5rem);  
+  white-space: normal;
+  word-break: break-word
+}
+.card__clock__btn {
+  display: block;
+  position: absolute;
+  right:0;
+  top:0;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: var(--bg-01);
+  color: var(--text-color);  
+  font-size: 1rem;  
+  font-weight: bold;
+  border-radius: 50%;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+  padding:0;  
+}
+
+.card__clock__btn:hover {
+  background: var(--bg-second);
+}
+.card__clock__timer:not(:last-child)::before, .card__clock__timer:not(:last-child)::after {
+  position: absolute;
+  display: block;
+  content: "";  
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: var(--bg-clock);
+  right: -4px;
+}
+.card__clock__timer:not(:last-child)::before {
+  top: 25%;
+}
+.card__clock__timer:not(:last-child)::after {
+  top: 45%;
+}
+.card__clock__label {
+  color:var(--bg-clock);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+
+.modal-box__overlay {
+  position: fixed;
+  width: 100%;
+  height:100vh;  
+  top: 0;
+  left: 0;  
+  z-index: 100;
+  background: var(--overlay-color);
+  transition: all 0.3s;
+  visibility: visible;
+  opacity: 1.0;
+}
+
+.modal-box {
+  position: fixed;
+  width: 600px;
+  height:300px;
+  padding: 1rem;
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 110;
+  transition: all 0.5s;
+  visibility: visible;
+  opacity: 1.0;
+}
+
+.modal-box__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--text-color);
+  color: var(--bg-02);
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  border: var(--bg-clock) 1px solid;
+  box-shadow: 2px 2px 4px 0 var(--shadow-color);
+}
+.modal-box__header {
+  width: 100%;
+  padding:0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  background: transparent;
+  color: var(--bg-02);
+  border-bottom: 1px solid var(--shadow-color);
+}
+.modal-box__content {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.modal-box__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 0.5rem;  
+  width: 100%;  
+  background: transparent;
+  color: var(--bg-02);  
+  border-top: 1px solid var(--shadow-color);  
+}
+.modal-box__footer button:not(last-child) {
+  margin-right: 1rem;
+}
+.modal-box--hidden {  
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal-box-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  padding: 1rem 2rem;
+  border:var(--bg-clock) 1px solid;
+  font-weight: bold;
+  outline: 0;
+  box-shadow: 2px 2px 5px var(--shadow-color);
+  transition: all 0.3s;
+}
+
+.btn-valid{  
+  background: var(--btn-add-hover);
+  color: var(--text-color);   
+}
+
+.btn-valid:hover{
+  background: var(--btn-add);
+  color: var(--bg-02);   
+  box-shadow:none;
+}
+
+.btn-close {
+  background: var(--bg-02);
+  color: var(--text-color);
+}
+
+.btn-close:hover {
+  background: var(--bg-clock);
+  color: var(--bg-02);
+  box-shadow:none;
+}
+
+.modal-box__content .input__wrapper:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.input__wrapper {
+  display: flex; 
+  flex-direction: column;
+  width: 100%; 
+}
+
+.input__wrapper label {      
+  width:100%; /* 15%; */
+  /* margin-left: 1rem;
+  margin-right: 0.5rem; */
+  text-align: left; /*right;*/
+}
+
+.input__wrapper select {  
+  display: block;
+  width: 100%;
+  height: 32px;
+  outline: none;
+}
+
+
+.loader {
+  position: fixed;
+  visibility:visible;
+  top:0;
+  left:0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: var(--overlay-color);
+  color: var(--text-color);
+  transition: opacity 1.0s ease;
+  opacity: 1.0;
+  
+}
+.loader__spinner {
+  position: relative;
+  
+  width: 160px;
+  height:160px;
+  margin-top: 2rem;
+  border-radius: 50%;
+  background: var(--text-color);
+  border:var(--bg-second) 12px solid;
+  box-shadow: 0px 0px 40px 0px var(--shadow-color-blue);
+  transition: opacity 1.0s ease;
+  animation: beatGlow 1s infinite alternate ease-in-out;
+  opacity: 1.0;
+}
+.loader--hidden {  
+  opacity:0;
+  visibility: hidden;
+}
+.loader__spinner::before,
+.loader__spinner::after {
+  content: "";
+  position: absolute;
+  width: 7px;  
+  background: var(--bg-tick);
+  border-radius: 15%;  
+  transform-origin: 50% 97%;
+  
+}
+/* petite aiguille */
+.loader__spinner::before {
+  height: 45px;
+  top:-40px;
+  left:0;
+  bottom:0;
+  right:0;
+  margin: auto;
+  transform: rotate(0deg);
+  animation: spinTick 12s infinite linear;
+}
+/* grande aiguille */
+.loader__spinner::after {
+  height: 60px;
+  top:-55px;
+  left:0;
+  bottom:0;
+  right:0;
+  margin: auto;  
+  transform: rotate(0deg);
+  animation: spinTick 2s infinite linear;
+
+}
+
+
+footer {
+  /*margin-top: 1.5rem;*/
+  text-align: center;
+}
+
+
+@keyframes spinTick {
+  0%   { transform:rotate(0deg);   }
+  100% { transform:rotate(360deg); }
+}
+
+@keyframes beatGlow {
+  0%   {  box-shadow: 0px 0px 40px 0px var(--shadow-color-blue); }
+  100%  {  box-shadow: 0px 0px 40px 20px var(--shadow-color-blue); }  
+}
+
+ 
+@media screen and (min-width: 768px){
+
+  .container {
+    max-width: 740px;
+  }
+
+  .wordClock__grid__card {
+    min-width: 180px;      
+    width:50%;    
+  }
+
+  .wordClock__grid__card_container {
+    min-height:255px;  
+  }
+
+  .card__clock__header > h3 {    
+    font-size:1em;    
+  }
+}
+
+@media screen and (min-width: 992px){
+
+  .container {
+    max-width: 960px;
+  }
+  .wordClock__grid__card {
+    min-width: 320px;    
+    width:33%;    
+  }
+
+}
+
+
+/* @media screen and (min-width: 1200px){
+
+  .wordClock__grid__card {
+    min-width: 290px;    
+    width:25%;    
+  }
+
+} */
+
+@media screen and (min-width: 1600px){
+
+  .wordClock__grid__card {
+    min-width: 380px;    
+    width:25%;    
+  }
+
+  .container {
+    max-width: 1400px;
+  }
+
+}
+
+
+
