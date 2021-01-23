@@ -278,7 +278,7 @@ function processKey(evt) {
     case "op":
       currentOps = this.getAttribute("data-op");
 
-      if (currentOps == "equal") { 
+      if ((currentOps == "equal") && (inputNum != "")) { 
         
         let tmp = lastOp + inputNum + cr;        
         history.push(tmp);
