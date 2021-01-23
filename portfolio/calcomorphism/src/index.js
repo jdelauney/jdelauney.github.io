@@ -187,6 +187,8 @@ function evalScience(op) {
     history.push(tmp);
     inputNum = v.toString();
     tmp = "=" + inputNum + cr;
+    pointUsed = false; 
+    lastOp = "";
     history.push(tmp);
     currentDisplay += inputNum;    
   }
@@ -196,6 +198,9 @@ function evalScience(op) {
     history.push(tmp);
     inputNum = v.toString();
     lastRes = inputNum;
+    nbOperator = 0;
+    lastOp = "";
+    pointUsed = false;               
     tmp = "=" + inputNum + cr;
     history.push(tmp);
     currentDisplay = inputNum;
@@ -256,7 +261,7 @@ function processKey(evt) {
   
   switch (attr) {
     case "num":   
-      if (lastInputType == "equal") {
+      if ((lastInputType == "equal") || ((lastInputType == "func") && ((currentOps == "sin") || (currentOps == "cos") || (currentOps == "rad") || (currentOps == "deg")))) {
         inputNum = "";
         currentDisplay = "";
         lastRes = "0";
@@ -377,12 +382,34 @@ function processKey(evt) {
             currentDisplay += inputNum;
             lastInputType = "num";
             updateDisplay();
-          }          
+          } 
+          else if (lastInputType == "equal")  {
+            inputNum = memPop();
+            lastRes = "0";
+            nbOperator = 0;
+            lastOp = "";
+            pointUsed = false; 
+            currentDisplay = inputNum;
+            lastInputType = "num";
+            updateDisplay();
+          }
           break;
+
         case "pi":
           if ((lastInputType == "op") || (lastRes == "0")) {
             inputNum = Math.PI;
             currentDisplay += inputNum;
+            pointUsed = false; 
+            lastInputType = "num";
+            updateDisplay();
+          } 
+          else if (lastInputType == "equal")  {
+            inputNum = Math.PI;
+            lastRes = "0";
+            nbOperator = 0;
+            lastOp = "";
+            pointUsed = false; 
+            currentDisplay = inputNum;
             lastInputType = "num";
             updateDisplay();
           }
@@ -399,6 +426,7 @@ function processKey(evt) {
           break;
       }
       break;
+
     default:
       break;
   }
