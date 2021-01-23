@@ -256,6 +256,14 @@ function processKey(evt) {
   
   switch (attr) {
     case "num":   
+      if (lastInputType == "equal") {
+        inputNum = "";
+        currentDisplay = "";
+        lastRes = "0";
+        nbOperator = 0;
+        lastOp = "";
+        pointUsed = false; 
+      }
       inputNum = inputNum + inputValue;
       currentDisplay += inputValue;
       updateDisplay();
