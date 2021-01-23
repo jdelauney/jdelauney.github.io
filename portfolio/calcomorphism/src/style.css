@@ -237,7 +237,7 @@ input, button {
   box-shadow: none;
   background: var(--background-dark);
   color: var(--text-disabled);
-  cursor: not-allowed;
+  cursor: not-allowed !important;
 }
 
 .history {
