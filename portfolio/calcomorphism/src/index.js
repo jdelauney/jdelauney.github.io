@@ -278,31 +278,32 @@ function processKey(evt) {
     case "op":
       currentOps = this.getAttribute("data-op");
 
-      if ((currentOps == "equal") && (inputNum != "")) { 
-        
-        let tmp = lastOp + inputNum + cr;        
-        history.push(tmp);
-        let res;
-        if (lastOp == "") {
-          lastRes = inputNum;
-          res = lastRes;
+      if ((currentOps == "equal")) { 
+        if (inputNum != "") {
+          let tmp = lastOp + inputNum + cr;        
+          history.push(tmp);
+          let res;
+          if (lastOp == "") {
+            lastRes = inputNum;
+            res = lastRes;
+          }
+          else {
+            res = compute(operateur, lastRes, inputNum);      
+          }
+          
+          currentDisplay = res;
+          tmp = "=" + res + cr;
+          history.push(tmp);
+          updateDisplay();
+          updateHistory();        
+          nbOperator = 0;
+          lastOp = "";
+          lastRes = res;
+          inputNum = res;
+          lastInputType = "equal";
+          memPushBtn.classList.remove("btn--disabled");
+          pointUsed = false; 
         }
-        else {
-          res = compute(operateur, lastRes, inputNum);      
-        }
-        
-        currentDisplay = res;
-        tmp = "=" + res + cr;
-        history.push(tmp);
-        updateDisplay();
-        updateHistory();        
-        nbOperator = 0;
-        lastOp = "";
-        lastRes = res;
-        inputNum = res;
-        lastInputType = "equal";
-        memPushBtn.classList.remove("btn--disabled");
-        pointUsed = false; 
       }
       else {     
         const opStr = this.textContent;
