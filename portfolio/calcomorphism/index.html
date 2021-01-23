@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/style.css">
+  <title>Calcomorphism</title>
+</head>
+<body>
+  <h1>Desktop dark neumorph calculator</h1>
+  <div class="calculator">
+    
+    <div class="display-box">
+      <input name="result" id="result" value="0">
+    </div>
+    <div class="history">
+      <p id="history" class="history__content">
+        
+      </p>
+    </div>
+    <div class="keys">      
+      <button class="btn btn--op btn--disabled" data-type="func" data-op="percent">&#37;</button>
+      <button class="btn btn--func" data-type="func" data-op="clearLast">CE</button>
+      <button class="btn btn--func" data-type="func" data-op="clearAll">C</button>
+      <button class="btn btn--func" data-type="func" data-op="delLast">&larr;</button>
+
+      <!-- <button class="btn">&Pi</button>
+      <button class="btn">sin</button>
+      <button class="btn">cos</button>
+      <button class="btn">tan</button>
+
+      <button class="btn">x&sup2;</button>
+      <button class="btn">&radic</button>
+      <button class="btn">e</button>
+      <button class="btn">e</button> -->
+
+      <button class="btn btn--op btn--disabled" data-type="open_bracket">(</button>
+      <button class="btn btn--op btn--disabled" data-type="close_bracket">)</button>
+      <button class="btn btn--op btn--disabled" data-type="sign">&plusmn;</button>
+      <button class="btn btn--op" data-type="op" data-op="mul">&times;</button>
+
+      <button class="btn" data-type="num">7</button>
+      <button class="btn" data-type="num">8</button>
+      <button class="btn" data-type="num">9</button>
+      <button class="btn btn--op" data-type="op" data-op="div">&divide;</button>
+
+      <button class="btn" data-type="num">4</button>
+      <button class="btn" data-type="num">5</button>
+      <button class="btn" data-type="num">6</button>
+      <button class="btn btn--op" data-type="op" data-op="sub">-</button>
+
+      <button class="btn" data-type="num">1</button>
+      <button class="btn" data-type="num">2</button>
+      <button class="btn" data-type="num">3</button>
+      <button class="btn btn--op" data-type="op" data-op="add">+</button>
+      
+      <button class="btn" data-type="num">0</button>
+      <button class="btn" data-type="num">.</button>
+      <button class="btn btn--op btn--op-equal" data-type="op" data-op="equal">=</button>      
+    </div>
+    <div class="extra-keys">
+      <button id="memClear" class="btn btn--func btn--disabled" data-type="func" data-op="memClear">MC</button>
+      <button id="memPush" class="btn btn--func btn--disabled" data-type="func" data-op="memPush">M+</button>
+      <button id="memPop" class="btn btn--func btn--disabled" data-type="func" data-op="memPop">MR</button>
+    </div>
+    <div class="scientific-keys">
+      <button class="btn btn--func" data-type="func" data-op="pi">PI</button>
+      <button class="btn btn--op" data-type="func" data-op="sin">sin</button>
+      <button class="btn btn--op" data-type="func" data-op="cos">cos</button>      
+      <button class="btn btn--func" data-type="func" data-op="rad">Rad</button>
+      <button class="btn btn--func" data-type="func" data-op="deg">Deg</button>
+    </div>
+  </div>
+
+  <script src="./src/index.js"></script>
+</body>
+</html>

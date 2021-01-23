@@ -1,0 +1,42 @@
+.btn {
+  width: 4rem;
+  height:4rem;      
+  background: var(--background);
+  color: var(--text);
+  border: none;
+  border-radius: 50%;
+  @include neumorph-shadow;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+
+  &:hover, &:active {
+    background: var(--background-dark);
+  }
+  &:active {
+    @include neumorph-shadow-inset;
+  }
+
+  &--op {
+    color: var(--btn-text-op-color);
+
+    &-equal {
+      grid-column: 3/5;
+      //justify-self: stretch;
+      width: 85%;
+      margin-left: 1rem;
+      border-radius: 25px;
+    }
+  }
+  &--func {
+    color: var(--btn-text-func-color);
+  }
+
+  &--disabled {
+    box-shadow: none;
+    background: var(--background-dark);
+    color:var(--text-disabled);
+    cursor:not-allowed;
+  }
+
+  
+}

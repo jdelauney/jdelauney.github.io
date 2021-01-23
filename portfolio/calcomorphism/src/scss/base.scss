@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono&display=swap");
+
+$backgroundColor : rgb(20, 25, 35);
+$backgroundDarkColor: darken($backgroundColor,3%);
+
+@mixin neumorph-shadow {
+  box-shadow: -6px -6px 9px rgba(255, 255, 255, 0.2), 6px 6px 9px rgba(0, 0, 0, 0.4);
+}
+@mixin neumorph-shadow-inset {
+  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.2), inset 6px 6px 9px rgba(0, 0, 0, 0.4);
+}
+
+@mixin neumorph-text-shadow {
+  text-shadow: -3px -3px 9px rgba(255, 255, 255, 0.4), 6px 6px 9px rgba(0, 0, 0, .4);
+}
+
+:root {
+  --background: #{$backgroundColor};
+  --background-dark: #{$backgroundDarkColor};
+  --text:rgb(255, 248, 231);
+  --input-number:rgb(108, 214, 108);
+  --btn-text-op-color:rgb(243, 142, 74);
+  --btn-text-func-color:rgb(74, 142, 243);
+  --text-disabled: #333;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(45deg, var(--background-dark) 0%, var(--background) 100%);
+  color: var(--text);  
+  font-size: 16px;
+  font-family:'Montserrat', arial, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  padding: .75rem 1rem;
+  font-size: 2.4rem;
+  font-weight:700;
+  color: var(--background-dark);
+  text-align: center;
+  border-bottom: 2px solid lighten($backgroundColor,5%);
+  border-top: 2px solid lighten($backgroundColor,5%);
+  @include neumorph-text-shadow;
+}
+
+
+input, button {
+  outline: none;
+}
+
+
+
