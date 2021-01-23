@@ -5,10 +5,10 @@ $backgroundColor : rgb(20, 25, 35);
 $backgroundDarkColor: darken($backgroundColor,3%);
 
 @mixin neumorph-shadow {
-  box-shadow: -6px -6px 9px rgba(255, 255, 255, 0.2), 6px 6px 9px rgba(0, 0, 0, 0.4);
+  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.1), 6px 6px 9px rgba(0, 0, 0, 0.4);
 }
 @mixin neumorph-shadow-inset {
-  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.2), inset 6px 6px 9px rgba(0, 0, 0, 0.4);
+  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.1), inset 6px 6px 9px rgba(0, 0, 0, 0.4);
 }
 
 @mixin neumorph-text-shadow {

@@ -279,9 +279,18 @@ function processKey(evt) {
       currentOps = this.getAttribute("data-op");
 
       if (currentOps == "equal") { 
+        
         let tmp = lastOp + inputNum + cr;        
         history.push(tmp);
-        const res = compute(operateur, lastRes, inputNum);      
+        let res;
+        if (lastOp == "") {
+          lastRes = inputNum;
+          res = lastRes;
+        }
+        else {
+          res = compute(operateur, lastRes, inputNum);      
+        }
+        
         currentDisplay = res;
         tmp = "=" + res + cr;
         history.push(tmp);

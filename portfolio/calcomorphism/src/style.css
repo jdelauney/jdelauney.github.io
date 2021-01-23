@@ -142,7 +142,7 @@ input, button {
   margin-top: 1.5rem;
   border-radius: 25px;
   background: var(--background);
-  box-shadow: -6px -6px 9px rgba(255, 255, 255, 0.2), 6px 6px 9px rgba(0, 0, 0, 0.4);
+  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.1), 6px 6px 9px rgba(0, 0, 0, 0.4);
 }
 .calculator .display-box {
   margin: 1rem 0;
@@ -164,7 +164,7 @@ input, button {
   background: var(--background-dark);
   color: var(--input-number);
   text-shadow: -1px -1px 2px #fff, 2px 2px 2px rgba(0, 0, 0, 0.4);
-  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.2), inset 6px 6px 9px rgba(0, 0, 0, 0.4);
+  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.1), inset 6px 6px 9px rgba(0, 0, 0, 0.4);
 }
 .calculator .scientific-keys {
   position: absolute;
@@ -211,7 +211,7 @@ input, button {
   color: var(--text);
   border: none;
   border-radius: 50%;
-  box-shadow: -6px -6px 9px rgba(255, 255, 255, 0.2), 6px 6px 9px rgba(0, 0, 0, 0.4);
+  box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.1), 6px 6px 9px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -219,7 +219,7 @@ input, button {
   background: var(--background-dark);
 }
 .btn:active {
-  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.2), inset 6px 6px 9px rgba(0, 0, 0, 0.4);
+  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.1), inset 6px 6px 9px rgba(0, 0, 0, 0.4);
 }
 .btn--op {
   color: var(--btn-text-op-color);
@@ -248,7 +248,7 @@ input, button {
   overflow: auto;
   max-height: calc(5 * 1.5rem);
   height: calc(5 * 1.5rem);
-  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.2), inset 6px 6px 9px rgba(0, 0, 0, 0.4);
+  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.1), inset 6px 6px 9px rgba(0, 0, 0, 0.4);
   border-radius: 25px;
 }
 .history .history__content {
