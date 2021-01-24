@@ -276,65 +276,68 @@ function processKey(evt) {
       break;
 
     case "op":
-      currentOps = this.getAttribute("data-op");
 
-      if ((currentOps == "equal")) { 
-        if (inputNum != "") {
-          let tmp = lastOp + inputNum + cr;        
-          history.push(tmp);
-          let res;
-          if (lastOp == "") {
-            lastRes = inputNum;
-            res = lastRes;
+      if (lastInputType == "num") {
+        currentOps = this.getAttribute("data-op");
+
+        if ((currentOps == "equal")) { 
+          if (inputNum != "") {
+            let tmp = lastOp + inputNum + cr;        
+            history.push(tmp);
+            let res;
+            if (lastOp == "") {
+              lastRes = inputNum;
+              res = lastRes;
+            }
+            else {
+              res = compute(operateur, lastRes, inputNum);      
+            }
+            
+            currentDisplay = res;
+            tmp = "=" + res + cr;
+            history.push(tmp);
+            updateDisplay();
+            updateHistory();        
+            nbOperator = 0;
+            lastOp = "";
+            lastRes = res;
+            inputNum = res;
+            lastInputType = "equal";
+            memPushBtn.classList.remove("btn--disabled");
+            pointUsed = false; 
+          }
+        }
+        else {     
+          const opStr = this.textContent;
+          currentDisplay += opStr;
+          let tmp; 
+          ++nbOperator;
+          if (nbOperator > 1) {
+            tmp = lastOp + inputNum + cr;          
+            history.push(tmp);
+            lastRes = compute(operateur, lastRes, inputNum); 
+            tmp = "=" + lastRes + cr;
+            history.push(tmp); 
+            lastOp = opStr;   
+            pointUsed = false; 
+            memPushBtn.classList.remove("btn--disabled");        
           }
           else {
-            res = compute(operateur, lastRes, inputNum);      
+            lastInput = inputNum;
+            lastRes = lastInput;
+            lastOp = opStr;
+            tmp = lastInput + cr;  
+            pointUsed = false;        
+            history.push(tmp);
+            
           }
           
-          currentDisplay = res;
-          tmp = "=" + res + cr;
-          history.push(tmp);
           updateDisplay();
-          updateHistory();        
-          nbOperator = 0;
-          lastOp = "";
-          lastRes = res;
-          inputNum = res;
-          lastInputType = "equal";
-          memPushBtn.classList.remove("btn--disabled");
-          pointUsed = false; 
+          updateHistory();
+          lastInputType = "op";
+          operateur = currentOps;        
+          inputNum = "";
         }
-      }
-      else {     
-        const opStr = this.textContent;
-        currentDisplay += opStr;
-        let tmp; 
-        ++nbOperator;
-        if (nbOperator > 1) {
-          tmp = lastOp + inputNum + cr;          
-          history.push(tmp);
-          lastRes = compute(operateur, lastRes, inputNum); 
-          tmp = "=" + lastRes + cr;
-          history.push(tmp); 
-          lastOp = opStr;   
-          pointUsed = false; 
-          memPushBtn.classList.remove("btn--disabled");        
-        }
-        else {
-          lastInput = inputNum;
-          lastRes = lastInput;
-          lastOp = opStr;
-          tmp = lastInput + cr;  
-          pointUsed = false;        
-          history.push(tmp);
-          
-        }
-        
-        updateDisplay();
-        updateHistory();
-        lastInputType = "op";
-        operateur = currentOps;        
-        inputNum = "";
       }
       
       break;
@@ -371,6 +374,7 @@ function processKey(evt) {
           updateDisplay();     
           currentDisplay = "";  
           memClear();
+          memPushBtn.classList.add("btn--disabled");
           clearHistory();
           break;
 
@@ -429,7 +433,9 @@ function processKey(evt) {
         case "cos":
         case "rad":
         case "deg":
-          evalScience(currentOps);
+          if ((lastInputType == "num") ||  (lastInputType == "equal")) {
+            evalScience(currentOps);
+          }
           break;
 
         default:
