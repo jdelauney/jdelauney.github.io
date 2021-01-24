@@ -277,7 +277,7 @@ function processKey(evt) {
 
     case "op":
 
-      if (lastInputType == "num") {
+      if ((lastInputType == "num") || ((lastInputType == "func") || (lastInputType == "equal")) {
         currentOps = this.getAttribute("data-op");
 
         if ((currentOps == "equal")) { 
