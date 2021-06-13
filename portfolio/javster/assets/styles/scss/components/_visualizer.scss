@@ -1,0 +1,148 @@
+.soundWave {
+  position: relative;
+  display:flex;
+  align-items:center;
+  justify-content: space-around;
+  width:100%;
+  background-color:rgba(1,38,46,.5);
+  min-height:12vmin;
+  padding:.5rem;
+  border-radius:5px;
+  &.play span { 
+    animation-play-state: running;
+    opacity:1;
+  }
+  span {
+    // position:absolute;
+    display: block;
+    top: 50%;
+    left:2%;
+    width: 4%;
+    height: 1vmin;      
+    background: #00B0FF;    
+    transform-origin: center center;
+    animation: audio-wave 2s infinite ease-in-out;
+    animation-play-state: paused;
+    opacity:0;
+    transition: opacity .25s ease;
+  }  
+  span:nth-child(1) {
+    animation-delay: -16.235s;
+  }
+  span:nth-child(2) {    
+    animation-delay: -15.574;
+  }
+  span:nth-child(3) {  
+    animation-delay: -14.758s;
+  }
+  span:nth-child(4) {  
+    animation-delay: -13.954s;
+  }
+  span:nth-child(5) {  
+    animation-delay: -13.152s;
+  }
+  span:nth-child(6) {  
+    animation-delay: -12.538s;
+  }
+  span:nth-child(7) {
+    animation-delay: -11.867s;
+  }
+  span:nth-child(8) {
+    animation-delay: -11.114s;
+  }
+  span:nth-child(9) {
+    animation-delay: -10.478s;
+  }
+  span:nth-child(10) {  
+    animation-delay: -9.959s;
+  }
+  span:nth-child(11) {  
+    animation-delay: -9.147s;
+  }
+  span:nth-child(12) {
+    animation-delay: -8.872s;
+  }
+  span:nth-child(13) {  
+    animation-delay: -7.958s;
+  }
+  span:nth-child(14) {    
+    animation-delay: -7.354s;
+  }
+  span:nth-child(15) {  
+    animation-delay: -6.765s;
+  } 
+  span:nth-child(16) {  
+    animation-delay: -5.875s;
+  } 
+  span:nth-child(18) {  
+    animation-delay: -4.125s;
+  } 
+  span:nth-child(19) {  
+    animation-delay: -2.196s;
+  } 
+  span:nth-child(20) {  
+    animation-delay: -1.514s;
+  } 
+  span:nth-child(21) {  
+    animation-delay: 0.0s;
+  } 
+}
+
+.equalizer {
+  
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  gap:.2rem;
+  background-color:rgba(1,38,46,.5);
+  padding:.5rem;
+  min-height:14vmin;
+  border-radius:5px;
+  
+  &.play span { 
+    animation-play-state: running;
+    opacity:1;
+  }
+  
+  span {
+    position:relative;
+    display:block;    
+    bottom:0;
+    height:14vmin;
+    width:20%;
+    flex:1;
+    align-self: flex-end;
+    background-image: linear-gradient(0deg, rgba(68,200,41,.7) 0%, 
+                                      rgba(75,255,4,.6) 15%, 
+                                      rgba(255,239,0,.7) 55%, 
+                                      rgba(255,180,3,.8) 80%, 
+                                      rgba(255,8,8,.9) 90%,
+                                      transparent 100%);
+    background-repeat: no-repeat;
+    
+    animation: equalizer-anim 1s ease-in-out infinite; 
+    animation-play-state: paused;
+    opacity:0;
+    transition: opacity .25s ease;
+    
+    transform-origin: bottom center;    
+  }
+  
+  span:nth-child(1){
+   animation-duration:1.2s;
+  }
+  span:nth-child(2){
+   animation-duration:.6s;
+  }
+  span:nth-child(3){
+    animation-duration:1s;
+  }
+  span:nth-child(4){
+   animation-duration:1.3s;
+  }
+  span:nth-child(5){
+    animation-duration:.7s;
+  }
+ 
+
+}

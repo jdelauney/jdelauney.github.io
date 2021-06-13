@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVSTER RADIO FM TUNER</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+
+<body>
+  <template>
+    <div id="audio-player-container">
+      <audio src=""></audio>
+      <button id="btnPlay" class="btn-player">
+        <span class="play-icon"></span>
+      </button>
+      <div class="player__row">
+        <span id="current-time" class="time">0:00</span>
+        <input type="range" id="seek-slider" max="100" value="0">
+        <span id="duration" class="time">0:00</span>
+      </div>
+      <div class="player__row">
+        <button id="btnMute" class="btn-mute">
+          <span class="speaker-icon"></span>
+        </button>
+        <input type="range" id="volume-slider" max="100" value="100">
+        <output id="volume-output">100</output>
+      </div>
+    </div>
+  </template>
+
+  <div class="page-wrapper">
+    <div id="javster" class="javster-logo">
+      <div class="javster-logo__head">
+        <div class="javster-logo__head-eyes">
+          <div class="javster-logo__head-eye javster-logo__head-eye-left"></div>
+          <div class="javster-logo__head-eye javster-logo__head-eye-right"></div>
+          <div class="javster-logo__head-nose"></div>
+          <div class="javster-logo__head-mouth"></div>
+        </div>
+        <div class="javster-logo__earphone"></div>
+      </div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+
+    <div class="player-wrapper">
+      <div class="player__panel">
+        <div class="player__radios">
+          <!-- http://fluxradios.blogspot.com/p/flux-radios-francaise.html#Radios%20Nationales -->
+          <ul class="radios__list">
+            <li class="radios__list-item" data-stream-url="http://stream.srg-ssr.ch/m/couleur3/mp3_128">
+              Couleur 3 (Suisse)
+            </li>
+            <li class="radios__list-item" data-stream-url="http://radios.rtbf.be/tarmac-128.mp3">
+              Tarmac (Belge)
+            </li>
+            <li class="radios__list-item" data-stream-url=" 	    http://cogecomedia.leanstream.co/CKOFFM-MP3">
+              CKOF-FM (Quebec)
+            </li>
+            <li class="radios__list-item"
+              data-stream-url="http://scdn.nrjaudio.fm/adwz2/fr/30601/mp3_128.mp3?origine=fluxradios">
+              Nostalgie
+            </li>
+            <li class="radios__list-item"
+              data-stream-url="http://scdn.nrjaudio.fm/adwz2/fr/30001/mp3_128.mp3?origine=fluxradios">
+              NRJ
+            </li>
+            <li class="radios__list-item" data-stream-url="http://stream.virginradio.fr/virgin.mp3">
+              Virgin radio
+            </li>
+            <li class="radios__list-item" data-stream-url="http://www.skyrock.fm/stream.php/tunein16_128mp3.mp3">
+              Skyrock
+            </li>
+          </ul>
+        </div>
+        <div id="audioPlayer" class="player__controls">
+          <audio-player></audio-player>
+          <div class="player__display">
+            <div id="soundWave" class="soundWave">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div id="equalizer" class="equalizer">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="main__title-wrapper">
+      <h1 class="main__title">JAVSTER RADIO FM TUNER</h1>
+    </div>
+
+
+  </div>
+  <script src="./assets/scripts/app.js"></script>
+</body>
+
+</html>
