@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
+	<title>DVP GameJam 2021 - BALL IT</title>
+	<meta name="Description" content="Description"/>
+
+	<meta name="robots" content="index, follow">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="styles/index.css">
+	<link rel="shortcut icon" href="assets/images/logo.svg" type="image/svg">
+</head>
+<body>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<defs>
+			<filter id="goo">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+				<feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+			</filter>
+		</defs>
+	</svg>
+	<div class="gameContainer">
+		<div class="gameContainer__inner">
+			<div id="gameBackground" class="gameContainer__background"></div>
+			<canvas id="gameScreen" class="gameSection gameScreen filter-blur" height="100" width="100"></canvas>
+			<div id="gameMenu" class="gameSection gameMenu">
+				<div class="gameMenu__inner">
+					<div class="logo__container">
+						<img src="assets/images/logo.svg" alt="BALL-IT GAME" height="320px" width="320px" />
+					</div>
+					<button class="btn btn--big">PLAY</button>
+				</div>
+			</div>
+			<div id="gameScore" class="gameSection gameScore">
+
+			</div>
+
+		</div>
+	</div>
+
+
+	<script type="module" src="scripts/index.js"></script>
+
+</body>
+</html>
