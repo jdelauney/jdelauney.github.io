@@ -1,0 +1,243 @@
+*, *::after, *::before {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gameBoard-width: clamp(280px, 60vw, 600px);
+    --clr-neutral-100: #fff;
+    --clr-neutral-200: rgba(255, 255, 255, 0.6);
+    --clr-neutral-300: #9A9A9A;
+    --clr-neutral-400: #6c757d;
+    --clr-neutral-500: #737a82;
+    --clr-neutral-600: #46494b;
+    --clr-neutral-800: #282b2f;
+    --clr-neutral-900: #1a1c1d;
+    --notification-width:320px;
+}
+
+@import 'https://fonts.googleapis.com/css?family=Architects+Daughter';
+
+body{
+    position:relative;
+    height:100vh;
+    background:url("https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmxhY2tib2FyZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80");
+    background-size:cover;
+    font-family: 'Architects Daughter', cursive;
+    color:#fff;
+    overflow:hidden;
+}
+
+main {
+    display:flex;
+    flex-direction:column;
+    width:100vw;
+    align-items:center;
+    justify-content:center;
+
+}
+
+#menu {
+    position:relative;
+    width:100%;
+    min-height:60vh;
+}
+
+#chooseOpponent,
+#chooseLevelIA,
+#chooseSign {
+    position: absolute;
+    width:100%;
+    top:25%;
+    left:50%;
+    transform:translate(-50%, -25%);
+}
+
+
+#menu,
+.mainHeader {
+    text-align:center;
+}
+
+h1 {
+    font-size: clamp(2rem, 15vw, 6rem);
+    opacity:.9;
+}
+
+h2 {
+    display:block;
+    width:100%;
+    font-size: 3rem;
+    opacity:.8;
+    margin-bottom:2rem;
+    text-align:center;
+}
+
+button{
+    background:none;
+    border-radius:.5rem;
+    color:#ccc;
+    font-family: 'Architects Daughter', cursive;
+    font-size:1.25rem;
+    border:1px solid transparent;
+    padding:.5rem 1rem;
+    outline:none;
+    cursor:pointer;
+    transition: all .3s ease;
+}
+button:hover{
+    border:1px dashed #E57373;
+    color:#1565C0;
+}
+
+#board {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width: 100%;
+}
+
+#chooseLevelIA,
+#chooseSign,
+#board {
+    display:none;
+}
+
+#gameBoard{
+    display: grid;
+    width: var(--gameBoard-width);
+    height: var(--gameBoard-width);
+    grid-template: repeat(3, 1fr)/repeat(3, 1fr);
+    padding: 1rem;
+    margin-top:1rem;
+    font-size: clamp(3rem, 10vw, 8rem);
+}
+
+#scoreBoard{
+    display: grid;
+    width: 100%;
+    max-width: 600px;
+    min-width: 300px;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    margin-top:1rem;
+    padding: 1rem;
+    border-top: 1px #fff dotted;
+    font-size: 1.5rem;
+}
+
+.btnBar {
+    display:flex;
+    width:100%;
+    align-items:center;
+    justify-content:center;
+    padding:.5rem;
+}
+.scoreItem {
+    align-self: center;
+    justify-self: center;
+}
+
+.scoreLabel {
+    font-size:1rem;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 6px solid #fff;
+    border-bottom: 6px solid #fff;
+    font-family: 'Architects Daughter', cursive;
+    opacity:.8;
+}
+
+.cell--cross {
+    color:#1565C0;
+    cursor: none;
+}
+
+.cell--circle {
+    color:#E57373;
+    cursor: none;
+}
+
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9) {
+    border-right:none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+    border-bottom:none;
+}
+
+
+.notification {
+    position: fixed;
+    width:var(--notification-width);
+    top:40%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    z-index: 1000;
+    cursor: pointer;
+    pointer-events: all;
+    border-radius: .5rem;
+    padding: 1.2rem;
+    gap:1rem;
+    background: var(--clr-neutral-200);
+    color: var(--clr-neutral-600);
+    border: 1px solid var(--clr-neutral-400);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.2);
+
+    visibility:hidden;
+    opacity:0;
+    transition: all .3s ease-in-out;
+}
+
+.notification--large {
+    --notification-width:70vmin;
+}
+
+.notification--show {
+    visibility:visible;
+    opacity:.8;
+}
+
+.notification__title {
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.notification__content {
+    width:100%;
+    font-size: 1em;
+    text-align:center;
+}
+
+.notification--inverse {
+    background: var(--clr-neutral-800);
+    color: var(--clr-neutral-100);
+    border: 1px solid var(--clr-neutral-900);
+}
+
+.notification--inverse .notification__close {
+    color:var(--clr-neutral-200);
+    border: 1px solid var(--clr-neutral-200);
+}
+
+.notification--inverse .notification__close::before,
+.notification--inverse .notification__close::after {
+    background-color:var(--clr-neutral-200);
+}
+
+.notification--inverse .notification__close:hover {
+    border: 2px solid var(--clr-neutral-200);
+}
