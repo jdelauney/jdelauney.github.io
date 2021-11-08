@@ -5,26 +5,33 @@ import Point from "../maths/Point.js";
 export default class MouseController extends EventEmitter {
 	constructor() {
 		super();
-		this.position = new Point()
+		this.enabled = false;
+    const gameScreen = document.querySelector('#gameScreen')
 
-	  window.addEventListener("mousemove", (event) => {
-			this.position.x = event.x
-		  this.position.y = event.y
-		  this.trigger("mousemove", this.position)
+		gameScreen.addEventListener("mousemove", (event) => {
+			const info = {
+				position: new Point(event.x,event.y),
+				movement: new Point(event.movementX, event.movementY)
+			}
+		  this.trigger("mousemove", [info])
 	  })
 
-		window.addEventListener("click", (event) => {
-			switch (event.button) {
-				case 1 :
-					this.trigger("mouseClickLeft")
-					break
-				case 2 :
-					this.trigger("mouseClickMiddle")
-					break
-				case 3 :
-					this.trigger("mouseClickRight")
-					break
+		gameScreen.addEventListener("click", (event) => {
+			//console.log('Mouse Controller button clicked == ', event.button)
+			if (this.enabled) {
+				switch (event.button) {
+					case 0 :
+						this.trigger("mouseLeftClick")
+						break
+					case 1 :
+						this.trigger("mouseMiddleClick")
+						break
+					case 2 :
+						this.trigger("mouseRightClick")
+						break
+				}
 			}
+			event.preventDefault()
 		})
 
 		window.addEventListener('contextmenu', (event) => {

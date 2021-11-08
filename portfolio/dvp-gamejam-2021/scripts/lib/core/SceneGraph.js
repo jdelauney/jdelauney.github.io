@@ -19,7 +19,6 @@ export default class SceneGraph extends EventEmitter {
 	}
 
 	addChildAt(child, index) {
-		const children = this.children;
 		const tab1 = this.children.slice(0,index);
 		const tab2 = this.children.slice(index);
 		this.children = tab1.concat([child]).concat(tab2);
@@ -61,9 +60,11 @@ export default class SceneGraph extends EventEmitter {
 
 	render() {
 		//console.log('Render Scene')
+		this.engine.renderer.context.save()
 		let max = this.children.length;
 		for(let i = 0 ; i < max; i++ ) {
 			this.children[i].render()
 		}
+		this.engine.renderer.context.restore()
 	}
 }

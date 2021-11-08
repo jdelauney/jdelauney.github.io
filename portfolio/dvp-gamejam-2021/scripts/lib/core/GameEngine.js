@@ -31,13 +31,9 @@ export default class AbstractGameEngine extends EventEmitter
 			if (_canvas instanceof HTMLElement) {
 				this.canvas = _canvas
 			} else {
-				console.log('Set canvas from QuerySelector : ', _canvas)
-
 				this.canvas = document.querySelector(_canvas)
 			}
 		}
-
-		console.log(this.canvas)
 
 		// Setup
 		this.viewport = new Viewport()
@@ -46,8 +42,7 @@ export default class AbstractGameEngine extends EventEmitter
 		this.controller = new GameController()
 		this.scene = new SceneGraph()
 
-		this.viewport.on('resize', () =>
-		{
+		this.viewport.on('resize', () => {
 			this.resize()
 		})
 
@@ -55,7 +50,6 @@ export default class AbstractGameEngine extends EventEmitter
 		this.init();
 
 		this.cadencer.on('cadencerProgress', this.onCadencerProgress.bind(this))
-
 	}
 
 	init() {
@@ -67,9 +61,9 @@ export default class AbstractGameEngine extends EventEmitter
 	}
 
 	onCadencerProgress() {
-		 const deltaTime = this.cadencer.deltaTime
-		 const currentTime = this.cadencer.currentTime
-		 const elapsedTime = this.cadencer.elapsedTime
+		const deltaTime = this.cadencer.deltaTime
+		const currentTime = this.cadencer.currentTime
+		const elapsedTime = this.cadencer.elapsedTime
 		//console.log(deltaTime)
 		this.trigger('updateFrame',[deltaTime,currentTime, elapsedTime])
 		this.trigger('beforeRender')

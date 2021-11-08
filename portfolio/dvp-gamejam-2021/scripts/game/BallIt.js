@@ -3,59 +3,84 @@ import BallParticleEngine from "./BallParticleEngine.js";
 import DummyObject from "../lib/core/DummyObject.js";
 import Point from "../lib/maths/Point.js";
 import CheckPoint from "./CheckPoint.js";
-import Circle from "./Circle.js";
 import Player from "./Player.js";
+import MathUtils from "../lib/maths/MathUtils.js";
 
 export default class BallIt extends AbstractGameEngine {
 	constructor(_canvas) {
 		super(_canvas);
 		this.displayGameMenu = true;
-
-		this._PI2 = Math.PI * 2
 	}
 
-	init() {
+	createNewCheckpoint() {
+		const size = MathUtils.randomRange(0, 25)
+		const distanceHorizontal = MathUtils.randomRange(-250, 250)
+		const distanceVertical = MathUtils.randomRange(45, 80)  + (this.checkpointlastSize + 80) + size
+		this.checkpointLastPos.x += distanceHorizontal
+		this.checkpointLastPos.y -= distanceVertical
+		const newPos = new Point(this.checkpointLastPos.x, this.checkpointLastPos.y)
+		this.checkpointCoords.push(newPos)
+		let rotDir = Math.random() < 0.5 ? -1 : 1
+		const checkPoint = new CheckPoint(newPos, size , MathUtils.randomRange(0, 7), MathUtils.clamp(MathUtils.randomRange(1, 3 - 0.5), 0.5, 2.0), rotDir)
+		this.checkpointlastSize = checkPoint.size
+		checkPoint.setParent(this.checkRoot)
+	}
+
+  init() {
+		//const startgame = async () => { await this.startGame() }
+
 		this.gameMenu = document.querySelector("#gameMenu")
+		this.playBtn = document.querySelector("#playBtn")
 		this.gameBackground = document.querySelector("#gameBackground")
-		this.gameMenu.addEventListener("click", ()=> {
+		this.playBtn.addEventListener("click", ()=> {
 			this.displayGameMenu = false
 			this.gameMenu.classList.add("gameMenu--hidden")
 			this.canvas.classList.remove("filter-blur")
 			this.gameBackground.classList.add("gameContainer__background--game")
 			this.ballParticleEngine.visible = false
-
-			this.startGame();
+      //startgame()
+		  this.startGame()
 		})
+
+		this.checkpointCoords = []
+		this.nextCheckpointIndex = 1
+		this.checkPoints = []
+
+		this.root = new DummyObject(new Point(0,0))
+		this.root.visible = false;
+		this.scene.addChild(this.root)
 
 		this.ballParticleEngine = new BallParticleEngine(300)
 		this.scene.addChild(this.ballParticleEngine)
 
-		//this.centerScreen = new Point(this.viewport.width / 2, this.viewport.height / 2)
-		this.root = new DummyObject(new Point(0,0))
-		this.root.visible = false;
-		this.scene.addChild(this.root)
-		this.checkPoints = []
-
+		// Start check point
 		this.startPos = new Point(this.viewport.width * 0.5, this.viewport.height - 200)
-		//this.startPos = new Point(0, 0)
+		this.checkRoot  = new DummyObject(new Point(0,0))
 
-		// for (let i = 0; i < 5; i++) {
-			this.checkPoint = new CheckPoint(this.startPos, 0)
-			//this.checkPoints.push(checkPoint)
-		  let checkRoot  = new DummyObject(new Point(0,0))
-		  checkRoot.addChild(this.checkPoint)
-		  this.root.addChild(checkRoot)
+		this.checkpointCoords.push(this.startPos)
+
+		this.checkpointLastPos = new Point(this.startPos.x, this.startPos.y)
+		this.checkpointlastSize = 0//checkPoint.size
+		for (let i = 0; i < 3; i++) {
+				this.createNewCheckpoint()
+		}
+
+		this.startCheckPoint = new CheckPoint(this.startPos,0)
+		this.startCheckPoint.setParent(this.checkRoot)
+
+		//this.root.addChild(this.checkRoot)
+		this.checkRoot.setParent(this.root)
+
+		this.player = new Player(this.startPos)
+		//this.root.addChild(this.player)
+		this.player.setParent(this.root)
+		//this.scene.addChild(this.player)
+
+		console.log(this.root.child.children)
+
+	  this.lastMousePos = new Point(0,0)
 
 
-      this.player = new Player(this.startPos)
-			this.playerRoot  = new DummyObject(new Point(0,0))
-		  this.playerRoot.name="PLAYERROOT"
-		  this.playerRoot.addChild(this.player)
-		  this.root.addChild(this.playerRoot)
-
-		// }
-
-		console.log(this.scene.children)
 
 		this.on('updateFrame', this.onUpdateFrame.bind(this))
 
@@ -63,19 +88,42 @@ export default class BallIt extends AbstractGameEngine {
 			this.renderer.clear()
 		})
 	}
+  onMouseLeftClick() {
+	  //console.log("Mouse left click")
+	  if (this.root.visible) {
+		  const nextPoint = this.checkpointCoords[this.nextCheckpointIndex]
+		  this.player.gotoNextPoint(nextPoint)
+		  this.nextCheckpointIndex++
+	  }
+  }
+
+	onMouseMove(info) {
+		if (this.root.visible) {
+			this.checkRoot.translation.x += info.movement.x
+			this.checkRoot.translation.y += info.movement.y
+		}
+	}
 
 	onUpdateFrame(deltaTime, currentTime, elapsedTime) {
-		this.checkPoint.animate(deltaTime, currentTime, elapsedTime)
-		let dt = currentTime;
-		this.playerOffset = new Point( 7 * Math.sin(this._PI2 * dt * 0.288 + 25), 8 * Math.cos(this._PI2 * dt * .236 + 35))
-
-		this.playerRoot.translation.x = this.playerOffset.x
-		this.playerRoot.translation.y = this.playerOffset.y
-		//this.player.animate(deltaTime, currentTime, elapsedTime)
+		if (this.ballParticleEngine.visible) {
+			this.ballParticleEngine.animate(deltaTime, currentTime, elapsedTime)
+		}
+		else {
+			this.checkRoot.child.children.forEach((child) => {
+				child.animate(deltaTime, currentTime, elapsedTime)
+			})
+			this.player.animate(deltaTime, currentTime, elapsedTime)
+		}
 	}
 
 	startGame() {
-		this.root.visible = true;
+		return new Promise(resolve => {
+			this.root.visible = true;
+			this.controller.mouse.on('mouseLeftClick', this.onMouseLeftClick.bind(this) )
+			//this.controller.mouse.on('mousemove', this.onMouseMove.bind(this) )
+			this.controller.mouse.enabled = true
+			return resolve
+		})
 	}
 
 }

@@ -1,4 +1,5 @@
 import AbstractGameObject from "../lib/core/GameObject.js";
+import MathUtils from "../lib/maths/MathUtils.js";
 
 export default class Circle extends AbstractGameObject {
 	constructor(position, radius, color) {
@@ -10,10 +11,10 @@ export default class Circle extends AbstractGameObject {
 		this.color = color
 	}
 
+
 	draw() {
-		//this.updating()
 		this.context.beginPath()
-		this.context.arc(0,0,this.size,0,this._PI2, false)
+		this.context.arc(0,0, this.size,0, MathUtils.PI2, false)
 		this.context.fillStyle = this.color
 		this.context.fill()
 	}

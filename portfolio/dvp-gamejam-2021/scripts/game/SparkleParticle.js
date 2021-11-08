@@ -3,19 +3,11 @@ import AbstractGameObject from "../lib/core/GameObject.js";
 import MathUtils from "../lib/maths/MathUtils.js";
 
 export default class BallParticle extends AbstractGameObject {
-	constructor(position, direction, speed, size, color) {
+	constructor(position, size, acceleration, gravity, velocity, angle, maxAngle, color) {
 		super()
 
-    this.translation = position;
-		this.direction = direction
-		this.speed = speed
-		this.size = size
-		this.color = color
+		this.translation = position;
 
-
-		console.log('Create Ball Particle')
-		this.width = size
-		this.height = size
 	}
 
 	animate(deltaTime,currentTime, elapsedTime) {

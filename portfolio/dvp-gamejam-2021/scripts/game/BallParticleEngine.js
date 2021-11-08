@@ -25,7 +25,18 @@ export default class BallParticleEngine extends AbstractParticleEngine {
 			let speed = new Point((Math.random() * 3) - 1, (Math.random() * 3) - 1)
 			let color = colours[Math.floor(Math.random() * colours.length)]
 
-			this.particleArray.push(new BallParticle(position, direction, speed , size, color));
+			//this.particleArray.push(new BallParticle(position, direction, speed , size, color));
+			this.addChild(new BallParticle(position, direction, speed , size, color))
 		}
+	}
+
+	animate(deltaTime,currentTime, elapsedTime) {
+		this.child.children.forEach((child) => {
+			child.animate(deltaTime, currentTime, elapsedTime)
+		})
+	}
+
+	draw() {
+		// do nothing here, it's the root
 	}
 }
