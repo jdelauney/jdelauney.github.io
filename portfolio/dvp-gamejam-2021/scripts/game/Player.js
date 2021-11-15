@@ -27,7 +27,7 @@ export default class Player extends AbstractGameObject {
 
 		let eyeLeft= new Circle(new Point(-8,  - 2), 10,'black')
 		let eyeLeftInner = new Circle(new Point(-5,  -1), 4,'white')
-		eyeLeft.shadow = {offsetX: 0, offsetY: 0, blur:7, color:"#00bbff"}
+		eyeLeft.shadow = {offsetX: 0, offsetY: 0, blur:8, color:"#00bbff"}
 
 		eyeLeft.setParent(this.body)
 		eyeRight.setParent(this.body)
@@ -35,7 +35,7 @@ export default class Player extends AbstractGameObject {
 		eyeRightInner.setParent(this.body)
 		this.body.setParent(this)
 
-		this.shadow = {offsetX: 0, offsetY: 0, blur:30, color:"#999999"}
+		this.shadow = {offsetX: 0, offsetY: 0, blur:20, color:"#ffffff"}
 	}
 
 	standAnimation(deltaTime,currentTime, elapsedTime) {

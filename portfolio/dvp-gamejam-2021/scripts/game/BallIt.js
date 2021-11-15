@@ -12,11 +12,12 @@ export default class BallIt extends AbstractGameEngine {
 		this.displayGameMenu = true;
 	}
 
-	createNewCheckpoint() {
+	createNewCheckpoint(dir) {
 		const size = MathUtils.randomRange(0, 25)
-		const distanceHorizontal = MathUtils.randomRange(-250, 250)
+		const distanceHorizontal = MathUtils.randomRange(60, 250)
 		const distanceVertical = MathUtils.randomRange(45, 80)  + (this.checkpointlastSize + 80) + size
-		this.checkpointLastPos.x += distanceHorizontal
+		this.checkpointLastPos.x += dir * distanceHorizontal
+		this.checkpointLastPos.x = MathUtils.clamp(this.checkpointLastPos.x, (60 + size), (this.viewport.width - (size + 60)))
 		this.checkpointLastPos.y -= distanceVertical
 		const newPos = new Point(this.checkpointLastPos.x, this.checkpointLastPos.y)
 		this.checkpointCoords.push(newPos)
@@ -38,13 +39,11 @@ export default class BallIt extends AbstractGameEngine {
 			this.canvas.classList.remove("filter-blur")
 			this.gameBackground.classList.add("gameContainer__background--game")
 			this.ballParticleEngine.visible = false
-      //startgame()
 		  this.startGame()
 		})
 
 		this.checkpointCoords = []
 		this.nextCheckpointIndex = 1
-		this.checkPoints = []
 
 		this.root = new DummyObject(new Point(0,0))
 		this.root.visible = false;
@@ -61,26 +60,20 @@ export default class BallIt extends AbstractGameEngine {
 
 		this.checkpointLastPos = new Point(this.startPos.x, this.startPos.y)
 		this.checkpointlastSize = 0//checkPoint.size
+	  let dir = Math.random() < 0.5 ? -1 : 1
 		for (let i = 0; i < 3; i++) {
-				this.createNewCheckpoint()
+			this.createNewCheckpoint(dir)
+			dir = -dir
 		}
-
 		this.startCheckPoint = new CheckPoint(this.startPos,0)
 		this.startCheckPoint.setParent(this.checkRoot)
-
-		//this.root.addChild(this.checkRoot)
 		this.checkRoot.setParent(this.root)
 
 		this.player = new Player(this.startPos)
-		//this.root.addChild(this.player)
 		this.player.setParent(this.root)
-		//this.scene.addChild(this.player)
+
 
 		console.log(this.root.child.children)
-
-	  this.lastMousePos = new Point(0,0)
-
-
 
 		this.on('updateFrame', this.onUpdateFrame.bind(this))
 
@@ -117,13 +110,10 @@ export default class BallIt extends AbstractGameEngine {
 	}
 
 	startGame() {
-		return new Promise(resolve => {
-			this.root.visible = true;
-			this.controller.mouse.on('mouseLeftClick', this.onMouseLeftClick.bind(this) )
-			//this.controller.mouse.on('mousemove', this.onMouseMove.bind(this) )
-			this.controller.mouse.enabled = true
-			return resolve
-		})
+		this.root.visible = true;
+		this.controller.mouse.on('mouseLeftClick', this.onMouseLeftClick.bind(this) )
+		//this.controller.mouse.on('mousemove', this.onMouseMove.bind(this) )
+		this.controller.mouse.enabled = true
 	}
 
 }

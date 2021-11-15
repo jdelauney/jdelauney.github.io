@@ -32,6 +32,8 @@ export default class Enemy extends AbstractGameObject {
 		eyeRightInner.setParent(this.body)
 		this.body.setParent(this)
 
+		this.explodeDest = null
+
 		this.shadow = {offsetX: 0, offsetY: 0, blur:10, color:"#0b112c"}
 	}
 
