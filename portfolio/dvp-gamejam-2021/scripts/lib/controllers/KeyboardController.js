@@ -18,13 +18,13 @@ export default class KeyboardController extends EventEmitter {
 		this.VK_CTRLRIGHT = 'ControlRight'
 
 		window.addEventListener("keydown", (event) => {
-			event.preventDefault()
+			//event.preventDefault()
 			this.keysDown[event.code] = true
 			this.trigger("keydown", this)
 		})
 
 		window.addEventListener("keyup", (event) => {
-			event.preventDefault()
+			//event.preventDefault()
 			delete this.keysDown[event.code]
 			this.trigger("keyup", this)
 		})
