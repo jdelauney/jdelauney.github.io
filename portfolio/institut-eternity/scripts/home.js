@@ -2,6 +2,7 @@ import {Collapsable} from "./lib/components/collapsable.js";
 import {GaugeMeter} from "./lib/components/gaugemeter.js";
 import IdealWeightCalculator from "./IdealWeightCalculator.js";
 import {DropDown} from "./lib/components/dropdown.js";
+import {Tooltipsable} from "./lib/components/tooltipsable.js";
 
 let iwGauge = null;
 let imcGauge = null;
@@ -14,6 +15,7 @@ const footerReveal = () => {
 window.addEventListener("DOMContentLoaded", () => {
 	Collapsable.bind();
 	DropDown.bind();
+	Tooltipsable.bind();
 	iwGauge = new GaugeMeter('#iw_gauge-meter');
 	imcGauge = new GaugeMeter('#imc_gauge-meter');
 	footerReveal();

@@ -179,7 +179,9 @@
 					<li class="navbar__menu-item"><a href="#" class="navbar__menu-link">Blog</a></li>
 					<li class="navbar__menu-item"><a href="#" class="navbar__menu-link">Devenez franchisé</a></li>
 					<li class="navbar__menu-item"><a href="#" class="navbar__menu-link">Nous contactez</a></li>
+					<li class="navbar__menu-item"><a href="#" class="hero__cta">Réservation en ligne</a></li>
 				</ul>
+
 			</nav>
 		</div>
 		<button id="navi-toggle" class="navigation__button" aria-haspopup="true" aria-controls="main-menu"
@@ -196,7 +198,7 @@
 		     alt="amincissement, cure minceur, soins, épilation, beauté et estéthique">
 		<img class="hero__background hero__background--right" src="./assets/images/hero-right.jpg" width="250" height="400"
 		     alt="Institut de beauté et estethique Eternity à Genève et Seyssel">
-		<a href="#" class="hero__cta">Réservation en ligne</a>
+
 		<div class="hero__slider-container">
 			<div class="hero__slider">
 				<div class="hero__slider-item">
@@ -326,7 +328,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="grid cols-1 cols-2-md gap-default mt-5">
+		<div class="grid cols-1 cols-2-md gap-default mt-6">
 			<div class="imcDesc">
 				<p>
 					Depuis 1997, l’<abbr title="Organisation Mondiale de la Santé">OMS</abbr>&nbsp;utilise cet indice afin
@@ -345,49 +347,43 @@
 					âge, de sa morphologie, de l'importance de sa musculature et de nombreux autres facteurs.
 				</p>
 			</div>
-			<div id="imcCalculator">
+			<div id="imcCalculator" >
 				<div class="imcCalculator">
 					<p class="prettyTitle">Calculatrice</p>
-					<p class="subtitle subtitle--colored text-left">
-						Afin de données les meilleurs résultats, ceux-ci sont basés sur plusieurs formules mathématiques :&nbsp;<br>
-						Lorentz, Creff, Devine, Monnerot Dumaine, et Bonhardt
-<!--						<span class="tooltip">Lorentz-->
-<!--							<span class="tooltip-label tooltip-label&#45;&#45;bottom text-left">-->
-<!--								La formule de Lorentz créée par le Dr Friedrich Lorentz.<br>-->
-<!--								Membre du département d’hygiène du sport de l’institut de Hambourg en 1929, <br>-->
-<!--								s’inspire de celle de Broca et l’enrichit en ajoutant les paramètres<br>-->
-<!--								de la taille et du sexe de la personne.</span>-->
-<!--						</span>,&nbsp;-->
-<!--						<span class="tooltip">Creff-->
-<!--							<span class="tooltip-label tooltip-label&#45;&#45;bottom text-left">-->
-<!--								La Formule du professeur AF Creff créée dans les années soixante-dix,<br>-->
-<!--								est très proche du poids idéal et se veut plus « pointue » qu’une autre,<br>-->
-<!--								à condition d’avoir un regard juste sur sa morphologie.</span>-->
-<!--						</span>,&nbsp;-->
-<!--						<span class="tooltip">Devine-->
-<!--							<span class="tooltip-label tooltip-label&#45;&#45;bottom text-left">-->
-<!--								Cette formule a été conçue par le Dr B.J. Devine en 1974.<br>-->
-<!--								Elle a été conçue, à l’origine, pour servir au dosage de certaines substances médicamenteuses.<br>-->
-<!--								Très utilisée dans les pays anglo-saxons, cette formule a été employée par de<br>-->
-<!--								grandes revues médicales et pharmaceutiques entre 1974 et 2000.</span>-->
-<!--						</span>,&nbsp;-->
-<!--						<span class="tooltip">Monnerot Dumaine-->
-<!--							<span class="tooltip-label tooltip-label&#45;&#45;bottom text-left">-->
-<!--								Afin de se rapprocher toujours plus précisément du poids idéal,<br>-->
-<!--								cette formule tient compte d’une mesure corporelle autre que la taille : <br>-->
-<!--								la silhouette de l’individu.</span>-->
-<!--						</span>,&nbsp;-->
-<!--						<span class="tooltip">Bonhardt-->
-<!--							<span class="tooltip-label tooltip-label&#45;&#45;bottom text-left">-->
-<!--								La formule de Bornhardt date de 1891. <br>-->
-<!--								Cette formule a été créée à l’origine pour connaitre la corpulence <br>-->
-<!--								des personnes engagées dans l’armée et ainsi déterminer leurs aptitudes<br>-->
-<!--								physiques pour le service militaire.<br>-->
-<!--								Moins populaire que celle de Broca, elle est pourtant plus fiable <br>-->
-<!--								pour se rapprocher du poids idéal puisqu’elle tient compte de la silhouette de l’individu.</span>-->
-<!--						</span>-->
-					</p>
-					<form id="imcForm" class="form-container">
+					<div class="subtitle subtitle--colored text-left">
+						Afin de donner les meilleurs résultats, ceux-ci sont basés sur plusieurs formules mathématiques :&nbsp;<br>
+						<span class="tooltip tooltip__label" data-js-tooltip = '{"position": "bottom" }' aria-describedby="lorentzTooltip" tabindex="0">Lorentz
+							<span id="lorentzTooltip" class="tooltip__container" role="alertdialog" aria-hidden="true" aria-live="polite">
+								La formule de Lorentz créée par le Dr Friedrich Lorentz.<br>
+								Membre du département d’hygiène du sport de l’institut de Hambourg en 1929, s’inspire de celle de Broca et l’enrichit en ajoutant les paramètres de la taille et du sexe de la personne.</span>
+						</span>,&nbsp;
+						<span class="tooltip tooltip__label" data-js-tooltip = '{"position": "bottom" }' aria-describedby="creffTooltip" tabindex="0">Creff
+							<span id="creffTooltip" class="tooltip__container" role="alertdialog" aria-hidden="true" aria-live="polite">
+								La Formule du professeur AF Creff créée dans les années soixante-dix est très proche du poids idéal et se veut plus « pointue » qu’une autre,
+								à condition d’avoir un regard juste sur sa morphologie.</span>
+						</span>,&nbsp;
+						<span class="tooltip tooltip__label" data-js-tooltip = '{"position": "bottom" }' aria-describedby="devineTooltip" tabindex="0">Devine
+							<span id="devineTooltip" class="tooltip__container" role="alertdialog" aria-hidden="true" aria-live="polite">
+								Cette formule a été conçue par le Dr B.J. Devine en 1974.<br>
+								Elle a été conçue, à l’origine, pour servir au dosage de certaines substances médicamenteuses.<br>
+								Très utilisée dans les pays anglo-saxons, cette formule a été employée par de<br>
+								grandes revues médicales et pharmaceutiques entre 1974 et 2000.</span>
+						</span>,&nbsp;
+						<span class="tooltip tooltip__label" data-js-tooltip = '{"position": "bottom" }' aria-describedby="monnerotTooltip" tabindex="0">Monnerot Dumaine
+							<span id="monnerotTooltip" class="tooltip__container" role="alertdialog" aria-hidden="true" aria-live="polite">
+								Afin de se rapprocher toujours plus précisément du poids idéal,<br>
+								cette formule tient compte d’une mesure corporelle autre que la taille : <br>
+								la silhouette de l’individu.</span>
+						</span>&nbsp;et&nbsp;
+						<span class="tooltip tooltip__label" data-js-tooltip = '{"position": "bottom" }' aria-describedby="bonhardtTooltip" tabindex="0">Bonhardt
+							<span id="bonhardtTooltip" class="tooltip__container" role="alertdialog" aria-hidden="true" aria-live="polite">
+								La formule de Bornhardt date de 1891.<br>
+								Cette formule a été créée à l’origine pour connaitre la corpulence des personnes engagées dans l’armée et ainsi déterminer leurs aptitudes physiques pour le service militaire.<br>
+								Moins populaire que celle de Broca, elle est pourtant plus fiable	pour se rapprocher du poids idéal puisqu’elle tient compte de la silhouette de l’individu.
+							</span>
+						</span>
+					</div>
+					<form id="imcForm" class="form-container mt-4">
 
 						<div class="form__row grid cols-1 cols-2-m gap-default">
 							<div class="form__col">
@@ -429,23 +425,17 @@
 						<div class="form__row flex-column">
 							<span class="d-block">Vous ête de morphologie :</span>
 							<div class=" grid cols-1 cols-3-m gap-default">
-								<div class="form__col">
-									<div class="form__control-group mt-0">
-										<input id="morphFine" type="radio" name="morphologie" class="form__control" value="0">
-										<label for="morphFine">Fine</label>
-									</div>
+								<div class="form__control-group mt-0">
+									<input id="morphFine" type="radio" name="morphologie" class="form__control" value="0">
+									<label for="morphFine">Fine</label>
 								</div>
-								<div class="form__col">
-									<div class="form__control-group mt-0">
-										<input id="morphNormal" type="radio" name="morphologie" class="form__control" value="1" checked>
-										<label for="morphNormal">Normale</label>
-									</div>
+								<div class="form__control-group mt-0">
+									<input id="morphNormal" type="radio" name="morphologie" class="form__control" value="1" checked>
+									<label for="morphNormal">Normale</label>
 								</div>
-								<div class="form__col">
-									<div class="form__control-group mt-0">
-										<input id="morphLarge" type="radio" name="morphologie" class="form__control" value="2">
-										<label for="morphLarge">Large</label>
-									</div>
+								<div class="form__control-group mt-0">
+									<input id="morphLarge" type="radio" name="morphologie" class="form__control" value="2">
+									<label for="morphLarge">Large</label>
 								</div>
 							</div>
 						</div>
@@ -466,7 +456,7 @@
 						</div>
 
 						<div class="form__row d-flex flex-justify-center mt-4">
-							<span class="btn btn--rounded btn--shadow btn--block btn-eternity btn-eternity--medium"><input type="submit" value="Calculer"></span>
+							<button type="submit" class="btn btn--rounded btn--shadow btn--block btn-eternity btn-eternity--medium">Calculer</button>
 						</div>
 					</form>
 					<div id="imcResult" class="imcCalculator__result">
@@ -816,7 +806,7 @@
 									<span class="openings__contact-card__phone"><a class="link-readMore" type="phone" href="+41223443636" itemprop="telephone">+41(0)22 344 36 36</a></span>
 								</div>
 						</div>
-						<p class="mt-3">
+						<p class="mt-5">
 							A <strong>Seyssel (France)</strong> :<br>
 						</p>
 						<div class="openings__contact-card" itemscope itemtype="https://schema.org/Person" translate="no">
@@ -946,7 +936,7 @@
 				</p>
 			</div>
 			<div class="form__row d-flex flex-justify-center mt-4">
-				<span class="btn btn--rounded btn--shadow btn--block btn-eternity btn-eternity--large"><input type="submit" value="Demander"></span>
+				<button type="submit" class="btn btn--rounded btn--shadow btn--block btn-eternity btn-eternity--large">Demander</button>
 			</div>
 		</form>
 		</div>
@@ -977,7 +967,7 @@
 				<p class="blogPost-card__content">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus, blanditiis, culpa deleniti eaque eius esse fugiat illum modi molestias numquam obcaecati praesentium quos repellendus sapiente sunt voluptas? Animi, consequuntur.
 				</p>
-				<a href="#" class="link-readMore">Lire la suite</a>
+				<a href="#" class="blogPost-card__link link-readMore">Lire la suite</a>
 			</article>
 			<article class="blogPost-card">
 				<header class="blogPost-card__header">
@@ -993,7 +983,7 @@
 				<p class="blogPost-card__content">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus, blanditiis, culpa deleniti eaque eius esse fugiat illum modi molestias numquam obcaecati praesentium quos repellendus sapiente sunt voluptas? Animi, consequuntur.
 				</p>
-				<a href="#" class="link-readMore">Lire la suite</a>
+				<a href="#" class="blogPost-card__link link-readMore">Lire la suite</a>
 			</article>
 			<article class="blogPost-card">
 				<header class="blogPost-card__header">
@@ -1009,7 +999,7 @@
 				<p class="blogPost-card__content">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus, blanditiis, culpa deleniti eaque eius esse fugiat illum modi molestias numquam obcaecati praesentium quos repellendus sapiente sunt voluptas? Animi, consequuntur.
 				</p>
-				<a href="#" class="link-readMore">Lire la suite</a>
+				<a href="#" class="blogPost-card__link link-readMore">Lire la suite</a>
 			</article>
 		</div>
 	</section>
@@ -1041,7 +1031,7 @@
 			<div class="d-flex flex-justify-center">
 				<div class="prettyContainer">
 					<h2 class="title title--center">Suivez, aimez, épinglez, partagez</h2>
-					<p class="subtitle ">
+					<p class="subtitle subtitle--colored">
 						Retrouvez nous sur les réseaux sociaux
 					</p>
 				</div>
