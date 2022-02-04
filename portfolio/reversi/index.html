@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
+	<title>Othello</title>
+	<meta name="Description" content="Jeu othello / Reversi"/>
+
+	<meta name="robots" content="index, follow">
+
+	<link rel="stylesheet" href="styles/main.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
+
+<!--	<link rel="shortcut icon" href="favicon.svg" type="image/svg">-->
+</head>
+<body>
+ <main id="game__wrapper">
+  <section id="gameMenu__container" class="game__panel">
+			<header class="gameMenu__header">
+				<h1 class="gameMenu__title">
+						Reversi
+				</h1>
+			</header>
+	    <div id="gameMenu__ui">
+		    <div id="gameMenu__ui-left">
+			    <nav id="gameNavbar">
+				    <ul id="gameMenu">
+					    <li class="gameMenu__item">
+						    <label for="tab-one"><span role="button" id="button_play" class="button" data-title="jouer">jouer</span></label>
+					    </li>
+					    <li class="gameMenu__item">
+						    <label for="tab-two"><span role="button" id="button_rules" class="button button--inv" data-title="règles">règles</span></label>
+					    </li>
+					    <li class="gameMenu__item">
+						    <label for="tab-three"><span role="button" id="button_infos" class="button" data-title="infos">infos</span></label>
+					    </li>
+				    </ul>
+			    </nav>
+		    </div>
+		    <div id="gameMenu__ui-right">
+			    <input type="radio" name="tabs" id="tab-zero" checked>
+			    <input type="radio" name="tabs" id="tab-one">
+			    <input type="radio" name="tabs" id="tab-two">
+			    <input type="radio" name="tabs" id="tab-three">
+
+			    <div id="gameMenuIntro" class="show">
+						<div class="scene3D__container">
+							<div class="scene3D autorotate">
+								<div class="box">
+									<div class="face face&#45;&#45;top"></div>
+									<div class="face face&#45;&#45;front"></div>
+									<div class="face face&#45;&#45;left"></div>
+									<div class="face face&#45;&#45;right"></div>
+									<div class="face face&#45;&#45;back"></div>
+									<div class="face face&#45;&#45;bottom"></div>
+								</div>
+								<div class="pawn3D pawn3D&#45;&#45;pos-1">
+									<div class="face face&#45;&#45;top"></div>
+									<div class="face face&#45;&#45;bottom"></div>
+								</div>
+								<div class="pawn3D pawn3D&#45;&#45;black pawn3D&#45;&#45;pos-2">
+									<div class="face face&#45;&#45;top"></div>
+									<div class="face face&#45;&#45;bottom"></div>
+								</div>
+								<div class="pawn3D pawn3D&#45;&#45;black pawn3D&#45;&#45;pos-3">
+									<div class="face face&#45;&#45;top"></div>
+									<div class="face face&#45;&#45;bottom"></div>
+								</div>
+								<div class="pawn3D pawn3D&#45;&#45;pos-4">
+									<div class="face face&#45;&#45;top"></div>
+									<div class="face face&#45;&#45;bottom"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+			    <div class="tabs-wrapper">
+				    <div class="tabs-container">
+					    <div class="tab-content">
+					      <div id="gameMenuPlay">
+						    <span role="button" id="button_startGameHumanVsHuman" class="button button--roll auto-text" data-title="Humain vs Humain" data-game-mode="humanVsHuman">Humain vs Humain</span>
+						    <span role="button" id="button_startGameHumanVsComputer" class="button button--roll auto-text"  data-title="Humain vs Ordinateur"  data-game-mode="humanVsComputer">Humain vs Ordinateur</span>
+		<!--				    <div class="switch">-->
+		<!--					    <input type="checkbox" id="choosePawn">-->
+		<!--					    <label for="choosePawn">Choisissez votre couleur :</label>-->
+		<!--				    </div>-->
+					    </div>
+					    </div>
+					    <div class="tab-content">
+					      <div id="gameMenuRules">
+						    <h2>But du jeu</h2>
+						    <p>
+							    Avoir plus de pions de sa couleur que l’adversaire à la fin de la partie. Celle-ci s’achève lorsque aucun des deux joueurs ne peut plus jouer de coup légal. Cela intervient généralement lorsque les 64 cases sont occupées.
+						    </p>
+						    <h2>Règles</h2>
+						    <p>
+							    Le Noir commence toujours et les deux adversaires jouent ensuite à tour de rôle. A son tour de jeu, le joueur doit poser un pion de sa couleur sur une case vide de l’othellier, adjacente à un pion adverse. Il doit également, en posant son pion, encadrer un ou plusieurs pions adverses entre le pion qu’il pose et un pion à sa couleur, déjà placé sur l’othellier. Cette prise en sandwich peut se faire horizontalement, verticalement ou en diagnonale.
+						    </p>
+					    </div>
+					    </div>
+						  <div class="tab-content">
+					      <div id="gameMenuInfos">
+						    <h2>Histoire</h2>
+								<p>
+									Reversi et Othello sont un même jeu. C'est un jeu de société combinatoire abstrait opposant deux joueurs.<br>
+									Le premier, le Reversi a été inventé en Angleterre au XIXe par Lewis Waterman ou John W. Mollet<br>
+									Alors qu'Othello a été « inventé » au Japon, au XXe siècle par Goro Hasegawa
+								</p>
+						    <p>
+							    Othello est une marque déposée, tandis que le Reversi est aujourd’hui libre de droits et est commercialisé par de nombreux éditeurs.
+						    </p>
+					    </div>
+						  </div>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+  </section>
+
+	<section id="gameBoard__container" class="game__panel">
+		<header id="gameBoard__menu">
+			<span id="playerTurnLabel"></span>
+			<span role="button" id="button_backToMenu" class="button button--roll button--small" data-title="Retour">Retour</span>
+		</header>
+		<div id="gameBoard"></div>
+		<footer id="gameScore">
+			<div class="gameScore__left">
+				<span id="namePlayerOne">Blanc :&nbsp;</span>
+				<span id="scorePlayerOne">2</span>
+			</div>
+			<div class="gameScore__right">
+				<span id="namePlayerTwo">Noir :&nbsp;</span>
+				<span id="scorePlayerTwo">2</span>
+			</div>
+		</footer>
+	</section>
+ </main>
+
+ <div id="modal" class="modal__wrapper">
+	 <div id="modal__box">
+		 <div id="modal__box-header">
+		 </div>
+		 <div id="modal__box-content" class="center">
+		 </div>
+		 <div id="modal__box-footer">
+		 </div>
+	 </div>
+ </div>
+
+	<script type="module" src="scripts/index.js"></script>
+</body>
+</html>
