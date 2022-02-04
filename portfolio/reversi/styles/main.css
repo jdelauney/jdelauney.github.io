@@ -1150,3 +1150,9 @@ input[type=radio],
         max-width: 70%;
     }
 }
+
+@media screen and (min-width: 1600px) {
+    #modal__box {
+        max-width: 50%;
+    }
+}
