@@ -149,67 +149,67 @@ class ReversiBoard extends CustomGameBoard {
 		}
 
 		const opponentPlayerColor = (playerColor === PawnColor.WHITE) ? PawnColor.BLACK : PawnColor.WHITE;
-
-		for (let i = -1; (i < 2); i++ ) {
-			for (let j = -1; (j < 2); j++) {
-				if ((j === 0) && (i === 0)) {
-					continue;
-				}
-				// On explore seulement si c'est la couleur de l'opposant
-				const vx = (x + i);
-				const vy = (y + j);
-				if (this.isValidPosition(vx, vy)) {
-					const pawn = this.getPawnAt(vx, vy);
-					// console.log("PAWN", pawn)
-					if (pawn !== null) {
-						if (pawn.color !== opponentPlayerColor) {
-							continue;
+		return new Promise((resolve, _reject) => {
+			for (let i = -1; (i < 2); i++) {
+				for (let j = -1; (j < 2); j++) {
+					if ((j === 0) && (i === 0)) {
+						continue;
+					}
+					// On explore seulement si c'est la couleur de l'opposant
+					const vx = (x + i);
+					const vy = (y + j);
+					if (this.isValidPosition(vx, vy)) {
+						const pawn = this.getPawnAt(vx, vy);
+						// console.log("PAWN", pawn)
+						if (pawn !== null) {
+							if (pawn.color !== opponentPlayerColor) {
+								continue;
+							}
 						}
 					}
-				}
 
-				let valid =  false;
-				for (let k = 1; (k < this.size); k++) {
-					const nx = x + k * i;
-					const ny = y + k * j;
-					if (this.isValidPosition(nx, ny)) {
-						const cellPawn = this.getPawnAt(nx, ny);
-						if (cellPawn === null ) {
-							break;
-						}
-						if ( cellPawn.color === opponentPlayerColor) {
-							continue;
-						}
-						else if (cellPawn.color === playerColor) {
-							valid = true;
-							break;
-						}
-					}
-				}
-
-				if (valid) {
+					let valid = false;
 					for (let k = 1; (k < this.size); k++) {
 						const nx = x + k * i;
 						const ny = y + k * j;
 						if (this.isValidPosition(nx, ny)) {
 							const cellPawn = this.getPawnAt(nx, ny);
-							if ( cellPawn.color === opponentPlayerColor) {
-								cellPawn.color = playerColor;
-								// console.log("FLIP = ", cellPawn);
-								if (triggerEvents) {
-									this.trigger("onFlipPawn", cellPawn);
-								}
-							}
-							else if (cellPawn.color === playerColor) {
-								valid = true;
-								flipperPawns += (k - 1);
+							if (cellPawn === null) {
 								break;
+							}
+							if (cellPawn.color === opponentPlayerColor) {
+								continue;
+							} else if (cellPawn.color === playerColor) {
+								valid = true;
+								break;
+							}
+						}
+					}
+
+					if (valid) {
+						for (let k = 1; (k < this.size); k++) {
+							const nx = x + k * i;
+							const ny = y + k * j;
+							if (this.isValidPosition(nx, ny)) {
+								const cellPawn = this.getPawnAt(nx, ny);
+								if (cellPawn.color === opponentPlayerColor) {
+									cellPawn.color = playerColor;
+									// console.log("FLIP = ", cellPawn);
+									if (triggerEvents) {
+										this.trigger("onFlipPawn", cellPawn);
+									}
+								} else if (cellPawn.color === playerColor) {
+									valid = true;
+									flipperPawns += (k - 1);
+									break;
+								}
 							}
 						}
 					}
 				}
 			}
-		}
+			resolve();
+		});
 	}
 
 	hasAvailableMoves() {
@@ -307,12 +307,12 @@ export class ReversiGameEngine extends CustomEventListener{
 		}
 	}
 
-	makeMove(x, y) {
+	async makeMove(x, y) {
 		// console.log("MAKE MOVE");
 		// console.log("X = ", x);
 		// console.log("Y = ", y);
 		// console.log("CURENT COLOR = ", this.currentPlayer.pawnColor);
-		this.board.makeMove(this.currentPlayer.pawnColor, x, y, true);
+		await this.board.makeMove(this.currentPlayer.pawnColor, x, y, true);
 		this.trigger("onUpdateBoard", this.board);
 		this.nextTurn();
 	}
