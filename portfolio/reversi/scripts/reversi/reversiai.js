@@ -1,5 +1,6 @@
 import CustomEngineAI_adapter from '../lib/gameengine/engineai.js';
 import {PawnColor} from "./reversigameengine.js";
+import { shuffleArray} from "../lib/core/utils.js";
 
 export const ReversiAIEngine = {
 	MINMAX : 0,
@@ -174,6 +175,7 @@ class Reversi_MinmaxAlphaBetaPrunning_AI_adapter extends CustomEngineAI_adapter 
 			// console.log("GET BEST MOVE COLOR = ", playerColor);
 			// console.log("Available Moves = ", availableMoves.length);
 			if (availableMoves.length > 0) {
+				shuffleArray(availableMoves);
 				for (const move of availableMoves) {
 					// console.log("MOVE = ", move);
 					const tempBoard = this.board.clone();
