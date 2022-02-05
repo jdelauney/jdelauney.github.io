@@ -1089,6 +1089,9 @@ input[type=radio],
     .tab-content {
         padding: 1rem;
     }
+    #modal__box {
+        max-width: 480px;
+    }
 }
 
 @media screen and (min-width: 960px) {
@@ -1146,13 +1149,5 @@ input[type=radio],
         margin-top: clamp(1rem, 2.5vh, 4rem);
     }
 
-    #modal__box {
-        max-width: 70%;
-    }
-}
 
-@media screen and (min-width: 1600px) {
-    #modal__box {
-        max-width: 50%;
-    }
 }

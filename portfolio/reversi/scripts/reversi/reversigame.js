@@ -65,9 +65,9 @@ export default class ReversiGame {
 		}
 	}
 
-	gameOverBoxButtonsClickHandler(event) {
+	modalBoxButtonsClickHandler(event) {
 		const action = event.currentTarget.getAttribute("data-action");
-		this.gameOverBoxButtonsAction = Number(action);
+		this.modalBoxButtonsAction = Number(action);
 	}
 
 	initGameBoard() {
@@ -241,18 +241,32 @@ export default class ReversiGame {
 		this.modalContent.appendChild(inputRowTwo);
 
 		const infoText = document.createElement("p");
-		infoText.innerHTML = "Le <b>joueur 1</b> à les <b>pions noir</b>, c'est donc lui qui <b>débutera la partie</b>"
+		infoText.style.width = "100%";
+		infoText.style.textAlign = "center";
+		infoText.innerHTML = "Le <b>joueur 1</b> à les <b>pions noir</b>.<br>Il <b>débutera la partie</b>"
 		this.modalContent.appendChild(infoText);
 
+		const cancelButton = this.createModalButton("Annuler");
+		cancelButton.setAttribute("data-action", "0");
+		cancelButton.addEventListener("click", this.modalBoxButtonsClickHandler.bind(this));
+		this.modalFooter.appendChild(cancelButton);
+
 		const validateButton = this.createModalButton("Valider");
+		validateButton.setAttribute("data-action", "1");
+		validateButton.addEventListener("click", this.modalBoxButtonsClickHandler.bind(this));
 		this.modalFooter.appendChild(validateButton);
 
 		this.showModalBox();
 
-		const promise = await waitForDOMEvent(validateButton, "click");
+		const promise = await Promise.race([
+			waitForDOMEvent(cancelButton, "click"),
+			waitForDOMEvent(validateButton, "click"),
+		]);
 
-		this.reversiEngine.players[0].name = (inputNameOne.value !== "") ? inputNameOne.value : "Jhon";
-		this.reversiEngine.players[1].name = (inputNameTwo.value !== "") ? inputNameTwo.value : "Jane";
+		if (this.modalBoxButtonsAction === 1) {
+			this.reversiEngine.players[0].name = (inputNameOne.value !== "") ? inputNameOne.value : "Jhon";
+			this.reversiEngine.players[1].name = (inputNameTwo.value !== "") ? inputNameTwo.value : "Jane";
+		}
 
 		this.hideModalBox();
 		this.clearModalBox();
@@ -270,14 +284,26 @@ export default class ReversiGame {
 		const inputRowOne = this.createInputPlayerName("Joueur 1 :", "inputNameOne","Jhon");
 		this.modalContent.appendChild(inputRowOne);
 
+		const cancelButton = this.createModalButton("Annuler");
+		cancelButton.setAttribute("data-action", "0");
+		cancelButton.addEventListener("click", this.modalBoxButtonsClickHandler.bind(this));
+		this.modalFooter.appendChild(cancelButton);
+
 		const validateButton = this.createModalButton("Valider");
+		validateButton.setAttribute("data-action", "1");
+		validateButton.addEventListener("click", this.modalBoxButtonsClickHandler.bind(this));
 		this.modalFooter.appendChild(validateButton);
+
 
 		this.showModalBox();
 
-		const promise = await waitForDOMEvent(validateButton, "click");
-
-		this.reversiEngine.players[0].name = (inputNameOne.value !== "") ? inputNameOne.value : "Jhon";
+		const promise = await Promise.race([
+			waitForDOMEvent(cancelButton, "click"),
+			waitForDOMEvent(validateButton, "click"),
+		]);
+		if (this.modalBoxButtonsAction === 1) {
+			this.reversiEngine.players[0].name = (inputNameOne.value !== "") ? inputNameOne.value : "Jhon";
+		}
 
 		this.hideModalBox();
 		this.clearModalBox();
@@ -293,11 +319,11 @@ export default class ReversiGame {
 		this.modalHeader.appendChild(titleElement);
 
 		const winnerName = (this.reversiEngine.players[0].pawnColor === winner) ? this.reversiEngine.players[0].name : this.reversiEngine.players[1].name;
-		this.modalContent.innerHTML = `<p>Le joueur <b>${winnerName}</b> a gagné la partie !</p>`;
+		this.modalContent.innerHTML = `<p style="width:100%; text-align: center">Le joueur <b>${winnerName}</b> a gagné la partie !</p>`;
 
 		const backToMenuButton = this.createModalButton("Menu");
 		backToMenuButton.setAttribute("data-action", "0");
-		backToMenuButton.addEventListener("click", this.gameOverBoxButtonsClickHandler.bind(this));
+		backToMenuButton.addEventListener("click", this.modalBoxButtonsClickHandler.bind(this));
 		this.modalFooter.appendChild(backToMenuButton);
 
 		const replayButton = this.createModalButton("Rejouer");
@@ -315,7 +341,7 @@ export default class ReversiGame {
 		this.hideModalBox();
 		this.clearModalBox();
 
-		if (this.gameOverBoxButtonsAction === 0) {
+		if (this.modalBoxButtonsAction === 0) {
 			this.backToMenuClickHandler();
 		}
 		else {
@@ -350,7 +376,7 @@ export default class ReversiGame {
 	}
 
 	doOnNotAvailableMoves() {
-		const msg = `<p>Le joueur ${this.reversiEngine.currentPlayer.name} ne peut pas jouer.<br> Il passe son tour.</p>
+		const msg = `<p style="width:100%; text-align: center">Le joueur ${this.reversiEngine.currentPlayer.name} ne peut pas jouer.<br> Il passe son tour.</p>
                  <p style="width:100%; text-align: center;"><i >Cette fenêtre se fermera automatiquement dans 5 secondes</i></p>`;
 		this.openModal("Aucune case valide", msg);
 	}
@@ -399,11 +425,17 @@ export default class ReversiGame {
 
 		await this.askPlayersName();
 
-		this.hideGameMenuParts();
-		this.initCounterScore();
-		this.newGame();
-		this.hideGameMenu();
-		this.showGameBoard();
+		if (this.modalBoxButtonsAction === 0) {
+			this.backToMenuClickHandler();
+		}
+		else {
+			this.hideGameMenuParts();
+			this.initCounterScore();
+			this.newGame();
+			this.hideGameMenu();
+			this.showGameBoard();
+		}
+
 	}
 
 	async humanVsComputerClickHandler() {
@@ -414,11 +446,16 @@ export default class ReversiGame {
 
 		await this.askSettingsPlayerVsComputer();
 
-		this.hideGameMenuParts();
-		this.initCounterScore();
-		this.newGame();
-		this.hideGameMenu();
-		this.showGameBoard();
+		if (this.modalBoxButtonsAction === 0) {
+			this.backToMenuClickHandler();
+		}
+		else {
+			this.hideGameMenuParts();
+			this.initCounterScore();
+			this.newGame();
+			this.hideGameMenu();
+			this.showGameBoard();
+		}
 	}
 
 	initEvents() {
