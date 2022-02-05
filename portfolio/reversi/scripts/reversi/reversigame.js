@@ -375,6 +375,12 @@ export default class ReversiGame {
 		}, 300);
 	}
 
+	doOnInvalideMove() {
+		const msg = `<p style="width:100%; text-align: center">${this.reversiEngine.currentPlayer.name} vous avez joué un coup invalide.<br> Retentez votre chance !.</p>
+                 <p style="width:100%; text-align: center;"><i >Cette fenêtre se fermera automatiquement dans 5 secondes</i></p>`;
+		this.openModal("Coup invalide !", msg);
+	}
+
 	doOnNotAvailableMoves() {
 		const msg = `<p style="width:100%; text-align: center">Le joueur ${this.reversiEngine.currentPlayer.name} ne peut pas jouer.<br> Il passe son tour.</p>
                  <p style="width:100%; text-align: center;"><i >Cette fenêtre se fermera automatiquement dans 5 secondes</i></p>`;
@@ -470,6 +476,7 @@ export default class ReversiGame {
 		this.reversiEngine.addEventListener("onStartGame", this.doOnStartGame.bind(this));
 		this.reversiEngine.addEventListener("onNextTurn", this.doOnNextTurn.bind(this));
 		this.reversiEngine.addEventListener("onNotAvailableMoves", this.doOnNotAvailableMoves.bind(this));
+		this.reversiEngine.addEventListener("onInvalidMove", this.doOnInvalideMove.bind(this));
 		this.reversiEngine.addEventListener("onPutPawn", this.doOnPutPawn.bind(this));
 		this.reversiEngine.addEventListener("onFlipPawn", this.doOnFlipPawn.bind(this));
 		this.reversiEngine.addEventListener("onGameOver", this.doOnGameOver.bind(this));

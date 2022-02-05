@@ -312,9 +312,15 @@ export class ReversiGameEngine extends CustomEventListener{
 		// console.log("X = ", x);
 		// console.log("Y = ", y);
 		// console.log("CURENT COLOR = ", this.currentPlayer.pawnColor);
-		await this.board.makeMove(this.currentPlayer.pawnColor, x, y, true);
-		this.trigger("onUpdateBoard", this.board);
-		this.nextTurn();
+		if (this.board.isValidMove(this.currentPlayer.pawnColor, x, y)) {
+			await this.board.makeMove(this.currentPlayer.pawnColor, x, y, true);
+			this.trigger("onUpdateBoard", this.board);
+			this.nextTurn();
+		}
+		else {
+			this.trigger("onInvalidMove");
+		}
+
 	}
 
 	async startGame() {
