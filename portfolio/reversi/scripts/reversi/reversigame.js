@@ -328,7 +328,7 @@ export default class ReversiGame {
 
 		const replayButton = this.createModalButton("Rejouer");
 		replayButton.setAttribute("data-action", "1");
-	  replayButton.addEventListener("click", this.gameOverBoxButtonsClickHandler.bind(this));
+	  replayButton.addEventListener("click", this.modalBoxButtonsClickHandler.bind(this));
 		this.modalFooter.appendChild(replayButton);
 
 		this.showModalBox();

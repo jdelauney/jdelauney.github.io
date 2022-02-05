@@ -135,7 +135,7 @@ class ReversiBoard extends CustomGameBoard {
 		// console.log("Y = ", y);
 		const isValid = this.isValidMove(playerColor, x, y)
 
-		if ((!isValid) || (this.isGameOver())) {
+		if (!isValid)  {
 			// console.log("NOT VALID MOVE");
 			return
 		}
