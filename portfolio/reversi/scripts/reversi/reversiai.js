@@ -216,11 +216,11 @@ class Reversi_MinmaxAlphaBetaPrunning_AI_adapter extends CustomEngineAI_adapter 
 		const mobility = this.computeMobilityScore(board, playerColor, opponentColor);
 		const parity = this.computeParityScore(board, playerColor, opponentColor);
 		const boardMap =  this.computeBoardMapScore(board, playerColor, opponentColor);
-		const frontiers = this.computeFrontierScore(board, playerColor, opponentColor);
+		//const frontiers = this.computeFrontierScore(board, playerColor, opponentColor);
 		const cornerGrab = this.cornerGrab(board, playerColor);
 		const edgeGrab = this.edgeGrab(board, playerColor)
 
-		return   (100 * cornerGrab) + (10 * edgeGrab) + frontiers +  mobility +  boardMap +  parity;
+		return   (100 * cornerGrab) + (10 * edgeGrab) +  mobility +  boardMap +  parity;
 	}
 
 	/**
