@@ -182,7 +182,7 @@ export default class ReversiGame {
 		return newButton;
 	}
 
-	async openModal(title, content, showCloseButton = true, autoclose = true,  closeDelay = 5000 ) {
+	async openModal(title, content, showCloseButton = true, closeButtonLabel = "Fermer", autoclose = true,  closeDelay = 5000 ) {
 		this.clearModalBox();
 
 		let closeButton = null;
@@ -194,7 +194,7 @@ export default class ReversiGame {
 		}
 
 		if (showCloseButton) {
-			closeButton = this.createModalButton("Fermer");
+			closeButton = this.createModalButton(closeButtonLabel);
 			this.modalFooter.appendChild(closeButton)
 		}
 
@@ -376,18 +376,19 @@ export default class ReversiGame {
 	}
 
 	doOnInvalideMove() {
-		const msg = `<p style="width:100%; text-align: center">${this.reversiEngine.currentPlayer.name} vous avez joué un coup invalide.<br> Retentez votre chance !.</p>
-                 <p style="width:100%; text-align: center;"><i >Cette fenêtre se fermera automatiquement dans 5 secondes</i></p>`;
-		this.openModal("Coup invalide !", msg);
+		const msg = `<p style="width:100%; text-align: center">${this.reversiEngine.currentPlayer.name} vous avez joué un coup invalide.<br> Retentez votre chance !.</p>`;
+                 // <p style="width:100%; text-align: center;"><i >Cette fenêtre se fermera automatiquement dans 5 secondes ou cliquez sur "Continuer"</i></p>`;
+		this.openModal("Coup invalide !", msg, true, "Continuer", false);
 	}
 
 	doOnNotAvailableMoves() {
 		const msg = `<p style="width:100%; text-align: center">Le joueur ${this.reversiEngine.currentPlayer.name} ne peut pas jouer.<br> Il passe son tour.</p>
                  <p style="width:100%; text-align: center;"><i >Cette fenêtre se fermera automatiquement dans 5 secondes</i></p>`;
-		this.openModal("Aucune case valide", msg);
+		this.openModal("Aucune case valide", msg, false);
 	}
 
 	async doOnGameOver(winner) {
+		this.displayScore();
 		await this.displayGameOverBox(winner);
 	}
 

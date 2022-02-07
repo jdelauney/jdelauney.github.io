@@ -45,3 +45,26 @@ export function shuffleArray(array) {
 		[array[i], array[j]] = [array[j], array[i]];
 	}
 }
+
+/**
+ * Supprime les objets dupliqué d'un tableau
+ * @param {array} array
+ * @param {function} compareCallback
+ * @return {array}
+ */
+export function removeDuplicateObjectFromArray(array, compareCallback) {
+	return array.filter((value, index, self) => {
+		return (index === self.findIndex((obj) => {
+			return compareCallback(obj, value);
+		}))
+	})
+}
+
+/**
+ * Supprime les valeurs dupliquées d'un tableau
+ * @param {array} array
+ * @return {array}
+ */
+function removeDuplicateValueFromArray(array) {
+	return [...new Set(array)];
+}

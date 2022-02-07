@@ -45,23 +45,11 @@ class ReversiBoard extends CustomGameBoard {
 	}
 
 	isValidMove(playerColor, x, y) {
-
-		// console.log("isValidMove");
-		// console.log("X = ", x);
-		// console.log("Y = ", y);
-
-		if (!this.isValidPosition(x, y)) {
-			//console.log("NOT VALID POSITION !");
+		if ((!this.isValidPosition(x, y)) || (!this.isEmptyCell(x, y))) {
 			return false;
 		}
 
-		if (!this.isEmptyCell(x, y)) {
-			// console.log("NOT EMPTY !");
-			return false;
-		}
-    //console.log("PLAYER COLOR ", playerColor);
 		const opponentPlayerColor = (playerColor === PawnColor.WHITE) ? PawnColor.BLACK : PawnColor.WHITE;
-		//console.log("OPPONENT COLOR ", opponentPlayerColor);
 
 		for (let i = -1; (i < 2); i++ ) {
 			for (let j = -1; (j < 2); j++) {
@@ -72,13 +60,10 @@ class ReversiBoard extends CustomGameBoard {
 
 				const vx = (x + i);
 				const vy = (y + j);
-				// console.log("VX = ", vx);
-				// console.log("VY = ", vy);
+
 				// On explore seulement si c'est la couleur de l'opposant
 				if (this.isValidPosition(vx, vy)) {
 					const pawn = this.getPawnAt(vx, vy);
-					// console.log("PAWN", pawn)
-
 					if (pawn !== null) {
 						if (pawn.color !== opponentPlayerColor) {
 							continue;
@@ -91,12 +76,10 @@ class ReversiBoard extends CustomGameBoard {
 					const ny = y + k * j;
 					if (this.isValidPosition(nx, ny)) {
 						const cellPawn = this.getPawnAt(nx, ny);
-						//console.log("cellPawn = ", cellPawn);
 						if (cellPawn === null) {
 							break;
 						}
 						if (cellPawn.color === playerColor) {
-							//console.log("IS A VALID MOVE");
 							return true;
 						}
 						else if ( cellPawn.color === opponentPlayerColor) {
@@ -106,7 +89,6 @@ class ReversiBoard extends CustomGameBoard {
 				}
 			}
 		}
-		//console.log("NOT A VALID MOVE");
 		return false;
 	}
 
@@ -129,21 +111,15 @@ class ReversiBoard extends CustomGameBoard {
 	}
 
 	makeMove(playerColor, x, y, triggerEvents = true) {
-		// console.log("=========================================================");
-		// console.log("playerColor == ", playerColor)
-		// console.log("X = ", x);
-		// console.log("Y = ", y);
 		const isValid = this.isValidMove(playerColor, x, y)
 
 		if (!isValid)  {
-			// console.log("NOT VALID MOVE");
 			return
 		}
 
 		let flipperPawns = 1;
 		const newPawn = new Pawn(x, y, playerColor)
 		this.setPawn(newPawn);
-		// console.log("PUT PAWN = ", newPawn);
 		if (triggerEvents) {
 			this.trigger("onPutPawn", newPawn);
 		}
@@ -160,7 +136,6 @@ class ReversiBoard extends CustomGameBoard {
 					const vy = (y + j);
 					if (this.isValidPosition(vx, vy)) {
 						const pawn = this.getPawnAt(vx, vy);
-						// console.log("PAWN", pawn)
 						if (pawn !== null) {
 							if (pawn.color !== opponentPlayerColor) {
 								continue;
@@ -194,7 +169,6 @@ class ReversiBoard extends CustomGameBoard {
 								const cellPawn = this.getPawnAt(nx, ny);
 								if (cellPawn.color === opponentPlayerColor) {
 									cellPawn.color = playerColor;
-									// console.log("FLIP = ", cellPawn);
 									if (triggerEvents) {
 										this.trigger("onFlipPawn", cellPawn);
 									}
@@ -264,7 +238,6 @@ export class ReversiGameEngine extends CustomEventListener{
 		this.board.setPawn(new Pawn(mid + 1, mid + 1, PawnColor.WHITE));
 		this.board.setPawn(new Pawn(mid + 1, mid, PawnColor.BLACK));
 		this.board.setPawn(new Pawn(mid, mid + 1, PawnColor.BLACK));
-
 	}
 
 	setPlayer(playerNum, playerType, pawnColor, name, engineAIAdapter  = ReversiAIEngine.MINMAX_ALPHABETA) {
@@ -281,10 +254,8 @@ export class ReversiGameEngine extends CustomEventListener{
 	}
 
 	async nextTurn() {
-		//console.log("NEXT TURN");
 		if (!this.board.isGameOver()) {
 			this.currentPlayer = this.getOpponentPlayer();
-			//console.log("CURRENT PLAYER = ", this.currentPlayer);
 
 			if (!this.board.hasValidMoves(this.currentPlayer.pawnColor)) {
 				this.trigger('onNotAvailableMoves', this.currentPlayer);
@@ -295,23 +266,14 @@ export class ReversiGameEngine extends CustomEventListener{
 			this.trigger('onNextTurn');
 
 			if (this.currentPlayer.type === PlayerType.COMPUTER) {
-				// console.log("COMPUTER PLAYER = ", this.currentPlayer);
 				await wait(500);
 				const bestMove = await this.currentPlayer.engineAI.getBestMove(this.currentPlayer.pawnColor);
-				// console.log("BestMove = ", bestMove);
-				// console.log("COMPUTER PLAY")
 				this.makeMove(bestMove.x, bestMove.y);
 			}
-
-
 		}
 	}
 
 	async makeMove(x, y) {
-		// console.log("MAKE MOVE");
-		// console.log("X = ", x);
-		// console.log("Y = ", y);
-		// console.log("CURENT COLOR = ", this.currentPlayer.pawnColor);
 		if (this.board.isValidMove(this.currentPlayer.pawnColor, x, y)) {
 			await this.board.makeMove(this.currentPlayer.pawnColor, x, y, true);
 			this.trigger("onUpdateBoard", this.board);
@@ -320,18 +282,12 @@ export class ReversiGameEngine extends CustomEventListener{
 		else {
 			this.trigger("onInvalidMove");
 		}
-
 	}
 
 	async startGame() {
-		//console.log("Start Game");
 		await this.board.reset();
 		this.initBoard();
 		this.currentPlayer = (this.players[0].pawnColor === PawnColor.BLACK) ? this.players[0] : this.players[1];
-		// console.log("PLAYER 0 = ", this.players[0]);
-		// console.log("PLAYER 2 = ", this.players[1]);
-		// console.log("CURRENT PLAYER = ", this.currentPlayer);
-		//console.log("Trigger onStartGame");
 		this.trigger("onStartGame");
 	}
 }

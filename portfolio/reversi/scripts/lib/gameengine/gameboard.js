@@ -97,7 +97,7 @@ export class CustomGameBoard extends CustomEventListener {
 
 	clone() {
 		const newBoard = new CustomGameBoard(this.width, this.height);
-		newBoard.board = [...this.board]; //[...this.board].map((row) => row.slice(0)); ===> DeepCopy
+		newBoard.board = [...this.board]; //[...this.board].map((row) => row.slice(0)); ou this.board.map(object => ({...object})); ===> DeepCopy
 		return newBoard;
 	}
 }
