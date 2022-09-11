@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
 	<title>Sass Swing - Class-less template</title>
-	<meta name="Description" content="Exemple : modèle de page << class less >> du framework Sass Swing "/>
+	<meta name="Description" content="Exemple : modèle de page << class less >> du framework Sass Swing " />
 
 	<meta name="robots" content="index, follow">
 
-<!--	<link rel="preconnect" href="https://unpkg.com">-->
-<!--	<link rel="preload" href="https://unpkg.com/@sass-swing/dist/css/sass-swing.min.css" as="style">-->
-<!--	<link rel="stylesheet" href="https://unpkg.com/@sass-swing/dist/css/sass-swing.min.css">-->
-	<link rel="stylesheet" href="../../../dist/css/sass-swing.min.css">
+	<link rel="preconnect" href="https://unpkg.com">
+	<link rel="preload" href="https://unpkg.com/sass-swing@latest/dist/css/sass-swing.min.css" as="style">
+	<link rel="stylesheet" href="https://unpkg.com/sass-swing@latest/dist/css/sass-swing.min.css">
 	<link rel="stylesheet" href="custom.css">
-	<script src="../../../dist/js/sass-swing.min.js" defer></script>
+	<script src="https://unpkg.com/sass-swing@latest/dist/js/sass-swing.min.js" defer></script>
+
 	<style>
-		[class*=grid-sample] > div {
+		[class*=grid-sample]>div {
 			padding: 1em;
 			background-color: var(--secondary-color-variation-1);
 			color: var(--on-secondary-color-variation-1);
 			text-align: center;
 		}
 
-		[class*="grid-neested"] > div {
+		[class*="grid-neested"]>div {
 			padding: .5em;
 			background: var(--secondary-color-variation-2);
 			color: var(--on-secondary-color-variation-2);
 		}
 
-		[class*="grid-neested-1"] > div {
+		[class*="grid-neested-1"]>div {
 			padding: .5em;
-			background: var(--info-color) ;
+			background: var(--info-color);
 			color: var(--on-info-color);
 		}
 
@@ -56,12 +57,13 @@
 	</style>
 
 </head>
+
 <body>
 	<header>
-		<div class="navigation navigation--fixed" >
+		<div class="navigation navigation--fixed">
 			<nav class="md:navigation-toggle" aria-label="menu principal" style="--p:.5em;">
 				<input type="checkbox" id="nav-toggle" name="nav-toggle">
-				<a href="#"  aria-label="back home">FULL PREVIEW</a>
+				<a href="#" aria-label="back home">FULL PREVIEW</a>
 				<div id="main-menu" class="navbar__menu  flex--center">
 					<ul>
 						<li><a href="#">Lien 1</a></li>
@@ -71,7 +73,7 @@
 					</ul>
 				</div>
 				<label for="nav-toggle" class="navbar__toggler" aria-controls="navbar-menu"
-				       aria-label="Ouvre ou ferme le menu principal">
+					aria-label="Ouvre ou ferme le menu principal">
 					<span class="navbar__toggler__icon">&nbsp;</span>
 					<span class="sr-only">Ouvre ou ferme le menu principal</span>
 				</label>
@@ -87,10 +89,12 @@
 	</header>
 	<main class="container">
 		<div class="navigation navigation--sticky" style="top:2.7em;">
-			<nav style="--px:1em;--background-color: hsl(var(--neutral-color-h) var(--neutral-color-variation-1-s) var(--neutral-color-variation-1-l) / 0.85);">
+			<nav
+				style="--px:1em;--background-color: hsl(var(--neutral-color-h) var(--neutral-color-variation-1-s) var(--neutral-color-variation-1-l) / 0.85);">
 				<span>Quick menu</span>
 				<details id="sectionmenu" role="group">
-					<summary id="sectionmenubutton" aria-haspopup="true" role="button menuitem" aria-controls="sectionmenulist">Sections</summary>
+					<summary id="sectionmenubutton" aria-haspopup="true" role="button menuitem" aria-controls="sectionmenulist">
+						Sections</summary>
 					<ul id="sectionmenulist" role="menu" aria-labelledby="sectionmenubutton">
 						<li role="presentation"><a role="menuitem" href="#heading">Heading</a></li>
 						<li role="presentation"><a role="menuitem" href="#flex">Flex</a></li>
@@ -112,7 +116,8 @@
 					</ul>
 				</details>
 				<details id="thememenu" role="group">
-					<summary id="thememenubutton" aria-haspopup="true" role="button menuitem" aria-controls="thememenulist">Theme</summary>
+					<summary id="thememenubutton" aria-haspopup="true" role="button menuitem" aria-controls="thememenulist">Theme
+					</summary>
 					<ul id="thememenulist" role="menu" aria-labelledby="thememenubutton">
 						<li role="presentation"><a role="menuitem" href="#" data-js-themeSwitcher="auto">Auto</a></li>
 						<li role="presentation"><a role="menuitem" href="#" data-js-themeSwitcher="light">Light</a></li>
@@ -126,61 +131,93 @@
 			<h2>Typography</h2>
 			<article>
 				<h3>Heading 3</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid deserunt dolorem laboriosam laudantium mollitia neque nesciunt sequi tempore voluptatibus.</p>
-				<p style="--fs:.8em;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi doloremque dolores eveniet fugiat magnam optio placeat praesentium quia sint soluta. Iusto.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid deserunt dolorem laboriosam laudantium
+					mollitia neque nesciunt sequi tempore voluptatibus.</p>
+				<p style="--fs:.8em;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi doloremque dolores
+					eveniet fugiat magnam optio placeat praesentium quia sint soluta. Iusto.</p>
 				<h4>Heading 4</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam blanditiis libero natus, provident quae quibusdam quos ratione.</p>
-				<p style="--lc:4;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias delectus dicta incidunt nam nobis omnis perferendis rem, voluptate. Esse explicabo modi nesciunt optio totam ullam veritatis? Accusamus aliquam commodi, corporis doloremque ea eaque facilis magni minima nemo officia possimus praesentium quae recusandae, similique, tenetur vitae voluptate? A alias aliquid amet, asperiores atque consectetur consequuntur dignissimos eveniet inventore, ipsam natus nesciunt nostrum nulla numquam optio provident, quas recusandae reiciendis saepe sequi sint unde veniam vero. At enim id illum inventore nulla officia quod suscipit. Aliquam animi aut dolor dolore ducimus exercitationem expedita explicabo facere inventore ipsa, ipsam itaque mollitia neque obcaecati odio perferendis placeat, porro quae quasi quis repudiandae saepe, tenetur ullam. Accusamus, ad adipisci animi architecto culpa delectus dicta dolore doloribus dolorum eaque eligendi ex explicabo facere fugit inventore, ipsam iste libero molestiae molestias necessitatibus neque obcaecati pariatur quam quidem rem rerum saepe sit tempora voluptate voluptates! Amet beatae dignissimos dolorem necessitatibus, quos ratione sed. Ad aspernatur atque blanditiis consequatur corporis debitis delectus deleniti deserunt dolor enim error esse eveniet expedita facilis iste laudantium libero magnam molestiae molestias nam necessitatibus, nihil nobis non odio provident quas quia quibusdam quod repellat repellendus reprehenderit repudiandae rerum similique suscipit veritatis voluptatem voluptatum. Numquam.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam blanditiis libero natus, provident quae
+					quibusdam quos ratione.</p>
+				<p style="--lc:4;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias delectus dicta incidunt nam
+					nobis omnis perferendis rem, voluptate. Esse explicabo modi nesciunt optio totam ullam veritatis? Accusamus
+					aliquam commodi, corporis doloremque ea eaque facilis magni minima nemo officia possimus praesentium quae
+					recusandae, similique, tenetur vitae voluptate? A alias aliquid amet, asperiores atque consectetur
+					consequuntur dignissimos eveniet inventore, ipsam natus nesciunt nostrum nulla numquam optio provident, quas
+					recusandae reiciendis saepe sequi sint unde veniam vero. At enim id illum inventore nulla officia quod
+					suscipit. Aliquam animi aut dolor dolore ducimus exercitationem expedita explicabo facere inventore ipsa,
+					ipsam itaque mollitia neque obcaecati odio perferendis placeat, porro quae quasi quis repudiandae saepe,
+					tenetur ullam. Accusamus, ad adipisci animi architecto culpa delectus dicta dolore doloribus dolorum eaque
+					eligendi ex explicabo facere fugit inventore, ipsam iste libero molestiae molestias necessitatibus neque
+					obcaecati pariatur quam quidem rem rerum saepe sit tempora voluptate voluptates! Amet beatae dignissimos
+					dolorem necessitatibus, quos ratione sed. Ad aspernatur atque blanditiis consequatur corporis debitis delectus
+					deleniti deserunt dolor enim error esse eveniet expedita facilis iste laudantium libero magnam molestiae
+					molestias nam necessitatibus, nihil nobis non odio provident quas quia quibusdam quod repellat repellendus
+					reprehenderit repudiandae rerum similique suscipit veritatis voluptatem voluptatum. Numquam.</p>
 				<h5 style="--mt:3em;">Heading 5</h5>
-				<p style="--bgc:#e7e7e7; --clr:#333333; --p:1em; --ta:justify;">Donec nec egestas nulla. Sed varius placerat felis eu suscipit. Mauris maximus ante in consequat luctus. Morbi euismod sagittis efficitur. Aenean non eros orci. Vivamus ut diam sem.</p>
+				<p style="--bgc:#e7e7e7; --clr:#333333; --p:1em; --ta:justify;">Donec nec egestas nulla. Sed varius placerat
+					felis eu suscipit. Mauris maximus ante in consequat luctus. Morbi euismod sagittis efficitur. Aenean non eros
+					orci. Vivamus ut diam sem.</p>
 				<h6>Heading 6</h6>
-				<p style="--cc:3;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium eius error fuga illum laboriosam nihil qui repudiandae sequi sunt ullam. A beatae deserunt dicta dolor doloremque ea enim esse fuga iure laborum mollitia officiis pariatur possimus quae quaerat quam, quia quis quo, quod saepe sint sit tenetur ut voluptates voluptatum? Accusantium adipisci alias aliquid assumenda atque delectus dicta dolore error tempore vitae. Amet corporis deserunt dignissimos, error expedita incidunt necessitatibus nemo, quos, reprehenderit tenetur voluptates voluptatibus. Harum nisi nulla tempore.</p>
+				<p style="--cc:3;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium eius error fuga illum
+					laboriosam nihil qui repudiandae sequi sunt ullam. A beatae deserunt dicta dolor doloremque ea enim esse fuga
+					iure laborum mollitia officiis pariatur possimus quae quaerat quam, quia quis quo, quod saepe sint sit tenetur
+					ut voluptates voluptatum? Accusantium adipisci alias aliquid assumenda atque delectus dicta dolore error
+					tempore vitae. Amet corporis deserunt dignissimos, error expedita incidunt necessitatibus nemo, quos,
+					reprehenderit tenetur voluptates voluptatibus. Harum nisi nulla tempore.</p>
 				<hr>
 				<section data-theme="light">
 					<h3>Heading 3</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolorum ducimus, exercitationem hic illum in incidunt ipsa maiores maxime, officia quas quis quod recusandae repudiandae rerum saepe sed sequi sint sit soluta veritatis, voluptate voluptates.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dicta eaque eum, exercitationem fugit mollitia nobis! At autem commodi consectetur cumque dolore eligendi illo maiores modi molestias non quae quidem, recusandae rem reprehenderit tempora vitae.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolorum ducimus, exercitationem hic illum
+						in incidunt ipsa maiores maxime, officia quas quis quod recusandae repudiandae rerum saepe sed sequi sint
+						sit soluta veritatis, voluptate voluptates.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dicta eaque eum, exercitationem fugit
+						mollitia nobis! At autem commodi consectetur cumque dolore eligendi illo maiores modi molestias non quae
+						quidem, recusandae rem reprehenderit tempora vitae.</p>
 				</section>
 				<section data-theme="dark">
 					<h3>Heading 3</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolorum ducimus, exercitationem hic illum in incidunt ipsa maiores maxime, officia quas quis quod recusandae repudiandae rerum saepe sed sequi sint sit soluta veritatis, voluptate voluptates.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dicta eaque eum, exercitationem fugit mollitia nobis! At autem commodi consectetur cumque dolore eligendi illo maiores modi molestias non quae quidem, recusandae rem reprehenderit tempora vitae.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolorum ducimus, exercitationem hic illum
+						in incidunt ipsa maiores maxime, officia quas quis quod recusandae repudiandae rerum saepe sed sequi sint
+						sit soluta veritatis, voluptate voluptates.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dicta eaque eum, exercitationem fugit
+						mollitia nobis! At autem commodi consectetur cumque dolore eligendi illo maiores modi molestias non quae
+						quidem, recusandae rem reprehenderit tempora vitae.</p>
 				</section>
 				<section style="--skewX:-15deg;--translateX:4em;">
 					<h3 style="--clr:red;">Inline text elements</h3>
 					<figure>
 						<table>
 							<tbody>
-							<tr>
-								<td><a href="#">Link</a></td>
-								<td><strong>Bold</strong></td>
-								<td><em>Italic</em></td>
-							</tr>
-							<tr>
-								<td><u>Underline</u></td>
-								<td><del>Deleted</del></td>
-								<td><ins>Inserted</ins></td>
-							</tr>
-							<tr>
-								<td><s>Strikethrough</s></td>
-								<td><small>Small </small></td>
-								<td><abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr></td>
-							</tr>
-							<tr>
-								<td>Text <sub>Sub</sub></td>
-								<td>Text <sup>Sup</sup></td>
-								<td><kbd>Kbd</kbd></td>
-							</tr>
-							<tr>
-								<td><mark>Mark</mark></td>
-								<td><var>variable</var></td>
-								<td><samp>Samp</samp></td>
-							</tr>
-							<tr>
-								<td><code>Code</code></td>
-								<td>Time = <time datetime="2022-07-07">7 Juillet</time></td>
-								<td>Output = <output name="result" value="60">60</output></td>
-							</tr>
+								<tr>
+									<td><a href="#">Link</a></td>
+									<td><strong>Bold</strong></td>
+									<td><em>Italic</em></td>
+								</tr>
+								<tr>
+									<td><u>Underline</u></td>
+									<td><del>Deleted</del></td>
+									<td><ins>Inserted</ins></td>
+								</tr>
+								<tr>
+									<td><s>Strikethrough</s></td>
+									<td><small>Small </small></td>
+									<td><abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr></td>
+								</tr>
+								<tr>
+									<td>Text <sub>Sub</sub></td>
+									<td>Text <sup>Sup</sup></td>
+									<td><kbd>Kbd</kbd></td>
+								</tr>
+								<tr>
+									<td><mark>Mark</mark></td>
+									<td><var>variable</var></td>
+									<td><samp>Samp</samp></td>
+								</tr>
+								<tr>
+									<td><code>Code</code></td>
+									<td>Time = <time datetime="2022-07-07">7 Juillet</time></td>
+									<td>Output = <output name="result" value="60">60</output></td>
+								</tr>
 							</tbody>
 						</table>
 					</figure>
@@ -207,7 +244,8 @@
 								</ul>
 							</li>
 							<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-						</ol></li>
+						</ol>
+					</li>
 					<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, possimus?</li>
 					<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, veritatis?</li>
 				</ul>
@@ -239,7 +277,8 @@
 							<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, laboriosam, sed!</li>
 							<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit!</li>
 							<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
-						</ul></li>
+						</ul>
+					</li>
 					<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio non.</li>
 				</ul>
 			</article>
@@ -247,14 +286,17 @@
 		<section id="blockquotes">
 			<h2>Blockquotes</h2>
 			<article>
-				<blockquote style="--op:.15; --rotate:90deg; --scaleX:.1; --rotate-hvr:0; --scaleX-hvr: 1; --op-hvr:1; --origin:center;">
-					"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam atque, ex, facere fugit, laborum molestiae odio quam reprehenderit rerum sunt vel!"
+				<blockquote
+					style="--op:.15; --rotate:90deg; --scaleX:.1; --rotate-hvr:0; --scaleX-hvr: 1; --op-hvr:1; --origin:center;">
+					"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam atque, ex, facere fugit, laborum molestiae
+					odio quam reprehenderit rerum sunt vel!"
 					<footer>
 						<cite>- Lorem ipsum dolor.</cite>
 					</footer>
 				</blockquote>
 				<blockquote style="--op:.15; --op-hvr:1; --mt:2em;">
-					"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam atque, ex, facere fugit, laborum molestiae odio quam reprehenderit rerum sunt vel!"
+					"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam atque, ex, facere fugit, laborum molestiae
+					odio quam reprehenderit rerum sunt vel!"
 					<cite>- Lorem ipsum dolor.</cite>
 				</blockquote>
 			</article>
@@ -263,7 +305,8 @@
 			<h2>Medias</h2>
 			<article>
 				<figure style="--minw:240px; --mw:600px;">
-					<img src="https://images.unsplash.com/photo-1662225659291-1338062e9d72" alt="Hyptonic" loading="lazy" style="--ar:3/4;">
+					<img src="https://images.unsplash.com/photo-1662225659291-1338062e9d72" alt="Hyptonic" loading="lazy"
+						style="--ar:3/4;">
 					<figcaption>Image from&nbsp;<a href="https://unsplash.com">unsplash.com</a></figcaption>
 				</figure>
 			</article>
@@ -306,7 +349,8 @@
 			<article>
 				<input type="button" value="Input button">
 				<input type="submit">
-				<input type="submit" style="--background-color:PaleGreen; --color:Teal; --border-color:OliveDrab; --hover-background-color:SeaGreen; --hover-color:Aquamarine; --hover-border-color:YellowGreen;">
+				<input type="submit"
+					style="--background-color:PaleGreen; --color:Teal; --border-color:OliveDrab; --hover-background-color:SeaGreen; --hover-color:Aquamarine; --hover-border-color:YellowGreen;">
 				<input type="reset">
 			</article>
 			<hr>
@@ -369,7 +413,8 @@
 					<label for="checkbox-2">Checkbox unchecked</label>
 				</fieldset>
 
-				<fieldset style="--bgc:var(--neutral-color-variation-3); --p:1em; --btlr:.5em; --bbrr:.5em; --bdr:2px solid blue;">
+				<fieldset
+					style="--bgc:var(--neutral-color-variation-3); --p:1em; --btlr:.5em; --bbrr:.5em; --bdr:2px solid blue;">
 					<legend><strong>Switches</strong></legend>
 					<label for="switch-1">
 						<input type="checkbox" id="switch-1" name="switch-1" role="switch" checked>
@@ -444,48 +489,48 @@
 			<article>
 				<table>
 					<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-					</tr>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+						</tr>
 					</thead>
 					<tbody>
-					<tr>
-						<th scope="row">1</th>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-					</tr>
-					<tr>
-						<th scope="row">2</th>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-					</tr>
-					<tr>
-						<th scope="row">3</th>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-					</tr>
+						<tr>
+							<th scope="row">1</th>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+						</tr>
 					</tbody>
 				</table>
 			</article>
@@ -493,40 +538,40 @@
 			<article>
 				<table class="table--bordered table--row-hover">
 					<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-					</tr>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+						</tr>
 					</thead>
 					<tbody>
-					<tr>
-						<th scope="row">1</th>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-					</tr>
-					<tr>
-						<th scope="row">2</th>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-					</tr>
-					<tr>
-						<th scope="row">3</th>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-					</tr>
+						<tr>
+							<th scope="row">1</th>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+						</tr>
 					</tbody>
 				</table>
 			</article>
@@ -534,40 +579,40 @@
 			<article>
 				<table class="table--bordered table--col-hover">
 					<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-					</tr>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+						</tr>
 					</thead>
 					<tbody>
-					<tr>
-						<th scope="row">1</th>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-					</tr>
-					<tr>
-						<th scope="row">2</th>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-					</tr>
-					<tr>
-						<th scope="row">3</th>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-					</tr>
+						<tr>
+							<th scope="row">1</th>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+						</tr>
 					</tbody>
 				</table>
 			</article>
@@ -575,40 +620,40 @@
 			<article>
 				<table class="table--bordered table--row-hover table--col-hover table--cell-hover">
 					<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-						<th scope="col">Heading</th>
-					</tr>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+							<th scope="col">Heading</th>
+						</tr>
 					</thead>
 					<tbody>
-					<tr>
-						<th scope="row">1</th>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-					</tr>
-					<tr>
-						<th scope="row">2</th>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-					</tr>
-					<tr>
-						<th scope="row">3</th>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-						<td>Cell</td>
-					</tr>
+						<tr>
+							<th scope="row">1</th>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+							<td>Cell</td>
+						</tr>
 					</tbody>
 				</table>
 			</article>
@@ -616,40 +661,40 @@
 			<article>
 				<table class="table--responsive table--bordered table--cell-hover">
 					<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Heading 1</th>
-						<th scope="col">Heading 2</th>
-						<th scope="col">Heading 3</th>
-						<th scope="col">Heading 4</th>
-						<th scope="col">Heading 5</th>
-					</tr>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Heading 1</th>
+							<th scope="col">Heading 2</th>
+							<th scope="col">Heading 3</th>
+							<th scope="col">Heading 4</th>
+							<th scope="col">Heading 5</th>
+						</tr>
 					</thead>
 					<tbody>
-					<tr>
-						<th scope="row">1</th>
-						<td data-label="Heading 1">Cell</td>
-						<td data-label="Heading 2">Cell</td>
-						<td data-label="Heading 3">Cell</td>
-						<td data-label="Heading 4">Cell</td>
-						<td data-label="Heading 5">Cell</td>
-					</tr>
-					<tr>
-						<th scope="row">2</th>
-						<td data-label="Heading 1">Cell</td>
-						<td data-label="Heading 2">Cell</td>
-						<td data-label="Heading 3">Cell</td>
-						<td data-label="Heading 4">Cell</td>
-						<td data-label="Heading 5">Cell</td>
-					</tr>
-					<tr>
-						<th scope="row">3</th>
-						<td data-label="Heading 1">Cell</td>
-						<td data-label="Heading 2">Cell</td>
-						<td data-label="Heading 3">Cell</td>
-						<td data-label="Heading 4">Cell</td>
-						<td data-label="Heading 5">Cell</td>
-					</tr>
+						<tr>
+							<th scope="row">1</th>
+							<td data-label="Heading 1">Cell</td>
+							<td data-label="Heading 2">Cell</td>
+							<td data-label="Heading 3">Cell</td>
+							<td data-label="Heading 4">Cell</td>
+							<td data-label="Heading 5">Cell</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td data-label="Heading 1">Cell</td>
+							<td data-label="Heading 2">Cell</td>
+							<td data-label="Heading 3">Cell</td>
+							<td data-label="Heading 4">Cell</td>
+							<td data-label="Heading 5">Cell</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td data-label="Heading 1">Cell</td>
+							<td data-label="Heading 2">Cell</td>
+							<td data-label="Heading 3">Cell</td>
+							<td data-label="Heading 4">Cell</td>
+							<td data-label="Heading 5">Cell</td>
+						</tr>
 					</tbody>
 				</table>
 			</article>
@@ -657,40 +702,40 @@
 				<h3>Custom table</h3>
 				<table class="table--responsive table--bordered custom--table">
 					<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Heading 1</th>
-						<th scope="col">Heading 2</th>
-						<th scope="col">Heading 3</th>
-						<th scope="col">Heading 4</th>
-						<th scope="col">Heading 5</th>
-					</tr>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Heading 1</th>
+							<th scope="col">Heading 2</th>
+							<th scope="col">Heading 3</th>
+							<th scope="col">Heading 4</th>
+							<th scope="col">Heading 5</th>
+						</tr>
 					</thead>
 					<tbody>
-					<tr>
-						<th scope="row">1</th>
-						<td data-label="Heading 1">Cell</td>
-						<td data-label="Heading 2">Cell</td>
-						<td data-label="Heading 3">Cell</td>
-						<td data-label="Heading 4">Cell</td>
-						<td data-label="Heading 5">Cell</td>
-					</tr>
-					<tr>
-						<th scope="row">2</th>
-						<td data-label="Heading 1">Cell</td>
-						<td data-label="Heading 2">Cell</td>
-						<td data-label="Heading 3">Cell</td>
-						<td data-label="Heading 4">Cell</td>
-						<td data-label="Heading 5">Cell</td>
-					</tr>
-					<tr>
-						<th scope="row">3</th>
-						<td data-label="Heading 1">Cell</td>
-						<td data-label="Heading 2">Cell</td>
-						<td data-label="Heading 3">Cell</td>
-						<td data-label="Heading 4">Cell</td>
-						<td data-label="Heading 5">Cell</td>
-					</tr>
+						<tr>
+							<th scope="row">1</th>
+							<td data-label="Heading 1">Cell</td>
+							<td data-label="Heading 2">Cell</td>
+							<td data-label="Heading 3">Cell</td>
+							<td data-label="Heading 4">Cell</td>
+							<td data-label="Heading 5">Cell</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td data-label="Heading 1">Cell</td>
+							<td data-label="Heading 2">Cell</td>
+							<td data-label="Heading 3">Cell</td>
+							<td data-label="Heading 4">Cell</td>
+							<td data-label="Heading 5">Cell</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td data-label="Heading 1">Cell</td>
+							<td data-label="Heading 2">Cell</td>
+							<td data-label="Heading 3">Cell</td>
+							<td data-label="Heading 4">Cell</td>
+							<td data-label="Heading 5">Cell</td>
+						</tr>
 					</tbody>
 				</table>
 			</article>
@@ -699,7 +744,8 @@
 			<h2>Accordions</h2>
 			<details>
 				<summary>Accordion 1</summary>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur dolore natus, nostrum odio ratione repellendus veniam? Atque eos exercitationem impedit iste necessitatibus.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur dolore natus, nostrum odio
+					ratione repellendus veniam? Atque eos exercitationem impedit iste necessitatibus.</p>
 			</details>
 			<details open="">
 				<summary>Accordion 2</summary>
@@ -714,7 +760,8 @@
 		<section id="progress">
 			<h2>Progress bar</h2>
 			<progress id="progress-1" value="25" max="100"></progress>
-			<progress id="progress-2" style="--background-color:LightSteelBlue; --progress-color:LightSalmon;--border-color:RebeccaPurple;"></progress>
+			<progress id="progress-2"
+				style="--background-color:LightSteelBlue; --progress-color:LightSalmon;--border-color:RebeccaPurple;"></progress>
 			<h3>Custom progress</h3>
 			<progress class="custom--progress"></progress>
 		</section>
@@ -772,7 +819,8 @@
 					</div>
 				</div>
 				<hr>
-				<div class="flex flex--row flex--v-center flex--space-around" style="--bgc:var(--neutral-color-variation-1); --p:1em;">
+				<div class="flex flex--row flex--v-center flex--space-around"
+					style="--bgc:var(--neutral-color-variation-1); --p:1em;">
 					<div style="--bgc:var(--neutral-color-variation-2); --clr:var(--on-neutral-color-variation-2); --p:1em;">
 						Element 1
 					</div>
@@ -807,7 +855,7 @@
 					<div>4</div>
 				</div>
 				<hr>
-				<div class="grid-sample grid cols-4 row-gap-1 col-gap-2" >
+				<div class="grid-sample grid cols-4 row-gap-1 col-gap-2">
 					<div>1</div>
 					<div>2</div>
 					<div>3</div>
@@ -941,7 +989,7 @@
 			<article>
 				<div class="navigation" style="--zi:6000;">
 					<nav class="navigation--burger">
-						<input type="checkbox"  id="nav-toggle-test" aria-checked="false">
+						<input type="checkbox" id="nav-toggle-test" aria-checked="false">
 						<ul>
 							<li>MENU BURGER ONLY</li>
 						</ul>
@@ -953,7 +1001,8 @@
 								<li><a href="#">Lien 4</a></li>
 							</ul>
 						</div>
-						<label for="nav-toggle-test" class="navbar__toggler" aria-haspopup="true" aria-controls="test-menu" aria-label="Open or close test menu">
+						<label for="nav-toggle-test" class="navbar__toggler" aria-haspopup="true" aria-controls="test-menu"
+							aria-label="Open or close test menu">
 							<span class="navbar__toggler__icon">&nbsp;</span>
 						</label>
 					</nav>
@@ -996,7 +1045,8 @@
 								<li><a href="#">Lien 4</a></li>
 							</ul>
 						</div>
-						<label for="nav-toggle-test-dropdown" class="navbar__toggler" aria-haspopup="true" aria-controls="test-menu" aria-label="Open or close dropdown menu">
+						<label for="nav-toggle-test-dropdown" class="navbar__toggler" aria-haspopup="true" aria-controls="test-menu"
+							aria-label="Open or close dropdown menu">
 							<span class="navbar__toggler__icon">&nbsp;</span>
 						</label>
 					</nav>
@@ -1079,74 +1129,66 @@
 			<h2>Fil d'Ariane</h2>
 			<article>
 				<nav class="breadcrumb-nav" aria-label="Fil d'Ariane">
-				<ol itemscope itemtype="https://schema.org/BreadcrumbList">
-					<li itemprop="itemListElement" itemscope
-					    itemtype="https://schema.org/ListItem">
-						<a itemprop="item" href="https://jdelauney.github.io/sass-swing/">
-							<span itemprop="name">Accueil</span>
-						</a>
-						<meta itemprop="position" content="1" />
-					</li>
-					<li itemprop="itemListElement" itemscope
-					    itemtype="https://schema.org/ListItem">
-						<a itemprop="item" href="https://jdelauney.github.io/sass-swing/documentation/">
-							<span itemprop="name">Documentation</span>
-						</a>
-						<meta itemprop="position" content="2" />
-					</li>
-					<li itemprop="itemListElement" itemscope
-					    itemtype="https://schema.org/ListItem" aria-current="page">
-						<span itemprop="name">FIl d'ariane</span>
-						<meta itemprop="position" content="3" />
-					</li>
-				</ol>
-			</nav>
+					<ol itemscope itemtype="https://schema.org/BreadcrumbList">
+						<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+							<a itemprop="item" href="https://jdelauney.github.io/sass-swing/">
+								<span itemprop="name">Accueil</span>
+							</a>
+							<meta itemprop="position" content="1" />
+						</li>
+						<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+							<a itemprop="item" href="https://jdelauney.github.io/sass-swing/documentation/">
+								<span itemprop="name">Documentation</span>
+							</a>
+							<meta itemprop="position" content="2" />
+						</li>
+						<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+							<span itemprop="name">FIl d'ariane</span>
+							<meta itemprop="position" content="3" />
+						</li>
+					</ol>
+				</nav>
 				<nav class="breadcrumb-nav" aria-label="Fil d'Ariane" style="--divider:'/';">
-				<ol itemscope itemtype="https://schema.org/BreadcrumbList">
-					<li itemprop="itemListElement" itemscope
-					    itemtype="https://schema.org/ListItem">
-						<a itemprop="item" href="https://jdelauney.github.io/sass-swing/">
-							<span itemprop="name">Accueil</span>
-						</a>
-						<meta itemprop="position" content="1" />
-					</li>
-					<li itemprop="itemListElement" itemscope
-					    itemtype="https://schema.org/ListItem">
-						<a itemprop="item" href="https://jdelauney.github.io/sass-swing/documentation/">
-							<span itemprop="name">Documentation</span>
-						</a>
-						<meta itemprop="position" content="2" />
-					</li>
-					<li itemprop="itemListElement" itemscope
-					    itemtype="https://schema.org/ListItem" aria-current="page">
-						<span itemprop="name">FIl d'ariane</span>
-						<meta itemprop="position" content="3" />
-					</li>
-				</ol>
-			</nav>
-				<nav class="breadcrumb-nav" aria-label="Fil d'Ariane" style="--divider:url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);">
-				<ol itemscope itemtype="https://schema.org/BreadcrumbList">
-					<li itemprop="itemListElement" itemscope
-					    itemtype="https://schema.org/ListItem">
-						<a itemprop="item" href="https://jdelauney.github.io/sass-swing/">
-							<span itemprop="name">Accueil</span>
-						</a>
-						<meta itemprop="position" content="1" />
-					</li>
-					<li itemprop="itemListElement" itemscope
-					    itemtype="https://schema.org/ListItem">
-						<a itemprop="item" href="https://jdelauney.github.io/sass-swing/documentation/">
-							<span itemprop="name">Documentation</span>
-						</a>
-						<meta itemprop="position" content="2" />
-					</li>
-					<li itemprop="itemListElement" itemscope
-					    itemtype="https://schema.org/ListItem" aria-current="page">
-						<span itemprop="name">FIl d'ariane</span>
-						<meta itemprop="position" content="3" />
-					</li>
-				</ol>
-			</nav>
+					<ol itemscope itemtype="https://schema.org/BreadcrumbList">
+						<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+							<a itemprop="item" href="https://jdelauney.github.io/sass-swing/">
+								<span itemprop="name">Accueil</span>
+							</a>
+							<meta itemprop="position" content="1" />
+						</li>
+						<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+							<a itemprop="item" href="https://jdelauney.github.io/sass-swing/documentation/">
+								<span itemprop="name">Documentation</span>
+							</a>
+							<meta itemprop="position" content="2" />
+						</li>
+						<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+							<span itemprop="name">FIl d'ariane</span>
+							<meta itemprop="position" content="3" />
+						</li>
+					</ol>
+				</nav>
+				<nav class="breadcrumb-nav" aria-label="Fil d'Ariane"
+					style="--divider:url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);">
+					<ol itemscope itemtype="https://schema.org/BreadcrumbList">
+						<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+							<a itemprop="item" href="https://jdelauney.github.io/sass-swing/">
+								<span itemprop="name">Accueil</span>
+							</a>
+							<meta itemprop="position" content="1" />
+						</li>
+						<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+							<a itemprop="item" href="https://jdelauney.github.io/sass-swing/documentation/">
+								<span itemprop="name">Documentation</span>
+							</a>
+							<meta itemprop="position" content="2" />
+						</li>
+						<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+							<span itemprop="name">FIl d'ariane</span>
+							<meta itemprop="position" content="3" />
+						</li>
+					</ol>
+				</nav>
 			</article>
 		</section>
 		<section id="pagination">
@@ -1190,19 +1232,23 @@
 			<article>
 				<div class="group group--vertical" style="--w:100%;">
 
-					<label role="button" class="btn--noshadow" for="collapse-accordeon-1" aria-label="Afficher cacher section un" style="--w:100%;">
+					<label role="button" class="btn--noshadow" for="collapse-accordeon-1" aria-label="Afficher cacher section un"
+						style="--w:100%;">
 						Section 1
 					</label>
-					<input type="radio" id="collapse-accordeon-1" name="collapse-accordeon" class="collapsable-toggler" aria-controls="accordeon-content-1" tabindex="-1" checked>
+					<input type="radio" id="collapse-accordeon-1" name="collapse-accordeon" class="collapsable-toggler"
+						aria-controls="accordeon-content-1" tabindex="-1" checked>
 					<div id="accordeon-content-1" class="card collapsable" style="--box-shadow: none; --border-radius:0;">
 						<div class="panel">
 							<h3>SECTION 1</h3>
 							<p>Contenu section 1</p>
 
-							<label role="button" class="btn--noshadow" for="collapse-list" aria-label="Afficher cacher la liste des liens en relation">
+							<label role="button" class="btn--noshadow" for="collapse-list"
+								aria-label="Afficher cacher la liste des liens en relation">
 								En relation
 							</label>
-							<input type="checkbox" id="collapse-list" name="collapse-list" class="collapsable-toggler" aria-controls="collapsable-list-content-1">
+							<input type="checkbox" id="collapse-list" name="collapse-list" class="collapsable-toggler"
+								aria-controls="collapsable-list-content-1">
 							<ul id="collapsable-list-content-1" class="collapsable" style="--px:var(--inner-v-spacing)">
 								<li><a href="#">Lien 1</a></li>
 								<li><a href="#">Lien 2</a></li>
@@ -1212,19 +1258,23 @@
 						</div>
 					</div>
 
-					<label role="button" class="btn--noshadow" for="collapse-accordeon-2" aria-label="Afficher cacher section deux" style="--w:100%;">
+					<label role="button" class="btn--noshadow" for="collapse-accordeon-2"
+						aria-label="Afficher cacher section deux" style="--w:100%;">
 						Section 2
 					</label>
-					<input type="radio" id="collapse-accordeon-2" name="collapse-accordeon" class="collapsable-toggler" aria-controls="accordeon-content-2">
+					<input type="radio" id="collapse-accordeon-2" name="collapse-accordeon" class="collapsable-toggler"
+						aria-controls="accordeon-content-2">
 					<div id="accordeon-content-2" class="card collapsable" style="--box-shadow: none; --border-radius:0;">
 						<div class="panel">
 							<h3>SECTION 2</h3>
 							<p>Contenu section 2</p>
 
-							<label class="btn--noshadow" for="collapse-div" aria-label="Afficher cacher la liste des liens en relation">
+							<label class="btn--noshadow" for="collapse-div"
+								aria-label="Afficher cacher la liste des liens en relation">
 								<span class="link link-underline link-underline--wavy">Voir l'image</span>
 							</label>
-							<input type="checkbox" id="collapse-div" name="collapse-div" class="collapsable-toggler" aria-controls="collapsable-div-content-1">
+							<input type="checkbox" id="collapse-div" name="collapse-div" class="collapsable-toggler"
+								aria-controls="collapsable-div-content-1">
 							<div id="collapsable-div-content-1" class="collapsable" style="--mw:320px;">
 								<img src="https://picsum.photos/300/200/" alt="picsum" width="300" height="200">
 							</div>
@@ -1232,22 +1282,28 @@
 						</div>
 					</div>
 
-					<label role="button" class="btn--noshadow" for="collapse-accordeon-3" aria-label="Afficher cacher section trois" style="--w:100%;">
+					<label role="button" class="btn--noshadow" for="collapse-accordeon-3"
+						aria-label="Afficher cacher section trois" style="--w:100%;">
 						Section 3
 					</label>
-					<input type="radio" id="collapse-accordeon-3" name="collapse-accordeon" class="collapsable-toggler" aria-controls="accordeon-content-3">
+					<input type="radio" id="collapse-accordeon-3" name="collapse-accordeon" class="collapsable-toggler"
+						aria-controls="accordeon-content-3">
 					<div id="accordeon-content-3" class="card collapsable" style="--box-shadow: none; --border-radius:0;">
 						<div class="panel">
 							<h3>SECTION 3</h3>
 							<p>Contenu section 3</p>
 
-							<label class="btn--noshadow" for="collapse-span" aria-label="Afficher cacher l'astuce" style="display: inline-block;">
+							<label class="btn--noshadow" for="collapse-span" aria-label="Afficher cacher l'astuce"
+								style="display: inline-block;">
 								<span class="link link-underline">Astuce ></span>
 							</label>
-							<input type="checkbox" id="collapse-span" name="collapse-div" class="collapsable-toggler" aria-controls="collapsable-span-content-1">
-							<span id="collapsable-span-content-1" class="collapsable" style="--txt: var(--on-neutral-color-variation-2);">
-				Un composant <b>Collaspable en ligne</b> ? Ajoutez <code><b>style</b>=<i>"display: inline-block;"</i></code> à votre <code><b>label</b></code>
-			</span>
+							<input type="checkbox" id="collapse-span" name="collapse-div" class="collapsable-toggler"
+								aria-controls="collapsable-span-content-1">
+							<span id="collapsable-span-content-1" class="collapsable"
+								style="--txt: var(--on-neutral-color-variation-2);">
+								Un composant <b>Collaspable en ligne</b> ? Ajoutez
+								<code><b>style</b>=<i>"display: inline-block;"</i></code> à votre <code><b>label</b></code>
+							</span>
 
 						</div>
 					</div>
@@ -1293,16 +1349,20 @@
 			<hr>
 			<article>
 				<button>
-					Notifications&nbsp;<span class="badge ui--info-alt">9<span class="sr-only"> Notifications non lues</span></span>
+					Notifications&nbsp;<span class="badge ui--info-alt">9<span class="sr-only"> Notifications non
+							lues</span></span>
 				</button>
 				<button>
-					Notifications&nbsp;<span class="badge badge--floating ui--success-alt">0<span class="sr-only"> Notifications non lues</span></span>
+					Notifications&nbsp;<span class="badge badge--floating ui--success-alt">0<span class="sr-only"> Notifications
+							non lues</span></span>
 				</button>
 				<button>
-					Notifications&nbsp;<span class="badge badge--pill badge--floating ui--warning-alt">9<span class="sr-only"> Notifications non lues</span></span>
+					Notifications&nbsp;<span class="badge badge--pill badge--floating ui--warning-alt">9<span class="sr-only">
+							Notifications non lues</span></span>
 				</button>
 				<button>
-					Notifications&nbsp;<span class="badge badge--circle badge--floating ui--danger-alt">124<span class="sr-only"> Notifications non lues</span></span>
+					Notifications&nbsp;<span class="badge badge--circle badge--floating ui--danger-alt">124<span class="sr-only">
+							Notifications non lues</span></span>
 				</button>
 			</article>
 			<hr>
@@ -1327,30 +1387,39 @@
 			<hr>
 			<article>
 				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip="top">Normal</span>
-				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="fit" data-tooltip="top">Info-bulle : fit</span>
-				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="small" data-tooltip="bottom">Info-bulle : small</span>
-				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="medium" data-tooltip="top">Info-bulle : medium</span>
-				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="large" data-tooltip="right">Info-bulle : large</span>
-				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="medium" data-tooltip="bottom" style="--tooltip-size-medium:12em;">Info-bulle : perso</span>
-				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip="top" style="--tooltip-size-large:8em;">Info-bulle : perso</span>
+				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="fit"
+					data-tooltip="top">Info-bulle : fit</span>
+				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="small"
+					data-tooltip="bottom">Info-bulle : small</span>
+				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="medium"
+					data-tooltip="top">Info-bulle : medium</span>
+				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="large"
+					data-tooltip="right">Info-bulle : large</span>
+				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="medium"
+					data-tooltip="bottom" style="--tooltip-size-medium:12em;">Info-bulle : perso</span>
+				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip="top"
+					style="--tooltip-size-large:8em;">Info-bulle : perso</span>
 			</article>
 			<hr>
 			<article style="--mt:4em;">
-				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip="bottom"  data-tooltip-size="fit" data-tooltip-visible>toujours visible</span>
+				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip="bottom"
+					data-tooltip-size="fit" data-tooltip-visible>toujours visible</span>
 
-				<div role="button" class="tooltip tooltip--top tooltip--large" style="--tooltip-size-large: 240px" aria-describedby="tooltipContent1" tabindex="0">
+				<div role="button" class="tooltip tooltip--top tooltip--large" style="--tooltip-size-large: 240px"
+					aria-describedby="tooltipContent1" tabindex="0">
 					Lorem picsum
 					<div id="tooltipContent1" role="tooltip" class="flex flex--column flex--center" style="--p:.5em">
 						<h4 style="--ta:center;">Random Lorem picsum</h4>
-						<img src="https://picsum.photos/240/160/" alt="picsum" width="240" height="160"/>
+						<img src="https://picsum.photos/240/160/" alt="picsum" width="240" height="160" />
 					</div>
 				</div>
 
-				<div role="button" class="tooltip tooltip--right tooltip--fit" data-tooltip-visible style="--tooltip-size-medium: 240px" aria-describedby="tooltipContent2" tabindex="0">
+				<div role="button" class="tooltip tooltip--right tooltip--fit" data-tooltip-visible
+					style="--tooltip-size-medium: 240px" aria-describedby="tooltipContent2" tabindex="0">
 					Lorem picsum
 					<div id="tooltipContent2" role="tooltip" class="flex flex--column flex--center" style="--p:.5em">
 						<h5 style="--ta:center;">Random Lorem picsum</h5>
-						<img src="https://picsum.photos/240/160/" alt="picsum" width="240" height="160"/>
+						<img src="https://picsum.photos/240/160/" alt="picsum" width="240" height="160" />
 						<a href="https://picsum.photos">Picsum Photos</a>
 					</div>
 				</div>
@@ -1380,15 +1449,15 @@
 					<button class="btn--secondary">Dropdown avec contenu personnalisé</button>
 					<div class="dropdown__menu" style="--gap:.5em;">
 						<a href="#" class="dropdown__item">
-							<img src="https://picsum.photos/24/24/" alt="picsum" width="24" height="24" style="--mw:24px;"/>
+							<img src="https://picsum.photos/24/24/" alt="picsum" width="24" height="24" style="--mw:24px;" />
 							&nbsp; item 1
 						</a>
 						<a href="#" class="dropdown__item">
-							<img src="https://picsum.photos/24/24/" alt="picsum" width="24" height="24" style="--mw:24px;"/>
+							<img src="https://picsum.photos/24/24/" alt="picsum" width="24" height="24" style="--mw:24px;" />
 							&nbsp; item 2
 						</a>
 						<a href="#" class="dropdown__item">
-							<img src="https://picsum.photos/24/24/" alt="picsum" width="24" height="24" style="--mw:24px;"/>
+							<img src="https://picsum.photos/24/24/" alt="picsum" width="24" height="24" style="--mw:24px;" />
 							&nbsp; item 3
 						</a>
 					</div>
@@ -1396,7 +1465,8 @@
 			</article>
 			<hr>
 			<article>
-				<div class="dropdown" aria-haspopup="true" aria-expanded="false" data-js-dropdown='{"showOnHover": false, "hideOnClickOutside": true}'>
+				<div class="dropdown" aria-haspopup="true" aria-expanded="false"
+					data-js-dropdown='{"showOnHover": false, "hideOnClickOutside": true}'>
 					<button class="btn--secondary">Dropdown au click</button>
 					<ul role="listbox" tabindex="-1" aria-hidden="true" style="--gap:.5em;">
 						<li><a href="#">Action 1</a></li>
@@ -1413,12 +1483,14 @@
 						<li><a href="#">Action 4</a></li>
 					</ul>
 				</div>
-				<div class="dropdown" aria-haspopup="true" aria-expanded="false" data-js-dropdown='{"showOnHover": true, "hideOnClickOutside": false}'>
+				<div class="dropdown" aria-haspopup="true" aria-expanded="false"
+					data-js-dropdown='{"showOnHover": true, "hideOnClickOutside": false}'>
 					<button class="btn--secondary">Dropdown au survol accessible</button>
 					<ul role="listbox" tabindex="-1" aria-hidden="true" style="--gap:.5em;">
 						<li><a href="#">Action 1</a></li>
 						<li><a href="#">Action 2</a></li>
-						<li class="dropdown" aria-haspopup="true" aria-expanded="false" data-js-dropdown='{"showOnHover": true, "hideOnClickOutside": false}'>
+						<li class="dropdown" aria-haspopup="true" aria-expanded="false"
+							data-js-dropdown='{"showOnHover": true, "hideOnClickOutside": false}'>
 							<a href="#">Action 3</a>
 							<ul role="listbox" tabindex="-1" aria-hidden="true" style="--gap:.5em;">
 								<li><a href="#">Action 3a</a></li>
@@ -1438,7 +1510,8 @@
 				<div class="tabs">
 					<ul role="tablist" aria-label="Tab choices">
 						<li role="presentation">
-							<a href="#panel-1" role="tab" id="tab-1" tabindex="0" aria-controls="panel-1" aria-selected="true">Tab 1</a>
+							<a href="#panel-1" role="tab" id="tab-1" tabindex="0" aria-controls="panel-1" aria-selected="true">Tab
+								1</a>
 						</li>
 						<li role="presentation">
 							<a href="#panel-2" role="tab" id="tab-2" tabindex="-1" aria-controls="panel-2">Tab 2</a>
@@ -1448,19 +1521,32 @@
 						</li>
 					</ul>
 					<section id="panels" role="region" aria-live="polite" style="--mh:10em;">
-						<div id="panel-1" tabindex="0" role="tabpanel" aria-labelledby="tab-3" aria-hidden="false" aria-expanded="true">
+						<div id="panel-1" tabindex="0" role="tabpanel" aria-labelledby="tab-3" aria-hidden="false"
+							aria-expanded="true">
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam eos laboriosam placeat, quasi quibusdam quisquam sed voluptas. Accusantium asperiores delectus dolorum, hic iure maxime molestiae natus, quaerat quis sequi tempora.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam eos laboriosam placeat, quasi
+								quibusdam quisquam sed voluptas. Accusantium asperiores delectus dolorum, hic iure maxime molestiae
+								natus, quaerat quis sequi tempora.
 							</p>
 						</div>
-						<div id="panel-2" tabindex="0" role="tabpanel" aria-labelledby="tab-3" aria-hidden="true" aria-expanded="false">
+						<div id="panel-2" tabindex="0" role="tabpanel" aria-labelledby="tab-3" aria-hidden="true"
+							aria-expanded="false">
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium atque autem cumque, dicta distinctio ea eaque error et eveniet expedita facere fugit harum id illo labore laborum magni minus mollitia, nemo neque nesciunt numquam odit officiis quia quibusdam repellendus saepe sequi tempora tempore temporibus tenetur vel voluptas. Accusantium, illo.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium atque autem cumque,
+								dicta distinctio ea eaque error et eveniet expedita facere fugit harum id illo labore laborum magni
+								minus mollitia, nemo neque nesciunt numquam odit officiis quia quibusdam repellendus saepe sequi tempora
+								tempore temporibus tenetur vel voluptas. Accusantium, illo.
 							</p>
 						</div>
-						<div id="panel-3" tabindex="0" role="tabpanel" aria-labelledby="tab-3" aria-hidden="true" aria-expanded="false">
+						<div id="panel-3" tabindex="0" role="tabpanel" aria-labelledby="tab-3" aria-hidden="true"
+							aria-expanded="false">
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut beatae consectetur deserunt, dignissimos doloremque eaque expedita harum molestiae mollitia nemo officiis perferendis perspiciatis quidem quos! Accusantium aliquid atque consequatur doloremque eos, hic impedit nam officiis quos ut? Ab alias, aliquam architecto aspernatur atque commodi, consectetur dignissimos dolorum earum eligendi enim, esse et facere facilis fugit illo incidunt iure iusto labore laboriosam mollitia natus neque non pariatur perferendis quae quam quas quasi quis quod rem sapiente sunt tenetur ullam vitae!
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut beatae consectetur deserunt,
+								dignissimos doloremque eaque expedita harum molestiae mollitia nemo officiis perferendis perspiciatis
+								quidem quos! Accusantium aliquid atque consequatur doloremque eos, hic impedit nam officiis quos ut? Ab
+								alias, aliquam architecto aspernatur atque commodi, consectetur dignissimos dolorum earum eligendi enim,
+								esse et facere facilis fugit illo incidunt iure iusto labore laboriosam mollitia natus neque non
+								pariatur perferendis quae quam quas quasi quis quod rem sapiente sunt tenetur ullam vitae!
 							</p>
 						</div>
 					</section>
@@ -1530,15 +1616,23 @@
 				<div class="panel">
 					<span class="like-h4">1) Choose the position where to show notifications</span>
 					<div class="section">
-						<input type="radio" name="notifyPos" id="top-left" value="top-left" checked=""><label for="top-left">top-left</label>
-						<input type="radio" name="notifyPos" id="top-center" value="top-center"><label for="top-center">top-center</label>
-						<input type="radio" name="notifyPos" id="top-right" value="top-right"><label for="top-right">top-right</label>
+						<input type="radio" name="notifyPos" id="top-left" value="top-left" checked=""><label
+							for="top-left">top-left</label>
+						<input type="radio" name="notifyPos" id="top-center" value="top-center"><label
+							for="top-center">top-center</label>
+						<input type="radio" name="notifyPos" id="top-right" value="top-right"><label
+							for="top-right">top-right</label>
 						<input type="radio" name="notifyPos" id="mid-left" value="mid-left"><label for="mid-left">mid-left</label>
-						<input type="radio" name="notifyPos" id="mid-center" value="mid-center"><label for="mid-center">mid-center</label>
-						<input type="radio" name="notifyPos" id="mid-right" value="mid-right"><label for="mid-right">mid-right</label>
-						<input type="radio" name="notifyPos" id="bottom-left" value="bottom-left"><label for="bottom-left">bottom-left</label>
-						<input type="radio" name="notifyPos" id="bottom-center" value="bottom-center"><label for="bottom-center">bottom-center</label>
-						<input type="radio" name="notifyPos" id="bottom-right" value="bottom-right"><label for="bottom-right">bottom-right</label>
+						<input type="radio" name="notifyPos" id="mid-center" value="mid-center"><label
+							for="mid-center">mid-center</label>
+						<input type="radio" name="notifyPos" id="mid-right" value="mid-right"><label
+							for="mid-right">mid-right</label>
+						<input type="radio" name="notifyPos" id="bottom-left" value="bottom-left"><label
+							for="bottom-left">bottom-left</label>
+						<input type="radio" name="notifyPos" id="bottom-center" value="bottom-center"><label
+							for="bottom-center">bottom-center</label>
+						<input type="radio" name="notifyPos" id="bottom-right" value="bottom-right"><label
+							for="bottom-right">bottom-right</label>
 					</div>
 					<span class="like-h4">2) Just click !</span>
 					<div class="section">
@@ -1557,17 +1651,21 @@
 		<section id="slider">
 			<h2>Slider</h2>
 			<article>
-				<section class="slider" aria-label="Carrousel" data-js-slider='{"infinite":false, "showButtonAction":true}' style="--slides-per-page:1; --slider-max-height: 300px;">
+				<section class="slider" aria-label="Carrousel" data-js-slider='{"infinite":false, "showButtonAction":true}'
+					style="--slides-per-page:1; --slider-max-height: 300px;">
 					<div class="slider__slides-wrapper">
 						<button class="slider__controls-prev btn--circle">
 							<span class="sr-only">Previous slides</span>
-							<span aria-hidden="true"><</span>
+							<span aria-hidden="true">
+								<< /span>
 						</button>
 						<div class="slider__slides-inner">
 							<div class="slider__slides">
-								<div class="slider__slide" role="group" aria-label="slide 1 de 12" aria-hidden="false" aria-current="true">
+								<div class="slider__slide" role="group" aria-label="slide 1 de 12" aria-hidden="false"
+									aria-current="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300city,night&1" alt="image 1" width="200" height="300" loading="lazy">
+										<img src="https://source.unsplash.com/random/200×300city,night&1" alt="image 1" width="200"
+											height="300" loading="lazy">
 										<p>SLIDE 1</p>
 									</div>
 									<div class="slider__slide__overlay  mySlideOverlay">
@@ -1576,7 +1674,8 @@
 								</div>
 								<div class="slider__slide" role="group" aria-label="slide 2 de 12" aria-hidden="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&2" alt="image 2" width="200" height="300" loading="lazy">
+										<img src="https://source.unsplash.com/random/200×300?city,night&2" alt="image 2" width="200"
+											height="300" loading="lazy">
 										<p>SLIDE 2</p>
 									</div>
 									<div class="slider__slide__overlay  mySlideOverlay">
@@ -1585,7 +1684,8 @@
 								</div>
 								<div class="slider__slide" role="group" aria-label="slide 3 de 12" aria-hidden="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&3" alt="image 3" width="200" height="300" loading="lazy">
+										<img src="https://source.unsplash.com/random/200×300?city,night&3" alt="image 3" width="200"
+											height="300" loading="lazy">
 										<p>SLIDE 3</p>
 									</div>
 									<div class="slider__slide__overlay  mySlideOverlay">
@@ -1594,7 +1694,8 @@
 								</div>
 								<div class="slider__slide" role="group" aria-label="slide 4 de 12" aria-hidden="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&4" alt="image 1" width="200" height="300" loading="lazy">
+										<img src="https://source.unsplash.com/random/200×300?city,night&4" alt="image 1" width="200"
+											height="300" loading="lazy">
 										<p>SLIDE 4</p>
 									</div>
 									<div class="slider__slide__overlay  mySlideOverlay">
@@ -1603,7 +1704,8 @@
 								</div>
 								<div class="slider__slide" role="group" aria-label="slide 5 de 12" aria-hidden="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&5" alt="image 1" width="200" height="300" loading="lazy">
+										<img src="https://source.unsplash.com/random/200×300?city,night&5" alt="image 1" width="200"
+											height="300" loading="lazy">
 										<p>SLIDE 5</p>
 									</div>
 									<div class="slider__slide__overlay  mySlideOverlay">
@@ -1612,7 +1714,8 @@
 								</div>
 								<div class="slider__slide" role="group" aria-label="slide 6 de 12" aria-hidden="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&6" alt="image 1" width="200" height="300" loading="lazy">
+										<img src="https://source.unsplash.com/random/200×300?city,night&6" alt="image 1" width="200"
+											height="300" loading="lazy">
 										<p>SLIDE 6</p>
 									</div>
 									<div class="slider__slide__overlay  mySlideOverlay">
@@ -1630,47 +1733,57 @@
 			</article>
 			<hr>
 			<article>
-				<section class="slider slider--showControlsOnHover" aria-label="Carrousel" data-js-slider='{ "slideByPage":true, "infinite":true, "autoplay":true,"indicatorsPosition":"top", "transitionTimingFunc": "cubic-bezier(0.39, 0.13, 0.11, 0.83)"}' style="--slides-per-page:2; --slider-max-height: 300px; --slider-horizontal-padding: 0; --slide-gap:1rem;--justify-indicators: flex-end;">
+				<section class="slider slider--showControlsOnHover" aria-label="Carrousel"
+					data-js-slider='{ "slideByPage":true, "infinite":true, "autoplay":true,"indicatorsPosition":"top", "transitionTimingFunc": "cubic-bezier(0.39, 0.13, 0.11, 0.83)"}'
+					style="--slides-per-page:2; --slider-max-height: 300px; --slider-horizontal-padding: 0; --slide-gap:1rem;--justify-indicators: flex-end;">
 					<div class="slider__slides-wrapper">
 						<button class="slider__controls-prev btn--circle">
 							<span class="sr-only">Previous slides</span>
-							<span aria-hidden="true"><</span>
+							<span aria-hidden="true">
+								<< /span>
 						</button>
 						<div class="slider__slides-inner">
 							<div class="slider__slides">
-								<div class="slider__slide" role="group" aria-label="slide 1 de 12" aria-hidden="false" aria-current="true">
+								<div class="slider__slide" role="group" aria-label="slide 1 de 12" aria-hidden="false"
+									aria-current="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&1" alt="image 1" width="200" height="300" loading="lazy">
+										<img src="https://source.unsplash.com/random/200×300?city,night&1" alt="image 1" width="200"
+											height="300" loading="lazy">
 										<p>SLIDE 1</p>
 									</div>
 								</div>
 								<div class="slider__slide" role="group" aria-label="slide 2 de 12" aria-hidden="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&2" alt="image 2" width="200" height="300" loading="lazy">
+										<img src="https://source.unsplash.com/random/200×300?city,night&2" alt="image 2" width="200"
+											height="300" loading="lazy">
 										<p>SLIDE 2</p>
 									</div>
 								</div>
 								<div class="slider__slide" role="group" aria-label="slide 3 de 12" aria-hidden="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&3" alt="image 3" width="200" height="300" loading="lazy">
+										<img src="https://source.unsplash.com/random/200×300?city,night&3" alt="image 3" width="200"
+											height="300" loading="lazy">
 										<p>SLIDE 3</p>
 									</div>
 								</div>
 								<div class="slider__slide" role="group" aria-label="slide 4 de 12" aria-hidden="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&4" alt="image 1" width="200" height="300" loading="lazy">
+										<img src="https://source.unsplash.com/random/200×300?city,night&4" alt="image 1" width="200"
+											height="300" loading="lazy">
 										<p>SLIDE 4</p>
 									</div>
 								</div>
 								<div class="slider__slide" role="group" aria-label="slide 5 de 12" aria-hidden="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&5" alt="image 1" width="200" height="300" loading="lazy">
+										<img src="https://source.unsplash.com/random/200×300?city,night&5" alt="image 1" width="200"
+											height="300" loading="lazy">
 										<p>SLIDE 5</p>
 									</div>
 								</div>
 								<div class="slider__slide" role="group" aria-label="slide 6 de 12" aria-hidden="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&6" alt="image 1" width="200" height="300" loading="lazy">
+										<img src="https://source.unsplash.com/random/200×300?city,night&6" alt="image 1" width="200"
+											height="300" loading="lazy">
 										<p>SLIDE 6</p>
 									</div>
 								</div>
@@ -1685,43 +1798,52 @@
 			</article>
 			<hr>
 			<article>
-				<section class="slider mySlider" aria-label="Carrousel" data-js-slider='{ "slideByPage":false, "infinite":true, "autoplay":true,"showIndicators":false, "intervalInMs" : 2050, "transitionSpeedInMs":2000, "transitionTimingFunc": "linear"}' style="--slider-max-height: 300px; --slider-horizontal-padding: 0;">
+				<section class="slider mySlider" aria-label="Carrousel"
+					data-js-slider='{ "slideByPage":false, "infinite":true, "autoplay":true,"showIndicators":false, "intervalInMs" : 2050, "transitionSpeedInMs":2000, "transitionTimingFunc": "linear"}'
+					style="--slider-max-height: 300px; --slider-horizontal-padding: 0;">
 					<div class="slider__slides-wrapper">
 						<div class="slider__slides-inner">
 							<div class="slider__slides">
-								<div class="slider__slide" role="group" aria-label="slide 1 de 12" aria-hidden="false" aria-current="true">
+								<div class="slider__slide" role="group" aria-label="slide 1 de 12" aria-hidden="false"
+									aria-current="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&1" alt="image 1" width="200" height="300">
+										<img src="https://source.unsplash.com/random/200×300?city,night&1" alt="image 1" width="200"
+											height="300">
 										<p>SLIDE 1</p>
 									</div>
 								</div>
 								<div class="slider__slide" role="group" aria-label="slide 2 de 12" aria-hidden="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&2" alt="image 2" width="200" height="300">
+										<img src="https://source.unsplash.com/random/200×300?city,night&2" alt="image 2" width="200"
+											height="300">
 										<p>SLIDE 2</p>
 									</div>
 								</div>
 								<div class="slider__slide" role="group" aria-label="slide 3 de 12" aria-hidden="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&3" alt="image 3" width="200" height="300">
+										<img src="https://source.unsplash.com/random/200×300?city,night&3" alt="image 3" width="200"
+											height="300">
 										<p>SLIDE 3</p>
 									</div>
 								</div>
 								<div class="slider__slide" role="group" aria-label="slide 4 de 12" aria-hidden="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&4" alt="image 1" width="200" height="300">
+										<img src="https://source.unsplash.com/random/200×300?city,night&4" alt="image 1" width="200"
+											height="300">
 										<p>SLIDE 4</p>
 									</div>
 								</div>
 								<div class="slider__slide" role="group" aria-label="slide 5 de 12" aria-hidden="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&5" alt="image 1" width="200" height="300">
+										<img src="https://source.unsplash.com/random/200×300?city,night&5" alt="image 1" width="200"
+											height="300">
 										<p>SLIDE 5</p>
 									</div>
 								</div>
 								<div class="slider__slide" role="group" aria-label="slide 6 de 12" aria-hidden="true">
 									<div class="slider__slide__content">
-										<img src="https://source.unsplash.com/random/200×300?city,night&6" alt="image 1" width="200" height="300">
+										<img src="https://source.unsplash.com/random/200×300?city,night&6" alt="image 1" width="200"
+											height="300">
 										<p>SLIDE 6</p>
 									</div>
 								</div>
@@ -1734,15 +1856,17 @@
 		<hr>
 	</main>
 	<footer>
-		<small>Built with <a href="https://github.com/jdelauney/sass-swing">Sass Swing</a> • <a href="https://github.com/jdelauney/sass-swing/examples/classless/index.html">Source code</a></small>
+		<small>Built with <a href="https://github.com/jdelauney/sass-swing">Sass Swing</a> • <a
+				href="https://github.com/jdelauney/sass-swing/examples/classless/index.html">Source code</a></small>
 	</footer>
 
 	<dialog id="modalTest">
 		<header>
 			<span class="like-h3" style="--mb:0;">Modal title</span>
-			<button data-modal-result="close" class="close" aria-label="Close" >
+			<button data-modal-result="close" class="close" aria-label="Close">
 				<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
-					<path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
+					<path
+						d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
 				</svg>
 			</button>
 		</header>
@@ -1855,4 +1979,5 @@
 
 	<script type="module" src="script.js"></script>
 </body>
+
 </html>
