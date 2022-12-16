@@ -1,1 +1,4 @@
 ﻿*.map
+/.idea/
+/.idea/**/*.xml
+/portfolio/pendu/.idea/
